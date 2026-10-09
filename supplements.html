@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VeriPura Supplements: VeriPura Core tuned for vitamins and supplements</title>
+<meta name="description" content="VeriPura Supplements is VeriPura Core tuned for vitamins and supplements: agents check ingredients, doses, claims and certificates against the requirements of any destination before products ship.">
+<!-- ROUGH MOCKUP of the VeriPura Supplements site (supplements subdomain). Copy drafts for internal review. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0F2444;
+  --ink-2:#1C3560;
+  --paper:#F6F8FB;
+  --white:#FFFFFF;
+  --slate:#44546B;
+  --line:#D8DEE7;
+  --pass:#2B8A3E;
+  --pass-bg:#E6F4EA;
+  --flag:#A8660F;
+  --flag-bg:#FBF0DD;
+  --miss:#A8352A;
+  --miss-bg:#F8E4E1;
+  --seal:#2E55C9;
+  --surface:#FFFFFF;
+  --brand:#0F2444;
+  --brand-2:#1C3560;
+  --on-brand:#FFFFFF;
+  --brand-text:#D3DDEC;
+  --brand-muted:#A9BCDB;
+  --line-soft:#EEF1F5;
+  --tint:#EEF2FA;
+  --tint-2:#E7ECF8;
+  --nav-bg:rgba(246,248,251,.92);
+  --shadow:#0F2444;
+  --btn-bg:#0F2444;
+  --btn-fg:#FFFFFF;
+  --btn-hover:#1C3560;
+  --accent:#9C36B5;
+  --accent-bg:#F8F0FC;
+  color-scheme:light;
+  --sans:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --max:1160px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--paper);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;font-weight:450}
+img{max-width:100%}
+a{color:var(--seal)}
+:focus-visible{outline:3px solid var(--seal);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+/* Nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--nav-bg);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
+.brand{display:flex;align-items:baseline;gap:8px;text-decoration:none;color:var(--ink);font-weight:800;font-size:20px;letter-spacing:-.01em}
+.brand small{font-weight:500;font-size:14px;color:var(--slate)}
+.nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+.nav ul a{color:var(--ink);text-decoration:none;font-size:15px;font-weight:500}
+.nav ul a:hover{color:var(--seal)}
+.btn{display:inline-block;font:600 15px/1 var(--sans);padding:13px 18px;border-radius:8px;text-decoration:none;border:1.5px solid var(--ink);cursor:pointer}
+.btn-solid{background:var(--btn-bg);color:var(--btn-fg);border-color:var(--btn-bg)}
+.btn-solid:hover{background:var(--btn-hover);border-color:var(--btn-hover)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover{background:var(--surface)}
+@media (max-width:1120px){.nav ul{display:none}}
+.brand,.nav ul a,.btn{white-space:nowrap}
+
+/* Hero */
+.hero{padding:72px 0 88px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(40px,5.6vw,68px);line-height:1.02;letter-spacing:-.03em;font-weight:800;margin:0 0 24px;max-width:12ch}
+.hero p.lede{font-size:20px;line-height:1.5;color:var(--ink-2);max-width:34em;margin:0 0 32px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero .note{margin-top:28px;font-size:14px;color:var(--slate);max-width:36em}
+@media (max-width:960px){.hero .wrap{grid-template-columns:1fr}}
+
+/* Evidence folder: the one memorable element */
+.folder{background:var(--surface);border:1.5px solid var(--ink);border-radius:14px;box-shadow:8px 8px 0 var(--shadow);overflow:hidden}
+.folder-head{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.folder-head h2{font-size:16px;margin:0 0 4px;font-weight:700}
+.folder-head p{margin:0;font-size:14px;color:var(--slate)}
+.verdict{font-weight:700;font-size:14px;padding:6px 10px;border-radius:6px;background:var(--paper);color:var(--slate);white-space:nowrap;transition:background .3s,color .3s}
+.verdict.hold{background:var(--flag-bg);color:var(--flag)}
+.checks{list-style:none;margin:0;padding:6px 0}
+.checks li{display:grid;grid-template-columns:22px 1fr auto;gap:12px;align-items:start;padding:11px 20px;border-bottom:1px solid var(--line-soft);opacity:.28;transition:opacity .35s ease}
+.checks li:last-child{border-bottom:0}
+.checks li.on{opacity:1}
+.checks .dot{width:12px;height:12px;border-radius:50%;margin-top:6px;background:var(--line)}
+.checks li.on.pass .dot{background:var(--pass)}
+.checks li.on.flag .dot{background:var(--flag)}
+.checks li.on.miss .dot{background:var(--miss)}
+.checks strong{display:block;font-size:15px;font-weight:600}
+.checks span.d{font-size:14px;color:var(--slate)}
+.checks .tag{font-size:13px;font-weight:600;padding:3px 8px;border-radius:5px;white-space:nowrap}
+.pass .tag{background:var(--pass-bg);color:var(--pass)}
+.flag .tag{background:var(--flag-bg);color:var(--flag)}
+.miss .tag{background:var(--miss-bg);color:var(--miss)}
+.anchor{padding:14px 20px;background:var(--brand);color:var(--brand-text);font-family:var(--mono);font-size:12.5px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.anchor b{color:var(--on-brand);font-weight:500}
+.folder-foot{font-size:12.5px;color:var(--slate);padding:10px 20px;background:var(--paper);border-top:1px solid var(--line)}
+
+/* Sections */
+section{padding:88px 0}
+section.alt{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+section.dark{background:var(--brand);color:var(--brand-text)}
+section.dark h2,section.dark h3{color:var(--on-brand)}
+section.dark p{color:var(--brand-text)}
+h2.title{font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-.02em;margin:0 0 18px;font-weight:800;max-width:20ch}
+p.intro{font-size:19px;color:var(--ink-2);max-width:40em;margin:0 0 48px}
+section.dark p.intro{color:var(--brand-text)}
+
+/* Problem */
+.problem{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.problem h3{font-size:20px;margin:0 0 10px;line-height:1.25}
+.problem p{margin:0;color:var(--slate)}
+@media (max-width:860px){.problem{grid-template-columns:1fr;gap:28px}}
+
+/* How it works: a real sequence, so numbered */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1.5px solid rgba(255,255,255,.25);border-radius:12px;overflow:hidden}
+.flow li{list-style:none;padding:26px 22px;border-right:1px solid rgba(255,255,255,.18)}
+.flow li:last-child{border-right:0}
+.flow .n{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--brand-muted);display:block;margin-bottom:12px}
+.flow h3{font-size:19px;margin:0 0 8px}
+.flow p{margin:0;font-size:15.5px}
+ol.flow{margin:0;padding:0}
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px}
+.rules div{border-left:3px solid #6F8FCB;padding-left:18px}
+.rules h3{font-size:17px;margin:0 0 6px}
+.rules p{margin:0;font-size:15.5px}
+@media (max-width:900px){.flow{grid-template-columns:1fr 1fr}.flow li:nth-child(2){border-right:0}.flow li:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.18)}.rules{grid-template-columns:1fr}}
+@media (max-width:540px){.flow{grid-template-columns:1fr}.flow li{border-right:0;border-bottom:1px solid rgba(255,255,255,.18)}}
+
+/* Agent library: grouped by Find / Check / Prove */
+.lib{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--ink)}
+.lib .col{padding:28px 28px 8px 0}
+.lib .col + .col{padding-left:28px;border-left:1px solid var(--line)}
+.lib h3{font-size:26px;letter-spacing:-.02em;margin:0 0 4px}
+.lib .what{color:var(--slate);margin:0 0 20px;font-size:15.5px}
+.lib dl{margin:0}
+.lib dt{font-weight:700;font-size:16px;margin-top:18px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.lib dd{margin:4px 0 0;color:var(--slate);font-size:15px}
+.status{font-size:12px;font-weight:600;padding:2px 7px;border-radius:4px}
+.status.live{background:var(--pass-bg);color:var(--pass)}
+.status.cfg{background:var(--tint-2);color:var(--seal)}
+.legend{margin-top:32px;font-size:14px;color:var(--slate);display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+@media (max-width:900px){.lib{grid-template-columns:1fr}.lib .col + .col{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
+
+/* Use cases: tabs */
+.tabs{display:grid;grid-template-columns:260px 1fr;gap:40px;align-items:start}
+.tablist{display:flex;flex-direction:column;border-left:2px solid var(--line)}
+.tablist button{all:unset;cursor:pointer;padding:12px 16px;margin-left:-2px;border-left:2px solid transparent;font-weight:600;font-size:16px;color:var(--slate);display:flex;justify-content:space-between;gap:10px}
+.tablist button[aria-selected="true"]{border-left-color:var(--ink);color:var(--ink);background:var(--paper)}
+.tablist button:hover{color:var(--ink)}
+.tablist button:focus-visible{outline:3px solid var(--seal);outline-offset:-3px}
+.tablist .s{font-size:12px;font-weight:600;color:var(--pass)}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:32px}
+.panel[hidden]{display:none}
+.panel h3{font-size:26px;margin:0 0 6px;letter-spacing:-.01em}
+.scope{max-width:46em;margin:-28px 0 40px;padding:16px 20px;border-left:3px solid var(--seal);background:var(--paper);color:var(--ink-2);font-size:16px}
+.panel .sub{color:var(--slate);margin:0 0 24px}
+.panel .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.panel h4{font-size:14px;margin:0 0 8px;color:var(--ink-2)}
+.panel ul{margin:0;padding-left:18px;font-size:15px;color:var(--ink-2)}
+.panel li{margin-bottom:6px}
+@media (max-width:900px){.tabs{grid-template-columns:1fr}.tablist{flex-direction:row;overflow-x:auto;border-left:0;border-bottom:2px solid var(--line)}.tablist button{border-left:0;margin:0 0 -2px;border-bottom:2px solid transparent;white-space:nowrap}.tablist button[aria-selected="true"]{border-bottom-color:var(--ink)}.panel .grid3{grid-template-columns:1fr}}
+
+/* Comparison */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px}
+th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:14px;color:var(--slate);font-weight:600;background:var(--paper)}
+thead th.us{color:var(--on-brand);background:var(--brand)}
+td.us{background:var(--tint);font-weight:600}
+tbody tr:last-child td{border-bottom:0}
+.y{color:var(--pass);font-weight:600}
+.p{color:var(--flag)}
+.n{color:var(--slate)}
+
+/* Engagement */
+.models{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:24px}
+.model{border:1.5px solid var(--line);border-radius:12px;padding:28px;background:var(--surface);display:flex;flex-direction:column}
+.model.lead{border-color:var(--ink);box-shadow:6px 6px 0 var(--shadow)}
+.model h3{font-size:22px;margin:0 0 6px}
+.model .for{font-size:14px;color:var(--slate);margin:0 0 16px}
+.model ul{padding-left:18px;margin:0 0 20px;font-size:15.5px}
+.model li{margin-bottom:7px}
+.model .btn{margin-top:auto;align-self:flex-start}
+.path{margin-top:28px;font-size:15.5px;color:var(--slate);max-width:48em}
+@media (max-width:960px){.models{grid-template-columns:1fr}}
+
+/* Customization layers */
+.layers{display:grid;gap:14px}
+.layer{display:grid;grid-template-columns:220px 1fr 1fr;gap:28px;padding:24px 0;border-top:1px solid var(--line)}
+.layer h3{margin:0;font-size:19px}
+.layer p{margin:0;color:var(--slate);font-size:15.5px}
+.layer .ex{color:var(--ink-2)}
+.eval{margin-top:32px;background:var(--paper);border-radius:12px;padding:24px 28px;border:1px solid var(--line)}
+.eval h3{margin:0 0 8px;font-size:18px}
+.eval p{margin:0;color:var(--ink-2)}
+@media (max-width:860px){.layer{grid-template-columns:1fr;gap:8px}}
+
+/* Integration + trust */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.two h3{font-size:22px;margin:0 0 14px}
+.two ul{list-style:none;margin:0;padding:0}
+.two li{padding:12px 0;border-top:1px solid rgba(255,255,255,.15)}
+.two li b{color:var(--on-brand);display:block}
+@media (max-width:860px){.two{grid-template-columns:1fr;gap:36px}}
+
+
+/* Developers */
+.dev{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:start}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.split h3{font-size:18px;margin:0 0 10px}
+.split ul{margin:0;padding-left:18px;color:var(--ink-2);font-size:15.5px}
+.split li{margin-bottom:8px}
+.split > div + div h3{color:var(--seal)}
+.code{margin:0;background:#0F2444;border-radius:12px;overflow:hidden;border:1.5px solid var(--code-border,#0F2444)}
+.code figcaption{display:flex;justify-content:space-between;gap:12px;padding:12px 18px;background:#1C3560;color:#D3DDEC;font-size:13px;font-weight:500}
+.code pre{margin:0;padding:18px;overflow-x:auto;font:500 13.5px/1.6 var(--mono);color:#EEF2F8}
+.code .c{color:#A9BCDB}.code .s{color:#9FD8C6}.code .n{color:#F1C27D}
+.devgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:48px;padding-top:32px;border-top:1px solid var(--line)}
+.devgrid h3{font-size:17px;margin:0 0 6px}
+.devgrid p{margin:0;color:var(--slate);font-size:15px}
+.devcta{margin-top:36px;display:flex;gap:12px;flex-wrap:wrap}
+@media (max-width:960px){.dev{grid-template-columns:1fr}.devgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.split,.devgrid{grid-template-columns:1fr}}
+
+/* Team + contact */
+.contact{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
+.people{display:grid;gap:20px;margin-top:28px}
+.person{padding-left:16px;border-left:3px solid var(--line)}
+.person .av{width:64px;height:64px;border-radius:50%;background:var(--line) center/cover no-repeat}
+.person .av.initials{display:grid;place-items:center;font-weight:700;font-size:20px;color:var(--ink-2);background:var(--tint-2)}
+.person h3{margin:0;font-size:17px}
+.person p{margin:2px 0 0;font-size:15px;color:var(--slate)}
+form{background:var(--surface);border:1.5px solid var(--ink);border-radius:14px;padding:28px;display:grid;gap:16px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{font-size:14px;font-weight:600;display:grid;gap:6px}
+input,select,textarea{font:inherit;font-size:16px;padding:11px 12px;border:1.5px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--seal);box-shadow:0 0 0 3px rgba(46,85,201,.18)}
+textarea{min-height:120px;resize:vertical}
+.formnote{font-size:13.5px;color:var(--slate);margin:0}
+.sent{display:none;font-weight:600;color:var(--pass)}
+@media (max-width:860px){.contact{grid-template-columns:1fr}.row{grid-template-columns:1fr}}
+
+footer{padding:36px 0;font-size:14px;color:var(--slate);border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--slate)}
+
+
+/* Readability: heavier fine text */
+.hero .note,.folder-head p,.checks span.d,.folder-foot,.problem p,.lib .what,.lib dd,.legend,.panel .sub,.panel ul,.model .for,.model ul,.path,.layer p,.eval p,.person p,.formnote,footer,.split ul,.devgrid p,.scope,td,.rules p,.flow p,.two li,.nav ul a{font-weight:500}
+.anchor,.folder-foot,.checks span.d{font-size:13.5px}
+.folder-foot{font-size:13px}
+p.intro,.hero p.lede{font-weight:450}
+
+/* Theme toggle */
+.theme-toggle{all:unset;cursor:pointer;font:600 14px/1 var(--sans);color:var(--ink);padding:10px 12px;border:1.5px solid var(--line);border-radius:8px;white-space:nowrap}
+.theme-toggle:hover{border-color:var(--ink)}
+.theme-toggle:focus-visible{outline:3px solid var(--seal);outline-offset:2px}
+.nav-right{display:flex;gap:10px;align-items:center}
+
+/* Dark mode */
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#E9EFF8;--ink-2:#CBD6E6;--paper:#0B1424;--surface:#111D33;--slate:#B2BFD2;--line:#2A3B57;--line-soft:#1C2B44;
+    --pass:#69DB7C;--pass-bg:#173B22;--flag:#F2B566;--flag-bg:#3A2A12;--miss:#F29488;--miss-bg:#3C1B18;--seal:#8AA8FF;
+    --brand:#16305E;--brand-2:#1F3D72;--on-brand:#FFFFFF;--brand-text:#DCE5F2;--brand-muted:#B7C8E6;
+    --tint:#1A2D4D;--tint-2:#1E335A;--nav-bg:rgba(11,20,36,.9);--shadow:#3E62B8;
+    --btn-bg:#E9EFF8;--btn-fg:#0B1424;--btn-hover:#FFFFFF;--code-border:#2A3B57;--accent:#E599F7;--accent-bg:#3A1846;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+    --ink:#E9EFF8;--ink-2:#CBD6E6;--paper:#0B1424;--surface:#111D33;--slate:#B2BFD2;--line:#2A3B57;--line-soft:#1C2B44;
+    --pass:#69DB7C;--pass-bg:#173B22;--flag:#F2B566;--flag-bg:#3A2A12;--miss:#F29488;--miss-bg:#3C1B18;--seal:#8AA8FF;
+    --brand:#16305E;--brand-2:#1F3D72;--on-brand:#FFFFFF;--brand-text:#DCE5F2;--brand-muted:#B7C8E6;
+    --tint:#1A2D4D;--tint-2:#1E335A;--nav-bg:rgba(11,20,36,.9);--shadow:#3E62B8;
+    --btn-bg:#E9EFF8;--btn-fg:#0B1424;--btn-hover:#FFFFFF;--code-border:#2A3B57;--accent:#E599F7;--accent-bg:#3A1846;
+    color-scheme:dark;
+  }
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .checks li,.verdict{transition:none}
+}
+sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin-left:1px}
+
+/* VeriPura Supplements accent: used in three places only */
+.brand .prod{color:var(--accent)}
+.brand .built{font-weight:500;font-size:13px;color:var(--slate);text-decoration:none;border-left:1px solid var(--line);padding-left:10px;margin-left:2px}
+.brand .built:hover{color:var(--seal)}
+.folder{border-color:var(--accent);box-shadow:8px 8px 0 var(--accent)}
+.kicker{display:inline-block;font-size:14px;font-weight:700;color:var(--accent);background:var(--accent-bg);padding:5px 10px;border-radius:6px;margin-bottom:18px}
+section.dark .kicker{background:rgba(255,255,255,.1);color:#F3D9FA}
+
+/* Stats */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--ink)}
+.stats div{padding:24px 20px 8px 0}
+.stats div + div{padding-left:20px;border-left:1px solid var(--line)}
+.stats b{display:block;font-size:34px;line-height:1.1;letter-spacing:-.02em;font-weight:800}
+.stats span{display:block;font-size:15px;color:var(--ink-2);font-weight:500;margin-top:6px}
+.stats small{display:block;font-size:13px;color:var(--slate);font-weight:500;margin-top:6px}
+@media (max-width:960px){.stats{grid-template-columns:1fr 1fr}.stats div{padding-left:0!important;border-left:0!important;border-top:1px solid var(--line)}}
+
+/* Stages grouped by Find / Check / Prove */
+.stages{list-style:none;margin:0;padding:0;counter-reset:none}
+.stages li{display:grid;grid-template-columns:42px 1fr;gap:8px;padding:10px 0;border-top:1px solid var(--line)}
+.stages li:first-child{border-top:0}
+.stages .no{font-family:var(--mono);font-size:13px;color:var(--slate);font-weight:500;padding-top:3px}
+.stages b{display:block;font-size:16px}
+.stages span{font-size:15px;color:var(--slate);font-weight:500}
+
+/* Proof band */
+.proof{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:center}
+.proof p.big{font-size:clamp(24px,2.6vw,32px);line-height:1.3;color:var(--on-brand);font-weight:600;margin:0}
+@media (max-width:860px){.proof{grid-template-columns:1fr}}
+
+/* Scenario panels */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
+.vs div{border-radius:10px;padding:18px 20px}
+.vs .without{background:var(--miss-bg)}
+.vs .with{background:var(--pass-bg)}
+.vs h4{margin:0 0 6px;font-size:14px}
+.vs .without h4{color:var(--miss)}
+.vs .with h4{color:var(--pass)}
+.vs p{margin:0;font-size:15.5px;color:var(--ink-2);font-weight:500}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
+.meta span{font-size:13px;font-weight:600;padding:3px 8px;border-radius:5px;background:var(--tint-2);color:var(--seal)}
+.panel > p{font-weight:500;color:var(--ink-2)}
+@media (max-width:760px){.vs{grid-template-columns:1fr}}
+
+/* Tools */
+.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.tool .soon{margin-top:auto;font-size:13.5px;font-weight:600;color:var(--slate)}
+.tool{background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:26px;display:flex;flex-direction:column;gap:10px}
+.tool h3{margin:0;font-size:20px}
+.tool p{margin:0;color:var(--slate);font-weight:500;font-size:15.5px}
+.tool a{margin-top:auto;font-weight:600;text-decoration:none}
+@media (max-width:860px){.tools{grid-template-columns:1fr}}
+
+/* FAQ */
+.faq details{border-top:1px solid var(--line);padding:18px 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;font-weight:700;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-weight:500;color:var(--slate)}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{margin:12px 0 0;color:var(--ink-2);font-weight:500;max-width:52em}
+
+/* What we check */
+.rulecards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.subhead{font-size:clamp(22px,2.4vw,28px);letter-spacing:-.01em;margin:64px 0 20px}
+ol.flow.light{grid-template-columns:repeat(3,1fr);border-color:var(--line);background:var(--surface)}
+ol.flow.light li{border-right-color:var(--line)}
+ol.flow.light .n{color:var(--slate)}
+ol.flow.light p{color:var(--ink-2);font-weight:500}
+@media (max-width:960px){.rulecards{grid-template-columns:1fr 1fr}}
+@media (max-width:900px){ol.flow.light{grid-template-columns:1fr}ol.flow.light li{border-right:0;border-bottom:1px solid var(--line)}ol.flow.light li:last-child{border-bottom:0}}
+@media (max-width:560px){.rulecards{grid-template-columns:1fr}}
+@media (max-width:1180px){.nav-right .built{display:none}}
+@media (max-width:640px){.nav-right .btn{display:none}.nav .wrap{gap:12px}}
+.contact>*{min-width:0}
+@media (max-width:420px){.brand{font-size:17px}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top"><span>VeriPura <span class="prod">Supplements</span><sup class="tm">™</sup></span></a>
+    <ul>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#developers">For IT teams</a></li>
+      <li><a href="#models">Work with us</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="built" href="index.html" style="font-size:13px;font-weight:600;color:var(--slate);text-decoration:none;white-space:nowrap">Built on VeriPura Core™</a>
+      <button class="theme-toggle" id="theme" type="button" aria-label="Switch color theme">Dark mode</button>
+      <a class="btn btn-solid" href="#contact">Request a free check</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="kicker">VeriPura Core™, tuned for vitamins and supplements</span>
+      <h1>Catch unauthorised ingredients and claims before supplements ship.</h1>
+      <p class="lede">VeriPura Supplements™ is VeriPura Core tuned for vitamins and supplements. Agents trained on ingredient, dosage, labeling and claims rules check every document against the requirements of any country of origin and any country of destination before the shipment moves, not at the border. Each shipment gets a verdict, the fixes it needs, and a record anyone can verify. Call the agents from your own systems, or have us run the checks for you.</p>
+      <div class="ctas">
+        <a class="btn btn-solid" href="#contact">Request a free compliance check</a>
+        <a class="btn btn-ghost" href="#developers">For IT and AI teams</a>
+      </div>
+      <p class="note">Built on VeriPura Core™ and its 50+ specialist agents. Tuned to your products, routes and documents.</p>
+    </div>
+
+    <div class="folder" aria-label="Illustrative evidence folder">
+      <div class="folder-head">
+        <div>
+          <h2>Evidence folder: botanical capsules shipment VS-6203</h2>
+          <p>Mumbai, India to Hamburg, Germany</p>
+        </div>
+        <span class="verdict" id="verdict">Checking</span>
+      </div>
+      <ul class="checks" id="checks">
+        <li class="pass"><span class="dot"></span><div><strong>Rules found</strong><span class="d">EU food supplement, novel food and labeling requirements</span></div><span class="tag">Done</span></li>
+        <li class="pass"><span class="dot"></span><div><strong>HS code assigned</strong><span class="d">2106.90, food preparations not elsewhere specified</span></div><span class="tag">Done</span></li>
+        <li class="pass"><span class="dot"></span><div><strong>Documents read</strong><span class="d">Formula, certificate of analysis, label artwork, certificate of origin</span></div><span class="tag">Done</span></li>
+        <li class="miss"><span class="dot"></span><div><strong>Botanical ingredient</strong><span class="d">Ingredient not authorised as a food in the EU</span></div><span class="tag">Mismatch</span></li>
+        <li class="flag"><span class="dot"></span><div><strong>Health claim</strong><span class="d">Claim wording differs from the authorised EU claim</span></div><span class="tag">Flagged</span></li>
+        <li class="pass"><span class="dot"></span><div><strong>Certificate of analysis</strong><span class="d">Results confirmed with the issuing laboratory</span></div><span class="tag">Pass</span></li>
+      </ul>
+      <div class="anchor"><span>Anchored <b>0x4b17a2…c90d</b></span><span>Routed to <b>Quality and regulatory</b></span></div>
+      <div class="folder-foot">Illustrative example. All data is fictional.</div>
+    </div>
+  </div>
+</header>
+
+<section class="alt" id="problem">
+  <div class="wrap">
+    <h2 class="title">Most supplement alerts start with an ingredient or a claim.</h2>
+    <p class="intro">Which ingredients are allowed, at what dose, and what the label may claim differ by market. Get one wrong and the product is stopped, recalled or treated as a medicine.</p>
+    <div class="stats">
+      <div><b>642</b><span>EU alerts in 2024 on dietary foods, food supplements and fortified foods</span><small>EU Alert and Cooperation Network, 2024 report</small></div>
+      <div><b>776</b><span>supplements found with hidden drug ingredients in the FDA tainted products database, 2007 to 2016</span><small>JAMA Network Open, 2018</small></div>
+      <div><b>20%</b><span>of those contained more than one unapproved drug ingredient</span><small>JAMA Network Open, 2018</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="how">
+  <div class="wrap">
+    <span class="kicker">What we tune for vitamins and supplements</span>
+    <h2 class="title">Nine stages, tuned for vitamins and supplements.</h2>
+    <p class="intro">VeriPura Supplements™ runs the same find, check and prove loop as every edition of VeriPura Core™. For vitamins and supplements, the agents are tuned on ingredient and novel food rules, maximum levels for vitamins and minerals, labeling and health claims, product notification, and the bodies that certify supplements, such as GMP, halal and organic certifiers. At the check stage, agents do not rely on the documents alone: they take in inputs from third-party validators and cross-check claims against independent data sources, so each finding rests on an outside source of truth, not only on what the paperwork says.</p>
+    <div class="lib" style="border-top-color:rgba(255,255,255,.35)">
+      <div class="col">
+        <h3>Find</h3>
+        <p class="what" style="color:#C3CEE0">Work out what applies.</p>
+        <ol class="stages">
+          <li><span class="no">01</span><div><b style="color:#fff">Intake</b><span style="color:#C3CEE0">Upload through the portal or API</span></div></li>
+          <li><span class="no">02</span><div><b style="color:#fff">Mapping</b><span style="color:#C3CEE0">HS code and corridor identified</span></div></li>
+        </ol>
+      </div>
+      <div class="col" style="border-left-color:rgba(255,255,255,.18)">
+        <h3>Check</h3>
+        <p class="what" style="color:#C3CEE0">Test every document field against the rules, third-party validators and independent data sources.</p>
+        <ol class="stages">
+          <li><span class="no">03</span><div><b style="color:#fff">Parse</b><span style="color:#C3CEE0">AI field extraction</span></div></li>
+          <li><span class="no">04</span><div><b style="color:#fff">Trace</b><span style="color:#C3CEE0">Supply chain linkage</span></div></li>
+          <li><span class="no">05</span><div><b style="color:#fff">Comply</b><span style="color:#C3CEE0">Any country of origin to any country of destination</span></div></li>
+          <li><span class="no">06</span><div><b style="color:#fff">Shield</b><span style="color:#C3CEE0">Risk score and alerts</span></div></li>
+        </ol>
+      </div>
+      <div class="col" style="border-left-color:rgba(255,255,255,.18)">
+        <h3>Prove</h3>
+        <p class="what" style="color:#C3CEE0">Leave a verifiable record.</p>
+        <ol class="stages">
+          <li><span class="no">07</span><div><b style="color:#fff">Auditor</b><span style="color:#C3CEE0">Full audit trail</span></div></li>
+          <li><span class="no">08</span><div><b style="color:#fff">Verdict</b><span style="color:#C3CEE0">Pass, fail or fix</span></div></li>
+          <li><span class="no">09</span><div><b style="color:#fff">Ledger</b><span style="color:#C3CEE0">IOTA anchor for the record</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="developers">
+  <div class="wrap">
+    <span class="kicker">For IT and AI teams at supplement brands, importers and exporters</span>
+    <h2 class="title">Call the supplements-tuned agents from your own systems.</h2>
+    <p class="intro">Keep your ERP, your orchestrator and your interface. VeriPura Supplements plugs in as the compliance layer your own agents and workflows call. Your team builds the experience; we maintain the supplements rules, the tuned agents and the evidence trail.</p>
+    <p class="scope">Use any agent on its own, or the full orchestrated pipeline. Call HS classification, ingredient screening or rule discovery individually, and add more agents as you need them.</p>
+    <div class="dev">
+      <div class="split">
+        <div>
+          <h3>Your team owns</h3>
+          <ul>
+            <li>The systems your product and quality staff use</li>
+            <li>How checks fit into formulation and shipping</li>
+            <li>How verdicts show up for your people</li>
+          </ul>
+        </div>
+        <div>
+          <h3>VeriPura Supplements supplies</h3>
+          <ul>
+            <li>Supplements rules for any route, kept current</li>
+            <li>Agents tuned for formulas, lab results and certifiers</li>
+            <li>Cross-document and red-flag checks</li>
+            <li>Connections to labs, third-party validators and independent data sources, with each finding recording the source it was checked against</li>
+            <li>A verifiable record for buyers and authorities</li>
+          </ul>
+        </div>
+      </div>
+      <figure class="code" aria-label="Illustrative tool call">
+        <figcaption><span>Your system calls VeriPura Supplements</span><span>Illustrative</span></figcaption>
+<pre><code><span class="c">// tool call from your own system</span>
+check_compliance({
+  hs_code: <span class="s">"2106.90"</span>,
+  origin: <span class="s">"IN"</span>,
+  destination: { country: <span class="s">"DE"</span> },
+  documents: [<span class="s">"formula.pdf"</span>, <span class="s">"coa.pdf"</span>]
+})
+
+<span class="c">// response</span>
+{
+  verdict: <span class="s">"hold"</span>,
+  findings: [{
+    check: <span class="s">"ingredient_status"</span>,
+    result: <span class="s">"mismatch"</span>,
+    detail: <span class="s">"ingredient not authorised in destination"</span>,
+    source: <span class="s">"independent_registry"</span>,
+    confidence: <span class="n">0.96</span>
+  }],
+  evidence_id: <span class="s">"vp:folder:VS-6203"</span>,
+  anchored: <span class="n">true</span>
+}</code></pre>
+      </figure>
+    </div>
+    <div class="ctas devcta">
+      <a class="btn btn-solid" href="#contact" data-role="IT or AI team">Request sandbox access</a>
+      <a class="btn btn-ghost" href="#contact">Talk to an engineer</a>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="alt" id="coverage">
+  <div class="wrap">
+    <h2 class="title">What we check.</h2>
+    <p class="intro">Tuned for vitamins and supplements, VeriPura Core can check any vitamin or supplement moving from any origin to any destination, wherever the rules can be obtained. The rules below are examples only.</p>
+    <div class="rulecards">
+      <div class="tool"><h3>Ingredients and dosage</h3><p>For example EU novel food rules, national maximum levels for vitamins and minerals, and US new dietary ingredient notifications.</p></div>
+      <div class="tool"><h3>Labeling and claims</h3><p>For example authorised EU health claims and US structure and function claims.</p></div>
+      <div class="tool"><h3>Notification and registration</h3><p>For example national product notifications in the EU and Health Canada product licences.</p></div>
+      <div class="tool"><h3>Quality and certifications</h3><p>For example GMP, halal, kosher and organic, which differ by country and certifier.</p></div>
+    </div>
+
+    <h3 class="subhead">Any route, set up on request.</h3>
+    <ol class="flow light">
+      <li><span class="n">Step 1</span><h3>Tell us the route</h3><p>The product, its origin and destination, and any certifications your customers require beyond import regulations.</p></li>
+      <li><span class="n">Step 2</span><h3>Core finds the requirements</h3><p>The agents identify the HS code, the rules that apply and every document the shipment needs.</p></li>
+      <li><span class="n">Step 3</span><h3>Agents trained and checked</h3><p>The agents are trained and tested on sample documents for that route, then go live.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="wrap">
+    <h2 class="title">Example tools for vitamins and supplements.</h2>
+    <p class="intro">Examples of tools that can be built on the supplements-tuned agents. They are not yet available. Tell us which would help your team, or call the agents directly from your own systems.</p>
+    <div class="tools">
+      <div class="tool"><h3>Formula Check</h3><p>Screen ingredients and doses against the rules of any country of destination.</p><span class="soon">Example. Not yet available.</span></div>
+      <div class="tool"><h3>Claims Check</h3><p>Compare label claims with the claims the destination market allows.</p><span class="soon">Example. Not yet available.</span></div>
+      <div class="tool"><h3>Certificate of Analysis Check</h3><p>Compare lab results with the specification and the destination's limits.</p><span class="soon">Example. Not yet available.</span></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="alt" id="models">
+  <div class="wrap">
+    <h2 class="title">Three ways to work with us.</h2>
+    <p class="intro">The same options as every edition of VeriPura Core, priced per transaction checked.</p>
+    <div class="models">
+      <div class="model lead">
+        <h3>Pilot</h3>
+        <p class="for">For brands, importers and exporters with a specific problem</p>
+        <ul>
+          <li>Starts with a free check on one real shipment</li>
+          <li>Shadow mode first: agents check, your team keeps working as usual</li>
+          <li>Read-only data access, no change to live operations</li>
+          <li>Pilot fee credited toward a contract</li>
+        </ul>
+        <a class="btn btn-solid" href="#contact">Start with one shipment</a>
+      </div>
+      <div class="model">
+        <h3>Agents in your systems</h3>
+        <p class="for">For IT and AI teams, and software platforms</p>
+        <ul>
+          <li>Call the supplements-tuned agents over API or MCP</li>
+          <li>Individual agents or the full pipeline</li>
+          <li>Supplements rules and model updates included</li>
+        </ul>
+        <a class="btn btn-ghost" href="#developers">See the developer options</a>
+      </div>
+      <div class="model">
+        <h3>Managed checks</h3>
+        <p class="for">For teams that want the outcome, not the build</p>
+        <ul>
+          <li>We run the checks for you</li>
+          <li>Your people handle only exceptions</li>
+          <li>Priced per transaction checked</li>
+        </ul>
+        <a class="btn btn-ghost" href="#contact">Talk to us</a>
+      </div>
+    </div>
+    <p class="path">A typical pilot: 4 weeks to baseline your current process, 4 weeks building in shadow mode, 4 weeks running live on exceptions, then a decision to expand.</p>
+  </div>
+</section>
+
+<section class="dark" id="partners">
+  <div class="wrap">
+    <span class="kicker">For freight forwarders, carriers and customs brokers</span>
+    <h2 class="title">Offer compliance checks alongside freight.</h2>
+    <p class="intro">When a shipment is rejected, the importer looks to the forwarder first. VeriPura turns that liability into a service and a revenue stream.</p>
+    <div class="two">
+      <div>
+        <ul>
+          <li><b>Revenue share on every shipment</b>Earn a share of revenue from every importer client you introduce, recurring rather than a one-off referral fee.</li>
+          <li><b>Protection from client disputes</b>A verifiable record of every check performed, so you can show the diligence you did when a client faces a border dispute.</li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li><b>A broader service offering</b>Pre-shipment document checks become a value-added service for clients sourcing from high-risk corridors.</li>
+          <li><b>Batch checks across shipments</b>Check many active shipments at once and send client-facing compliance reports automatically.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ctas" style="margin-top:36px"><a class="btn" href="#contact" style="background:#E9EFF8;color:#0B1424;border-color:#E9EFF8">Talk to us about partnering</a></div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2 class="title">Questions.</h2>
+    <div class="faq">
+      <details><summary>What is VeriPura Supplements™?</summary><p>VeriPura Core tuned for vitamins and supplements. It checks formulas, doses, labels, claims and lab results against the requirements of any country of origin and any country of destination before a shipment departs.</p></details>
+      <details><summary>How does it relate to VeriPura Core™?</summary><p>VeriPura Supplements™ is the edition of VeriPura Core™ tuned for vitamins and supplements: the same orchestrated agent engine, with agents trained on vitamins and supplements rules, documents and certifiers. Other industries, such as food, cosmetics and pharmaceuticals, have their own tuned editions.</p></details>
+      <details><summary>Can our IT team use it directly?</summary><p>Yes. Every supplements-tuned agent can be called over API or MCP from your own systems, one at a time or as the full pipeline. Request sandbox access to try it.</p></details>
+      <details><summary>Which documents does it check?</summary><p>Formulas, certificates of analysis, label artwork, GMP certificates, product notifications, certificates of origin and the other documents the destination market requires.</p></details>
+      <details><summary>Which frameworks does it cover?</summary><p>Any framework for any country of origin and any country of destination, wherever the rules can be obtained, plus certifications your buyers require. Examples include the EU Food Supplements Directive, the EU Novel Food Regulation, EU health claims rules, US dietary supplement and labeling rules, and Health Canada's natural health product rules.</p></details>
+      <details><summary>When is a supplement treated as a medicine?</summary><p>It depends on the market. An ingredient, a dose or a claim can move a product into the medicine category in one country but not in another. The agents check each against the destination's rules and flag the ones that would cross the line.</p></details>
+      <details><summary>What does a pilot look like?</summary><p>It starts with a free compliance check on one real shipment. If that shows value, a 12-week paid pilot follows in shadow mode, with the fee credited toward a contract.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="contact">
+  <div class="wrap contact">
+    <div>
+      <h2 class="title">Start with one shipment.</h2>
+      <p class="intro" style="margin-bottom:0">Send us the documents for one real shipment and we'll show you every rule that applied, what was missing and any red flags. If it's useful, the next step is a 12-week pilot in shadow mode, with the fee credited toward a contract.</p>
+      <div class="people">
+        <div class="person"><div><h3>Onno Stienen, CEO and co-founder</h3><p>18+ years in import and export compliance across Southeast Asia and Europe.</p></div></div>
+        <div class="person"><div><h3>Thomas Oberlin, COO and co-founder</h3><p>Serial entrepreneur and patent holder with a background in B2B go-to-market.</p></div></div>
+        <div class="person"><div><h3>John Wotherspoon, CTO</h3><p>35+ years in enterprise solutions architecture, including SAP delivery, and a decade building blockchain products for real-world use cases.</p></div></div>
+      </div>
+    </div>
+    <form id="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+      <input type="hidden" name="_subject" value="New enquiry from the VeriPura Supplements site">
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+      <div class="row">
+        <label>Name<input name="name" autocomplete="name" required></label>
+        <label>Company<input name="company" autocomplete="organization" required></label>
+      </div>
+      <div class="row">
+        <label>Work email<input name="email" type="email" autocomplete="email" required></label>
+        <label>Your role
+          <select name="role">
+            <option>Brand or manufacturer</option>
+            <option>Importer or distributor</option>
+            <option>Exporter</option>
+            <option>IT or AI team</option>
+            <option>Freight forwarder</option>
+            <option>Customs broker</option>
+            <option>Carrier</option>
+            <option>Investor</option>
+            <option>Other</option>
+          </select>
+        </label>
+      </div>
+      <label>Which route do you want checked?<textarea name="problem" placeholder="For example: botanical capsules from India to Germany"></textarea></label>
+      <button class="btn btn-solid" type="submit">Request a free check</button>
+      <p class="sent" id="sent" role="status">Sent. Someone from our team will reply within one business day.</p>
+      <p class="formerr" id="formerr" role="alert" style="display:none;font-weight:600;color:var(--miss)">Something went wrong. Please email us or book a call instead.</p>
+      <p class="formnote">We use your details only to reply to your request. <a href="privacy.html">Privacy notice</a>.</p>
+      <p class="formnote">Prefer to talk first? <a href="https://calendar.app.google/Xe4rLSCFsGeATWD49">Book a call</a>.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>VeriPura Supplements™ is <a href="index.html">VeriPura Core™</a> tuned for vitamins and supplements. © 2026</span>
+    <span><a href="privacy.html">Privacy</a>  |  <a href="https://investors.veripura.com/">Investor relations</a></span>
+  </div>
+</footer>
+
+<script>
+// Theme toggle: follows the system until the visitor chooses
+(function(){
+  const root=document.documentElement,btn=document.getElementById('theme');
+  let saved=null;try{saved=localStorage.getItem('vp-theme');}catch(e){}
+  if(saved)root.setAttribute('data-theme',saved);
+  const isDark=()=>root.dataset.theme?root.dataset.theme==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const label=()=>{btn.textContent=isDark()?'Light mode':'Dark mode';};
+  label();
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',label);
+  btn.addEventListener('click',()=>{const next=isDark()?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('vp-theme',next);}catch(e){}label();});
+})();
+
+
+// Evidence folder fills in on load
+(function(){
+  const items=[...document.querySelectorAll('#checks li')];
+  const verdict=document.getElementById('verdict');
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finish=()=>{verdict.textContent='Hold: 1 mismatch, 1 flag';verdict.classList.add('hold');};
+  if(reduce){items.forEach(li=>li.classList.add('on'));finish();return;}
+  items.forEach((li,i)=>setTimeout(()=>li.classList.add('on'),500+i*550));
+  setTimeout(finish,500+items.length*550);
+})();
+// Tabs with arrow keys
+(function(){
+  const tabs=[...document.querySelectorAll('[role="tab"]')];
+  const select=t=>{tabs.forEach(x=>{const on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});t.focus();};
+  tabs.forEach((t,i)=>{t.addEventListener('click',()=>select(t));t.addEventListener('keydown',e=>{if(['ArrowDown','ArrowRight'].includes(e.key)){e.preventDefault();select(tabs[(i+1)%tabs.length]);}if(['ArrowUp','ArrowLeft'].includes(e.key)){e.preventDefault();select(tabs[(i-1+tabs.length)%tabs.length]);}});});
+})();
+// Preselect role from developer CTA
+document.querySelectorAll('[data-role]').forEach(a=>a.addEventListener('click',()=>{const s=document.querySelector('select[name="role"]');if(s)s.value=a.dataset.role;}));
+
+// Form submission: set FORM_ENDPOINT to your Formspree URL to make it live
+(function(){
+  const form=document.getElementById('form'),sent=document.getElementById('sent'),err=document.getElementById('formerr');
+  const endpoint=form.getAttribute('action');
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    if(!form.checkValidity()){form.reportValidity();return;}
+    if(endpoint.includes('YOUR_FORM_ID')){sent.style.display='block';return;} // mockup mode
+    const btn=form.querySelector('button[type="submit"]');btn.disabled=true;err.style.display='none';
+    try{
+      const r=await fetch(endpoint,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+      if(r.ok){form.reset();sent.style.display='block';}else{throw new Error();}
+    }catch(_){err.style.display='block';}
+    btn.disabled=false;
+  });
+})();
+</script>
+</body>
+</html>

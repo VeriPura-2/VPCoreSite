@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy notice | VeriPura Core</title>
+<!-- DRAFT privacy notice. Highlighted brackets are placeholders. Have it reviewed before publishing. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0F2444;
+  --ink-2:#1C3560;
+  --paper:#F6F8FB;
+  --white:#FFFFFF;
+  --slate:#44546B;
+  --line:#D8DEE7;
+  --pass:#2B8A3E;
+  --pass-bg:#E6F4EA;
+  --flag:#A8660F;
+  --flag-bg:#FBF0DD;
+  --miss:#A8352A;
+  --miss-bg:#F8E4E1;
+  --seal:#2E55C9;
+  --surface:#FFFFFF;
+  --brand:#0F2444;
+  --brand-2:#1C3560;
+  --on-brand:#FFFFFF;
+  --brand-text:#D3DDEC;
+  --brand-muted:#A9BCDB;
+  --line-soft:#EEF1F5;
+  --tint:#EEF2FA;
+  --tint-2:#E7ECF8;
+  --nav-bg:rgba(246,248,251,.92);
+  --shadow:#0F2444;
+  --btn-bg:#0F2444;
+  --btn-fg:#FFFFFF;
+  --btn-hover:#1C3560;
+  color-scheme:light;
+  --sans:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --max:1160px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--paper);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;font-weight:450}
+img{max-width:100%}
+a{color:var(--seal)}
+:focus-visible{outline:3px solid var(--seal);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+/* Nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--nav-bg);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
+.brand{display:flex;align-items:baseline;gap:8px;text-decoration:none;color:var(--ink);font-weight:800;font-size:20px;letter-spacing:-.01em}
+.brand small{font-weight:500;font-size:14px;color:var(--slate)}
+.nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+.nav ul a{color:var(--ink);text-decoration:none;font-size:15px;font-weight:500}
+.nav ul a:hover{color:var(--seal)}
+.btn{display:inline-block;font:600 15px/1 var(--sans);padding:13px 18px;border-radius:8px;text-decoration:none;border:1.5px solid var(--ink);cursor:pointer}
+.btn-solid{background:var(--btn-bg);color:var(--btn-fg);border-color:var(--btn-bg)}
+.btn-solid:hover{background:var(--btn-hover);border-color:var(--btn-hover)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover{background:var(--surface)}
+@media (max-width:1120px){.nav ul{display:none}}
+.brand,.nav ul a,.btn{white-space:nowrap}
+
+/* Hero */
+.hero{padding:72px 0 88px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(40px,5.6vw,68px);line-height:1.02;letter-spacing:-.03em;font-weight:800;margin:0 0 24px;max-width:12ch}
+.hero p.lede{font-size:20px;line-height:1.5;color:var(--ink-2);max-width:34em;margin:0 0 32px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero .note{margin-top:28px;font-size:14px;color:var(--slate);max-width:36em}
+@media (max-width:960px){.hero .wrap{grid-template-columns:1fr}}
+
+/* Evidence folder: the one memorable element */
+.folder{background:var(--surface);border:1.5px solid var(--ink);border-radius:14px;box-shadow:8px 8px 0 var(--shadow);overflow:hidden}
+.folder-head{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.folder-head h2{font-size:16px;margin:0 0 4px;font-weight:700}
+.folder-head p{margin:0;font-size:14px;color:var(--slate)}
+.verdict{font-weight:700;font-size:14px;padding:6px 10px;border-radius:6px;background:var(--paper);color:var(--slate);white-space:nowrap;transition:background .3s,color .3s}
+.verdict.hold{background:var(--flag-bg);color:var(--flag)}
+.checks{list-style:none;margin:0;padding:6px 0}
+.checks li{display:grid;grid-template-columns:22px 1fr auto;gap:12px;align-items:start;padding:11px 20px;border-bottom:1px solid var(--line-soft);opacity:.28;transition:opacity .35s ease}
+.checks li:last-child{border-bottom:0}
+.checks li.on{opacity:1}
+.checks .dot{width:12px;height:12px;border-radius:50%;margin-top:6px;background:var(--line)}
+.checks li.on.pass .dot{background:var(--pass)}
+.checks li.on.flag .dot{background:var(--flag)}
+.checks li.on.miss .dot{background:var(--miss)}
+.checks strong{display:block;font-size:15px;font-weight:600}
+.checks span.d{font-size:14px;color:var(--slate)}
+.checks .tag{font-size:13px;font-weight:600;padding:3px 8px;border-radius:5px;white-space:nowrap}
+.pass .tag{background:var(--pass-bg);color:var(--pass)}
+.flag .tag{background:var(--flag-bg);color:var(--flag)}
+.miss .tag{background:var(--miss-bg);color:var(--miss)}
+.anchor{padding:14px 20px;background:var(--brand);color:var(--brand-text);font-family:var(--mono);font-size:12.5px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.anchor b{color:var(--on-brand);font-weight:500}
+.folder-foot{font-size:12.5px;color:var(--slate);padding:10px 20px;background:var(--paper);border-top:1px solid var(--line)}
+
+/* Sections */
+section{padding:88px 0}
+section.alt{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+section.dark{background:var(--brand);color:var(--brand-text)}
+section.dark h2,section.dark h3{color:var(--on-brand)}
+section.dark p{color:var(--brand-text)}
+h2.title{font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-.02em;margin:0 0 18px;font-weight:800;max-width:20ch}
+p.intro{font-size:19px;color:var(--ink-2);max-width:40em;margin:0 0 48px}
+section.dark p.intro{color:var(--brand-text)}
+
+/* Problem */
+.problem{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.problem h3{font-size:20px;margin:0 0 10px;line-height:1.25}
+.problem p{margin:0;color:var(--slate)}
+@media (max-width:860px){.problem{grid-template-columns:1fr;gap:28px}}
+
+/* How it works: a real sequence, so numbered */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1.5px solid rgba(255,255,255,.25);border-radius:12px;overflow:hidden}
+.flow li{list-style:none;padding:26px 22px;border-right:1px solid rgba(255,255,255,.18)}
+.flow li:last-child{border-right:0}
+.flow .n{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--brand-muted);display:block;margin-bottom:12px}
+.flow h3{font-size:19px;margin:0 0 8px}
+.flow p{margin:0;font-size:15.5px}
+ol.flow{margin:0;padding:0}
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px}
+.rules div{border-left:3px solid #6F8FCB;padding-left:18px}
+.rules h3{font-size:17px;margin:0 0 6px}
+.rules p{margin:0;font-size:15.5px}
+@media (max-width:900px){.flow{grid-template-columns:1fr 1fr}.flow li:nth-child(2){border-right:0}.flow li:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.18)}.rules{grid-template-columns:1fr}}
+@media (max-width:540px){.flow{grid-template-columns:1fr}.flow li{border-right:0;border-bottom:1px solid rgba(255,255,255,.18)}}
+
+/* Agent library: grouped by Find / Check / Prove */
+.lib{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--ink)}
+.lib .col{padding:28px 28px 8px 0}
+.lib .col + .col{padding-left:28px;border-left:1px solid var(--line)}
+.lib h3{font-size:26px;letter-spacing:-.02em;margin:0 0 4px}
+.lib .what{color:var(--slate);margin:0 0 20px;font-size:15.5px}
+.lib dl{margin:0}
+.lib dt{font-weight:700;font-size:16px;margin-top:18px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.lib dd{margin:4px 0 0;color:var(--slate);font-size:15px}
+.status{font-size:12px;font-weight:600;padding:2px 7px;border-radius:4px}
+.status.live{background:var(--pass-bg);color:var(--pass)}
+.status.cfg{background:var(--tint-2);color:var(--seal)}
+.legend{margin-top:32px;font-size:14px;color:var(--slate);display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+@media (max-width:900px){.lib{grid-template-columns:1fr}.lib .col + .col{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
+
+/* Use cases: tabs */
+.tabs{display:grid;grid-template-columns:260px 1fr;gap:40px;align-items:start}
+.tablist{display:flex;flex-direction:column;border-left:2px solid var(--line)}
+.tablist button{all:unset;cursor:pointer;padding:12px 16px;margin-left:-2px;border-left:2px solid transparent;font-weight:600;font-size:16px;color:var(--slate);display:flex;justify-content:space-between;gap:10px}
+.tablist button[aria-selected="true"]{border-left-color:var(--ink);color:var(--ink);background:var(--paper)}
+.tablist button:hover{color:var(--ink)}
+.tablist button:focus-visible{outline:3px solid var(--seal);outline-offset:-3px}
+.tablist .s{font-size:12px;font-weight:600;color:var(--pass)}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:32px}
+.panel[hidden]{display:none}
+.panel h3{font-size:26px;margin:0 0 6px;letter-spacing:-.01em}
+.scope{max-width:46em;margin:-28px 0 40px;padding:16px 20px;border-left:3px solid var(--seal);background:var(--paper);color:var(--ink-2);font-size:16px}
+.panel .sub{color:var(--slate);margin:0 0 24px}
+.panel .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.panel h4{font-size:14px;margin:0 0 8px;color:var(--ink-2)}
+.panel ul{margin:0;padding-left:18px;font-size:15px;color:var(--ink-2)}
+.panel li{margin-bottom:6px}
+@media (max-width:900px){.tabs{grid-template-columns:1fr}.tablist{flex-direction:row;overflow-x:auto;border-left:0;border-bottom:2px solid var(--line)}.tablist button{border-left:0;margin:0 0 -2px;border-bottom:2px solid transparent;white-space:nowrap}.tablist button[aria-selected="true"]{border-bottom-color:var(--ink)}.panel .grid3{grid-template-columns:1fr}}
+
+/* Comparison */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:15px}
+th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:14px;color:var(--slate);font-weight:600;background:var(--paper)}
+thead th.us{color:var(--on-brand);background:var(--brand)}
+td.us{background:var(--tint);font-weight:600}
+tbody tr:last-child td{border-bottom:0}
+.y{color:var(--pass);font-weight:600}
+.p{color:var(--flag)}
+.n{color:var(--slate)}
+
+/* Engagement */
+.models{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:24px}
+.model{border:1.5px solid var(--line);border-radius:12px;padding:28px;background:var(--surface);display:flex;flex-direction:column}
+.model.lead{border-color:var(--ink);box-shadow:6px 6px 0 var(--shadow)}
+.model h3{font-size:22px;margin:0 0 6px}
+.model .for{font-size:14px;color:var(--slate);margin:0 0 16px}
+.model ul{padding-left:18px;margin:0 0 20px;font-size:15.5px}
+.model li{margin-bottom:7px}
+.model .btn{margin-top:auto;align-self:flex-start}
+.path{margin-top:28px;font-size:15.5px;color:var(--slate);max-width:48em}
+@media (max-width:960px){.models{grid-template-columns:1fr}}
+
+/* Customization layers */
+.layers{display:grid;gap:14px}
+.layer{display:grid;grid-template-columns:220px 1fr 1fr;gap:28px;padding:24px 0;border-top:1px solid var(--line)}
+.layer h3{margin:0;font-size:19px}
+.layer p{margin:0;color:var(--slate);font-size:15.5px}
+.layer .ex{color:var(--ink-2)}
+.eval{margin-top:32px;background:var(--paper);border-radius:12px;padding:24px 28px;border:1px solid var(--line)}
+.eval h3{margin:0 0 8px;font-size:18px}
+.eval p{margin:0;color:var(--ink-2)}
+@media (max-width:860px){.layer{grid-template-columns:1fr;gap:8px}}
+
+/* Integration + trust */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.two h3{font-size:22px;margin:0 0 14px}
+.two ul{list-style:none;margin:0;padding:0}
+.two li{padding:12px 0;border-top:1px solid rgba(255,255,255,.15)}
+.two li b{color:var(--on-brand);display:block}
+@media (max-width:860px){.two{grid-template-columns:1fr;gap:36px}}
+
+
+/* Developers */
+.dev{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:start}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.split h3{font-size:18px;margin:0 0 10px}
+.split ul{margin:0;padding-left:18px;color:var(--ink-2);font-size:15.5px}
+.split li{margin-bottom:8px}
+.split > div + div h3{color:var(--seal)}
+.code{margin:0;background:#0F2444;border-radius:12px;overflow:hidden;border:1.5px solid var(--code-border,#0F2444)}
+.code figcaption{display:flex;justify-content:space-between;gap:12px;padding:12px 18px;background:#1C3560;color:#D3DDEC;font-size:13px;font-weight:500}
+.code pre{margin:0;padding:18px;overflow-x:auto;font:500 13.5px/1.6 var(--mono);color:#EEF2F8}
+.code .c{color:#A9BCDB}.code .s{color:#9FD8C6}.code .n{color:#F1C27D}
+.devgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:48px;padding-top:32px;border-top:1px solid var(--line)}
+.devgrid h3{font-size:17px;margin:0 0 6px}
+.devgrid p{margin:0;color:var(--slate);font-size:15px}
+.devcta{margin-top:36px;display:flex;gap:12px;flex-wrap:wrap}
+@media (max-width:960px){.dev{grid-template-columns:1fr}.devgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.split,.devgrid{grid-template-columns:1fr}}
+
+/* Team + contact */
+.contact{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
+.people{display:grid;gap:20px;margin-top:28px}
+.person{padding-left:16px;border-left:3px solid var(--line)}
+.person .av{width:64px;height:64px;border-radius:50%;background:var(--line) center/cover no-repeat}
+.person .av.initials{display:grid;place-items:center;font-weight:700;font-size:20px;color:var(--ink-2);background:var(--tint-2)}
+.person h3{margin:0;font-size:17px}
+.person p{margin:2px 0 0;font-size:15px;color:var(--slate)}
+form{background:var(--surface);border:1.5px solid var(--ink);border-radius:14px;padding:28px;display:grid;gap:16px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{font-size:14px;font-weight:600;display:grid;gap:6px}
+input,select,textarea{font:inherit;font-size:16px;padding:11px 12px;border:1.5px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--seal);box-shadow:0 0 0 3px rgba(46,85,201,.18)}
+textarea{min-height:120px;resize:vertical}
+.formnote{font-size:13.5px;color:var(--slate);margin:0}
+.sent{display:none;font-weight:600;color:var(--pass)}
+@media (max-width:860px){.contact{grid-template-columns:1fr}.row{grid-template-columns:1fr}}
+
+footer{padding:36px 0;font-size:14px;color:var(--slate);border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--slate)}
+
+
+/* Readability: heavier fine text */
+.hero .note,.folder-head p,.checks span.d,.folder-foot,.problem p,.lib .what,.lib dd,.legend,.panel .sub,.panel ul,.model .for,.model ul,.path,.layer p,.eval p,.person p,.formnote,footer,.split ul,.devgrid p,.scope,td,.rules p,.flow p,.two li,.nav ul a{font-weight:500}
+.anchor,.folder-foot,.checks span.d{font-size:13.5px}
+.folder-foot{font-size:13px}
+p.intro,.hero p.lede{font-weight:450}
+
+/* Theme toggle */
+.theme-toggle{all:unset;cursor:pointer;font:600 14px/1 var(--sans);color:var(--ink);padding:10px 12px;border:1.5px solid var(--line);border-radius:8px;white-space:nowrap}
+.theme-toggle:hover{border-color:var(--ink)}
+.theme-toggle:focus-visible{outline:3px solid var(--seal);outline-offset:2px}
+.nav-right{display:flex;gap:10px;align-items:center}
+
+/* Dark mode */
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#E9EFF8;--ink-2:#CBD6E6;--paper:#0B1424;--surface:#111D33;--slate:#B2BFD2;--line:#2A3B57;--line-soft:#1C2B44;
+    --pass:#69DB7C;--pass-bg:#173B22;--flag:#F2B566;--flag-bg:#3A2A12;--miss:#F29488;--miss-bg:#3C1B18;--seal:#8AA8FF;
+    --brand:#16305E;--brand-2:#1F3D72;--on-brand:#FFFFFF;--brand-text:#DCE5F2;--brand-muted:#B7C8E6;
+    --tint:#1A2D4D;--tint-2:#1E335A;--nav-bg:rgba(11,20,36,.9);--shadow:#3E62B8;
+    --btn-bg:#E9EFF8;--btn-fg:#0B1424;--btn-hover:#FFFFFF;--code-border:#2A3B57;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+    --ink:#E9EFF8;--ink-2:#CBD6E6;--paper:#0B1424;--surface:#111D33;--slate:#B2BFD2;--line:#2A3B57;--line-soft:#1C2B44;
+    --pass:#69DB7C;--pass-bg:#173B22;--flag:#F2B566;--flag-bg:#3A2A12;--miss:#F29488;--miss-bg:#3C1B18;--seal:#8AA8FF;
+    --brand:#16305E;--brand-2:#1F3D72;--on-brand:#FFFFFF;--brand-text:#DCE5F2;--brand-muted:#B7C8E6;
+    --tint:#1A2D4D;--tint-2:#1E335A;--nav-bg:rgba(11,20,36,.9);--shadow:#3E62B8;
+    --btn-bg:#E9EFF8;--btn-fg:#0B1424;--btn-hover:#FFFFFF;--code-border:#2A3B57;
+    color-scheme:dark;
+  }
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .checks li,.verdict{transition:none}
+}
+sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin-left:1px}
+
+.policy{max-width:760px;padding-top:56px;padding-bottom:88px}
+.policy h1{font-size:clamp(36px,5vw,52px);letter-spacing:-.02em;margin:0 0 8px;font-weight:800}
+.policy .updated{color:var(--slate);font-weight:500;margin:0 0 28px}
+.policy h2{font-size:22px;margin:40px 0 10px}
+.policy p,.policy li{color:var(--ink-2);font-weight:500}
+.policy ul{padding-left:20px}
+.policy li{margin-bottom:8px}
+.ph{background:var(--flag-bg);color:var(--flag);padding:0 4px;border-radius:4px;font-weight:600}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span>VeriPura Core<sup class="tm">™</sup></span> <small>Privacy</small></a>
+    <div class="nav-right">
+      <button class="theme-toggle" id="theme" type="button" aria-label="Switch color theme">Dark mode</button>
+      <a class="btn btn-ghost" href="index.html">Back to site</a>
+    </div>
+  </div>
+</nav>
+<main class="wrap policy">
+<h1>Privacy notice</h1>
+<p class="updated">Last updated: 7 October 2026</p>
+<p>This notice explains how VeriPura handles personal data collected through veripura.com and its industry sites, such as food.veripura.com: the contact form, the link to book a call, and your visit to the site itself. It is written to meet the UK GDPR and the EU General Data Protection Regulation.</p>
+
+<h2>Who we are</h2>
+<p><span class="ph">[Company legal name]</span>, <span class="ph">[registered address]</span>, trading as VeriPura ("VeriPura", "we", "us"), is the controller of the personal data described here. Contact us about privacy at <span class="ph">[privacy email address]</span>.</p>
+
+<h2>What we collect</h2>
+<ul>
+<li><b>Contact form.</b> Your name, company, work email, the type of engagement you are interested in (for example a pilot, a license or sandbox access), your industry, and your message.</li>
+<li><b>Booking a call.</b> If you book through our Google booking page, Google processes your name, email address, the time you choose and any answers you give, and shares them with us.</li>
+<li><b>Visiting the site.</b> Our hosting provider and font provider receive technical data such as your IP address and browser type when the page loads.</li>
+<li><b>Display preference.</b> If you switch between light and dark mode, that choice is saved in your own browser. It is not sent to us.</li>
+</ul>
+
+<h2>Why we use it, and on what basis</h2>
+<ul>
+<li>To reply to your request, arrange a call, and prepare a compliance check, pilot or proposal you asked about. The legal basis is taking steps at your request before a contract, or our legitimate interest in responding to business enquiries.</li>
+<li>To keep the site working and secure. The legal basis is our legitimate interest in operating the site.</li>
+</ul>
+<p>We do not sell your personal data, we do not use it to train AI models, and we do not add you to marketing emails unless you ask us to.</p>
+
+<h2>Who we share it with</h2>
+<p>We use a small number of service providers who process data on our behalf:</p>
+<ul>
+<li><b>Formspree</b>, which delivers contact form submissions to us by email.</li>
+<li><b>Google</b>, for our booking page, calendar and email.</li>
+<li><b>Our hosting provider</b>, <span class="ph">[hosting provider]</span>, which serves the site.</li>
+<li><b>Google Fonts</b>, which serves the typefaces used on the site.</li>
+</ul>
+<p>We may also disclose data where the law requires it.</p>
+
+<h2>International transfers</h2>
+<p>Some of these providers process data outside the UK and the European Economic Area, including in the United States. Where they do, we rely on appropriate safeguards such as an adequacy decision or standard contractual clauses (with the UK addendum where relevant).</p>
+
+<h2>How long we keep it</h2>
+<p>We keep enquiry and booking data for <span class="ph">[retention period]</span> after our last contact with you, unless it becomes part of a contract, in which case we keep it as long as that contract requires. You can ask us to delete it sooner.</p>
+
+<h2>Your rights</h2>
+<p>You can ask us to access, correct or delete your personal data, to restrict or object to how we use it, and to receive a copy in a portable format. To use any of these rights, contact <span class="ph">[privacy email address]</span>. You can also complain to a data protection authority: in the UK, the Information Commissioner's Office (ico.org.uk); in the EU, the authority in your country or <span class="ph">[our lead supervisory authority]</span>.</p>
+
+<h2>Cookies</h2>
+<p>This site does not use advertising or analytics cookies. The only item stored on your device is your light or dark display preference, kept in your browser.</p>
+
+<h2>Changes to this notice</h2>
+<p>If we change how we handle personal data, we will update this page and the date at the top.</p>
+</main>
+<footer><div class="wrap"><span>VeriPura Core™. © 2026</span><span><a href="index.html">Back to site</a></span></div></footer>
+
+<script>
+// Theme toggle: follows the system until the visitor chooses
+(function(){
+  const root=document.documentElement,btn=document.getElementById('theme');
+  let saved=null;try{saved=localStorage.getItem('vp-theme');}catch(e){}
+  if(saved)root.setAttribute('data-theme',saved);
+  const isDark=()=>root.dataset.theme?root.dataset.theme==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const label=()=>{btn.textContent=isDark()?'Light mode':'Dark mode';};
+  label();
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',label);
+  btn.addEventListener('click',()=>{const next=isDark()?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('vp-theme',next);}catch(e){}label();});
+})();
+</script>
+</body>
+</html>
