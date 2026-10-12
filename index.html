@@ -1,10 +1,31 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}.social{display:flex;gap:10px;align-items:center}
+.social a{display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:50%;color:var(--slate)}
+.social a:hover{color:var(--seal);border-color:var(--seal)}
+.social svg{width:16px;height:16px;fill:currentColor}
+.aboutgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:8px}
+.acard{border-top:2px solid var(--ink);padding-top:16px}
+.acard h3{margin:0 0 2px;font-size:19px}
+.acard .role{color:var(--slate);font-size:14px;font-weight:600;margin:0 0 8px}
+.acard p{margin:0;color:var(--slate);font-size:15.5px}
+.media{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:760px}
+.media li{border:1px solid var(--line);border-radius:12px;padding:22px;background:var(--paper)}
+.media .src{font-size:13px;font-weight:600;color:var(--slate);margin:0 0 8px}
+.media h3{font-size:18px;line-height:1.3;margin:0 0 8px}
+.media p{margin:0;color:var(--slate);font-size:15px}
+@media (max-width:860px){.aboutgrid,.media{grid-template-columns:1fr}}
+</style></head><body>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>VeriPura Core: compliance agents that prove their work</title>
-<meta name="description" content="VeriPura Core is the orchestrated compliance agent engine behind VeriPura. It finds the rules, checks the documents and records a verifiable verdict. Licensed and trained for regulated supply chains in any industry.">
+<meta name="description" content="VeriPura Core is the orchestrated compliance agent engine behind VeriPura. It finds the rules, checks the documents and records a verifiable result. Trained with you for regulated supply chains in any industry.">
+<!-- ROUGH MOCKUP for veripura.com. Copy and claims are drafts for internal review. -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -58,6 +79,7 @@ a{color:var(--seal)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
 .brand{display:flex;align-items:baseline;gap:8px;text-decoration:none;color:var(--ink);font-weight:800;font-size:20px;letter-spacing:-.01em}
 .brand small{font-weight:500;font-size:14px;color:var(--slate)}
+.brand img.logo{height:1.5em;width:auto;align-self:center;display:block;flex:none}
 .nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
 .nav ul a{color:var(--ink);text-decoration:none;font-size:15px;font-weight:500}
 .nav ul a:hover{color:var(--seal)}
@@ -146,6 +168,7 @@ ol.flow{margin:0;padding:0}
 .status{font-size:12px;font-weight:600;padding:2px 7px;border-radius:4px}
 .status.live{background:var(--pass-bg);color:var(--pass)}
 .status.cfg{background:var(--tint-2);color:var(--seal)}
+.status.dev{background:var(--flag-bg);color:var(--flag)}
 .legend{margin-top:32px;font-size:14px;color:var(--slate);display:flex;gap:18px;flex-wrap:wrap;align-items:center}
 @media (max-width:900px){.lib{grid-template-columns:1fr}.lib .col + .col{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
 
@@ -187,7 +210,7 @@ tbody tr:last-child td{border-bottom:0}
 .n{color:var(--slate)}
 
 /* Engagement */
-.models{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:24px}
+.models{display:grid;grid-template-columns:1.2fr 1fr;gap:24px}
 .model{border:1.5px solid var(--line);border-radius:12px;padding:28px;background:var(--surface);display:flex;flex-direction:column}
 .model.lead{border-color:var(--ink);box-shadow:6px 6px 0 var(--shadow)}
 .model h3{font-size:22px;margin:0 0 6px}
@@ -300,21 +323,48 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
 @media (max-width:640px){.nav-right .btn{display:none}.nav .wrap{gap:12px}}
 .contact>*{min-width:0}
 @media (max-width:420px){.brand{font-size:17px}}
+.apps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.app{border:1.5px solid var(--line);border-radius:12px;padding:24px;background:var(--surface);display:flex;flex-direction:column;text-decoration:none;color:inherit}
+.app:hover{border-color:var(--seal)}
+.app.first{border-color:var(--ink);box-shadow:6px 6px 0 var(--shadow)}
+.app .top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}
+.app h3{font-size:21px;margin:0}
+.app p{margin:0 0 12px;color:var(--slate);font-size:15.5px}
+.app ul{margin:0 0 16px;padding-left:18px;font-size:14.5px;color:var(--ink-2)}
+.app li{margin-bottom:4px}
+.app .status{white-space:nowrap;flex:none}
+.app .go{margin-top:auto;font-weight:600;color:var(--seal);font-size:15px}
+.app.more{border-style:dashed;background:transparent}
+.stack{border:1.5px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.stack .approw{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
+.stack .approw div{background:var(--tint-2);padding:14px;font-size:14.5px}
+.stack .approw a.ask{background:var(--surface);padding:14px;font-size:14.5px;text-decoration:none;color:inherit;border:1.5px dashed var(--seal);margin:-1px}
+.stack .approw a.ask b{color:var(--seal)}
+.stack .approw a.ask:hover{background:var(--tint-2)}
+.stack .approw b{display:block;font-size:15.5px;margin-bottom:4px;color:var(--ink)}
+.stack .approw span{color:var(--slate)}
+.stack .core{background:var(--ink);color:#fff;padding:22px 24px}
+.stack .core h3{margin:0 0 6px;color:#fff;font-size:20px}
+.stack .core p{margin:0;opacity:.85;font-size:15.5px}
+.stack .parts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
+.stack .parts div{background:var(--surface);padding:16px;font-size:14.5px}
+.stack .parts b{display:block;margin-bottom:4px}
+.stack .lbl{padding:10px 24px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--slate);background:var(--paper);border-bottom:1px solid var(--line)}
+@media(max-width:900px){.apps{grid-template-columns:1fr}.stack .approw,.stack .parts{grid-template-columns:1fr 1fr}}
+
+.eg{font-size:12px;font-weight:600;color:var(--slate);border:1px dashed var(--line);border-radius:4px;padding:2px 7px;white-space:nowrap;flex:none}
+.app.ex{border-style:dashed;background:transparent}
+.app.ex:hover{border-style:solid}
+.egnote{margin:20px 0 0;font-size:14.5px;color:var(--slate)}
+.teaser{display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 </style>
 </head>
 <body>
 
 <nav class="nav" aria-label="Main">
   <div class="wrap">
-    <a class="brand" href="#top"><span>VeriPura Core<sup class="tm">™</sup></span></a>
-    <ul>
-      <li><a href="#how">How it works</a></li>
-      <li><a href="#agents">Agents</a></li>
-      <li><a href="#industries">Industries</a></li>
-      <li><a href="#models">Work with us</a></li>
-      <li><a href="#developers">For developers</a></li>
-      <li><a href="#trust">Trust and IP</a></li>
-    </ul>
+    <a class="brand" href="#top"><img class="logo" src="data:image/png;base64,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" alt="" width="30" height="30"><span>VeriPura Core<sup class="tm">™</sup></span></a>
+    <ul><li><a href="#solutions">Industry solutions</a></li><li><a href="core.html">VeriPura Core</a></li><li><a href="#models">Work with us</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul>
     <div class="nav-right">
       <button class="theme-toggle" id="theme" type="button" aria-label="Switch color theme">Dark mode</button>
       <a class="btn btn-solid" href="#contact">Start a pilot</a>
@@ -326,10 +376,10 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
   <div class="wrap">
     <div>
       <h1>Compliance agents that prove their work.</h1>
-      <p class="lede">VeriPura Core<sup class="tm">™</sup> is the orchestrated agent engine behind VeriPura. It finds the rules that apply to a shipment, product or job, checks every document against them, and records a verdict anyone can verify. We license it and train it for your industry.</p>
+      <p class="lede">VeriPura Core<sup class="tm">™</sup> is the orchestrated agent engine behind VeriPura. It finds the rules that apply to a shipment, product or job, checks every document against them, and records a result anyone can verify. Each industry solution is Core tuned for that industry.</p>
       <div class="ctas">
-        <a class="btn btn-solid" href="#contact">Start a co-development pilot</a>
-        <a class="btn btn-ghost" href="#industries">See industry use cases</a>
+        <a class="btn btn-solid" href="#solutions">See industry solutions</a>
+        <a class="btn btn-ghost" href="core.html">How Core works</a>
       </div>
       <p class="note">Patent-pending. 50+ specialist agents, tuned first for food in VeriPura Food™.</p>
     </div>
@@ -351,11 +401,55 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
         <li class="pass"><span class="dot"></span><div><strong>Jurisdiction check</strong><span class="d">Product approval valid for high-velocity hurricane zone</span></div><span class="tag">Pass</span></li>
       </ul>
       <div class="anchor"><span>Anchored <b>0x9f3c71…e21a</b></span><span>Routed to <b>Trade compliance</b></span></div>
-      <div class="folder-foot">Illustrative example. All data is fictional.</div>
+      <div class="folder-foot">Illustrative example. All data is fictional. Your team makes the decision.</div>
     </div>
   </div>
 </header>
 
+<section id="solutions">
+  <div class="wrap">
+    <h2 class="title">Industry solutions built on Core.</h2>
+    <p class="intro">Every solution runs on the same engine. What changes is the rulebook, the documents and the certifiers. Food is where we started. The others show what Core can be tuned for.</p>
+    <div class="apps">
+      <a class="app first" href="food.html">
+        <div class="top"><h3>VeriPura Food™</h3><span class="status live">Live</span></div>
+        <p>Imports, exports and certifications for food and agriculture.</p>
+        <ul><li>Origin, health and halal or organic certificates</li><li>Shelf-life and lot traceability</li><li>Tested first with real beef export documentation</li></ul>
+        <span class="go">Open VeriPura Food →</span>
+      </a>
+      <a class="app ex" href="building-supplies.html">
+        <div class="top"><h3>Building Supplies</h3><span class="eg">Example</span></div>
+        <p>Imported lumber, panels and fixtures delivered to jobs.</p>
+        <ul><li>Lacey Act declarations and AD/CVD scope</li><li>Product approvals by county and wind zone</li><li>Red-flag screening on supplier pricing</li></ul>
+        <span class="go">See the example →</span>
+      </a>
+      <a class="app ex" href="cosmetics.html">
+        <div class="top"><h3>Cosmetics</h3><span class="eg">Example</span></div>
+        <p>Ingredients, claims and registrations by market.</p>
+        <ul><li>Ingredient restrictions per destination</li><li>Product information file completeness</li><li>Responsible-person and notification records</li></ul>
+        <span class="go">See the example →</span>
+      </a>
+      <a class="app ex" href="supplements.html">
+        <div class="top"><h3>Vitamins and Supplements</h3><span class="eg">Example</span></div>
+        <p>Labels, claims and ingredient limits across borders.</p>
+        <ul><li>Permitted ingredients and dose limits</li><li>Label and claim checks</li><li>Certificates of analysis against specifications</li></ul>
+        <span class="go">See the example →</span>
+      </a>
+      <a class="app ex" href="pharmaceuticals.html">
+        <div class="top"><h3>Pharmaceuticals</h3><span class="eg">Example</span></div>
+        <p>Supply-chain evidence for regulated medicines.</p>
+        <ul><li>Manufacturer and site authorizations</li><li>Batch and cold-chain records</li><li>Serialization and import permits</li></ul>
+        <span class="go">See the example →</span>
+      </a>
+      <a class="app more" href="#contact" data-interest="Something else">
+        <div class="top"><h3>Your industry</h3></div>
+        <p>Pet food, chemicals, apparel, metals or something else. Core can be tuned for any product, origin and destination.</p>
+        <span class="go">Start a pilot →</span>
+      </a>
+    </div>
+    <p class="egnote">Examples are industry solutions under development, shown to illustrate how Core is tuned. They are not yet available.</p>
+  </div>
+</section>
 <section class="alt" id="problem">
   <div class="wrap">
     <h2 class="title">Compliance lives in documents, and point tools only see a slice.</h2>
@@ -377,227 +471,41 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
   </div>
 </section>
 
-<section class="dark" id="how">
-  <div class="wrap">
-    <h2 class="title">One orchestrator, many specialists, one verifiable record.</h2>
-    <p class="intro">Every business event goes to an orchestrator (ours, or your own). It decides which specialist agents need to run and only lets the transaction move when the evidence is complete or a named person has signed off on the gap.</p>
-    <ol class="flow">
-      <li><span class="n">Step 1</span><h3>Receive the event</h3><p>A purchase order, receipt, work order, shipment or rule change arrives through API, ERP or file drop.</p></li>
-      <li><span class="n">Step 2</span><h3>Load the rulebook</h3><p>The orchestrator attaches the right profile: product, origin, destination and jurisdiction.</p></li>
-      <li><span class="n">Step 3</span><h3>Run the specialists</h3><p>Agents work in parallel. Each returns pass, fail or missing evidence, with sources cited.</p></li>
-      <li><span class="n">Step 4</span><h3>Release or route</h3><p>Clean files move on. Exceptions go to a named person with a drafted fix.</p></li>
-    </ol>
-    <div class="rules">
-      <div><h3>Agents recommend, people decide</h3><p>Holds, supplier exits, filings and statements to authorities always pass a named human.</p></div>
-      <div><h3>If it isn't recorded, it didn't happen</h3><p>Every check writes to a tamper-evident folder, anchored on a public ledger and shareable as W3C Verifiable Credentials.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="agents">
-  <div class="wrap">
-    <h2 class="title">An agent library you configure, not rebuild.</h2>
-    <p class="intro">Agents are grouped by the job they do. Food import agents are built and tested today. The rest of the library runs on the same core and is configured and trained for each new industry.</p>
-    <div class="lib">
-      <div class="col">
-        <h3>Find</h3>
-        <p class="what">Work out what applies.</p>
-        <dl>
-          <dt>Regulation discovery</dt>
-          <dd>Identifies the import, export and certification rules for any product, origin and destination, wherever the rules can be obtained.</dd>
-          <dt>Document requirements</dt>
-          <dd>Turns the applicable rules into the exact document set a transaction needs.</dd>
-          <dt>Jurisdiction profiles <span class="status cfg">Configurable</span></dt>
-          <dd>Versioned rulebooks per country, state or local authority, resolved from an address.</dd>
-          <dt>Regulatory watch</dt>
-          <dd>Detects rule changes and maps the impact to products, suppliers and open orders.</dd>
-        </dl>
-      </div>
-      <div class="col">
-        <h3>Check</h3>
-        <p class="what">Test the evidence against the rules.</p>
-        <dl>
-          <dt>Document extraction</dt>
-          <dd>Reads certificates, declarations and labels in any format or language, field by field.</dd>
-          <dt>HS classification</dt>
-          <dd>Assigns codes with confidence scores and checks them against declared goods.</dd>
-          <dt>Cross-document consistency</dt>
-          <dd>Finds mismatched names, quantities, dates, authorities and expiries between documents.</dd>
-          <dt>Provenance and duty <span class="status cfg">Configurable</span></dt>
-          <dd>Checks origin, species or material and duty exposure per producer and period.</dd>
-          <dt>Red-flag sentinel <span class="status cfg">Configurable</span></dt>
-          <dd>Watches price outliers, supplier enforcement news and new routing patterns.</dd>
-        </dl>
-      </div>
-      <div class="col">
-        <h3>Prove</h3>
-        <p class="what">Leave a record anyone can verify.</p>
-        <dl>
-          <dt>Evidence folder</dt>
-          <dd>One tamper-evident folder per lot, shipment, component or job.</dd>
-          <dt>Lineage <span class="status cfg">Configurable</span></dt>
-          <dd>Follows evidence through splits, blends and bills of materials.</dd>
-          <dt>Verifiable credentials</dt>
-          <dd>Machine-readable attestations for buyers, auditors and authorities.</dd>
-          <dt>Audit pack</dt>
-          <dd>Assembles the full evidence trail for a customs request, claim or customer audit.</dd>
-        </dl>
-      </div>
-    </div>
-    <div class="legend"><span><span class="status cfg">Configurable</span> built on the core, trained per customer</span></div>
-  </div>
-</section>
-
 <section class="alt" id="industries">
   <div class="wrap">
-    <h2 class="title">Same core, different rulebooks.</h2>
-    <p class="intro">Anything that is certified at origin, moved across borders, transformed and inspected at the end has the same shape. These are the industries we are building for, each with real civil or criminal exposure for getting it wrong.</p>
-    <p class="scope">VeriPura Core identifies the rules for any product moving from any origin to any destination, by HS code, wherever those rules can be obtained. That covers government regulations and the certifications buyers require, such as organic or halal. The rules shown below are examples only.</p>
-    <div class="editions" aria-label="Industry editions">
-      <span>Industry editions of VeriPura Core™:</span>
-      <a href="food.html">Food</a>
-      <a href="building-supplies.html">Building Supplies</a>
-      <a href="cosmetics.html">Cosmetics</a>
-      <a href="supplements.html">Vitamins and Supplements</a>
-      <a href="pharmaceuticals.html">Pharmaceuticals</a>
-    </div>
-    <div class="tabs">
-      <div class="tablist" role="tablist" aria-label="Industries">
-        <button role="tab" id="t-food" aria-controls="p-food" aria-selected="true">Food and agriculture</button>
-        <button role="tab" id="t-supp" aria-controls="p-supp" aria-selected="false" tabindex="-1">Supplements and vitamins</button>
-        <button role="tab" id="t-pet" aria-controls="p-pet" aria-selected="false" tabindex="-1">Pet food</button>
-        <button role="tab" id="t-cos" aria-controls="p-cos" aria-selected="false" tabindex="-1">Cosmetics</button>
-        <button role="tab" id="t-pharma" aria-controls="p-pharma" aria-selected="false" tabindex="-1">Pharmaceuticals</button>
-        <button role="tab" id="t-build" aria-controls="p-build" aria-selected="false" tabindex="-1">Building materials</button>
-        <button role="tab" id="t-chem" aria-controls="p-chem" aria-selected="false" tabindex="-1">Chemicals, pesticides and precursors</button>
-        <button role="tab" id="t-apparel" aria-controls="p-apparel" aria-selected="false" tabindex="-1">Apparel, textiles and footwear</button>
-        <button role="tab" id="t-metals" aria-controls="p-metals" aria-selected="false" tabindex="-1">Steel, aluminum and metals</button>
+    <h2 class="title">One core, many solutions.</h2>
+    <p class="intro">What is shared stays in Core, so every solution gets better as the engine does. What is specific to an industry sits in the solution on top.</p>
+    <div class="stack" aria-label="Solutions on top of Core">
+      <div class="lbl">Industry solutions: tuned per industry</div>
+      <div class="approw">
+        <div><b>Food</b><span>Origin and health certificates, halal, organic</span></div>
+        <div><b>Building Supplies</b><span>Lacey, AD/CVD, local approvals</span></div>
+        <div><b>Cosmetics</b><span>Ingredients, claims, registrations</span></div>
+        <div><b>Supplements</b><span>Doses, labels, analysis reports</span></div>
+        <div><b>Pharma</b><span>Authorizations, batch records</span></div>
+        <a class="ask" href="#contact" data-interest="Something else"><b>Ask us about your vertical</b><span>Pet food, chemicals, apparel, metals and more →</span></a>
       </div>
-
-      <div class="panel" role="tabpanel" id="p-food" aria-labelledby="t-food">
-        <h3>Food and agriculture</h3>
-        <p class="sub">Any country of origin to any country of destination. Pre-shipment verification for importers, exporters, forwarders and carriers, including seafood.</p>
-        <div class="grid3">
-          <div><h4>Example rules</h4><ul><li>Border and food safety rules (for example EU 2017/625, FDA FSMA)</li><li>Organic certification, which differs by country</li><li>Halal, kosher and other buyer-required certifications</li></ul></div>
-          <div><h4>Documents checked</h4><ul><li>Phytosanitary and health certificates</li><li>Certificates of origin and analysis</li><li>Organic and halal certificates</li></ul></div>
-          <div><h4>Evidence produced</h4><ul><li>Pass, fail or fix verdict per shipment</li><li>Ledger-anchored audit trail</li><li>Shareable compliance credentials</li></ul></div>
-        </div>
-        <p class="edlink"><a href="food.html">See VeriPura Food™, the edition tuned for this industry</a></p>
-      </div>
-
-      <div class="panel" role="tabpanel" id="p-supp" aria-labelledby="t-supp" hidden>
-        <h3>Supplements and vitamins</h3>
-        <p class="sub">For brands, importers and contract manufacturers sourcing ingredients globally.</p>
-        <div class="grid3">
-          <div><h4>Example rules</h4><ul><li>FDA dietary supplement cGMP and FSVP</li><li>EU food supplement and novel food rules</li><li>Labeling and health claims rules per market</li></ul></div>
-          <div><h4>Documents checked</h4><ul><li>Certificates of analysis and identity tests</li><li>Ingredient specifications</li><li>Supplier GMP certificates and labels</li></ul></div>
-          <div><h4>Evidence produced</h4><ul><li>Ingredient-to-batch lineage</li><li>Label and claims check per market</li><li>Supplier verification record</li></ul></div>
-        </div>
-        <p class="edlink"><a href="supplements.html">See VeriPura Supplements™, the edition tuned for this industry</a></p>
-      </div>
-
-      <div class="panel" role="tabpanel" id="p-pet" aria-labelledby="t-pet" hidden>
-        <h3>Pet food</h3>
-        <p class="sub">For manufacturers and importers of pet food, treats and animal-origin ingredients.</p>
-        <div class="grid3">
-          <div><h4>Example rules</h4><ul><li>FDA FSMA animal food rules and FSVP</li><li>State registration and labeling rules</li><li>EU animal by-product rules and TRACES</li></ul></div>
-          <div><h4>Documents checked</h4><ul><li>Health certificates for animal-origin ingredients</li><li>Certificates of analysis</li><li>State registrations and labels</li></ul></div>
-          <div><h4>Evidence produced</h4><ul><li>Ingredient origin record</li><li>Registration status per product and state</li><li>Border-ready document set</li></ul></div>
-        </div>
-      </div>
-
-      <div class="panel" role="tabpanel" id="p-cos" aria-labelledby="t-cos" hidden>
-        <h3>Cosmetics</h3>
-        <p class="sub">For brands and importers selling one formula into many markets.</p>
-        <div class="grid3">
-          <div><h4>Example rules</h4><ul><li>EU Cosmetics Regulation</li><li>US MoCRA</li><li>Market-specific ingredient restrictions</li></ul></div>
-          <div><h4>Documents checked</h4><ul><li>Ingredient specifications and SDS</li><li>Safety assessments</li><li>Labels per market</li></ul></div>
-          <div><h4>Evidence produced</h4><ul><li>Formula check per destination</li><li>Label compliance record</li><li>Product information file support</li></ul></div>
-        </div>
-        <p class="edlink"><a href="cosmetics.html">See VeriPura Cosmetics™, the edition tuned for this industry</a></p>
-      </div>
-
-      <div class="panel" role="tabpanel" id="p-pharma" aria-labelledby="t-pharma" hidden>
-        <h3>Pharmaceuticals</h3>
-        <p class="sub">For importers, distributors and manufacturers moving APIs and finished drugs across borders.</p>
-        <div class="grid3">
-          <div><h4>Example rules</h4><ul><li>FDA import requirements and DSCSA</li><li>EU GMP and Falsified Medicines Directive</li><li>Import licensing and testing rules</li></ul></div>
-          <div><h4>Documents checked</h4><ul><li>Certificates of analysis</li><li>GMP certificates and drug master files</li><li>Import licences and supplier qualification files</li></ul></div>
-          <div><h4>Evidence produced</h4><ul><li>API-to-batch lineage</li><li>Supplier qualification status</li><li>Inspection-ready batch dossier</li></ul></div>
-        </div>
-        <p class="edlink"><a href="pharmaceuticals.html">See VeriPura Pharma™, the edition tuned for this industry</a></p>
-      </div>
-
-      <div class="panel" role="tabpanel" id="p-build" aria-labelledby="t-build" hidden>
-        <h3>Building materials</h3>
-        <p class="sub">For distributors and manufacturers that import wood, transform it into components and deliver into many local rulebooks.</p>
-        <div class="grid3">
-          <div><h4>Example rules</h4><ul><li>Lacey Act declarations</li><li>AD/CVD and Section 232 duties</li><li>TSCA Title VI, state product approvals, engineer seal rules</li></ul></div>
-          <div><h4>Documents checked</h4><ul><li>Mill certificates and grade data</li><li>SFI/FSC chain of custody</li><li>Product approvals, evaluation reports, sealed drawings</li></ul></div>
-          <div><h4>Evidence produced</h4><ul><li>Provenance record per inbound lot</li><li>Lineage from lot to component to job</li><li>Permit-ready package per jurisdiction</li></ul></div>
-        </div>
-        <p class="edlink"><a href="building-supplies.html">See VeriPura Building Supplies™, the edition tuned for this industry</a></p>
-      </div>
-
-      <div class="panel" role="tabpanel" id="p-chem" aria-labelledby="t-chem" hidden>
-        <h3>Chemicals, pesticides and precursors</h3>
-        <p class="sub">For importers and distributors where a knowing violation can bring criminal charges, not just fines.</p>
-        <div class="grid3">
-          <div><h4>Example rules</h4><ul><li>TSCA import certification, EU REACH and CLP</li><li>EPA pesticide import rules (FIFRA)</li><li>DEA listed chemical import notices</li></ul></div>
-          <div><h4>Documents checked</h4><ul><li>Safety data sheets</li><li>TSCA certification statements and pesticide arrival notices</li><li>Precursor import declarations and end-use statements</li></ul></div>
-          <div><h4>Evidence produced</h4><ul><li>Substance status per market</li><li>Import certification record</li><li>Restricted-substance screening trail</li></ul></div>
-        </div>
-      </div>
-
-      <div class="panel" role="tabpanel" id="p-apparel" aria-labelledby="t-apparel" hidden>
-        <h3>Apparel, textiles and footwear</h3>
-        <p class="sub">For brands and importers that must prove where every fiber came from, tier by tier.</p>
-        <div class="grid3">
-          <div><h4>Example rules</h4><ul><li>Forced-labor import rules (UFLPA)</li><li>Rules of origin and trade preferences, Section 301</li><li>Fiber content and origin labeling</li></ul></div>
-          <div><h4>Documents checked</h4><ul><li>Cotton-to-garment supply chain tracing records</li><li>Factory and mill records</li><li>Certificates of origin and test reports</li></ul></div>
-          <div><h4>Evidence produced</h4><ul><li>Tier-by-tier traceability file</li><li>Origin determination record</li><li>Label compliance check</li></ul></div>
-        </div>
-      </div>
-
-      <div class="panel" role="tabpanel" id="p-metals" aria-labelledby="t-metals" hidden>
-        <h3>Steel, aluminum and metals</h3>
-        <p class="sub">For importers and distributors exposed to duty evasion, transshipment and False Claims Act cases.</p>
-        <div class="grid3">
-          <div><h4>Example rules</h4><ul><li>Section 232 tariffs</li><li>AD/CVD scope and circumvention rules</li><li>Duty evasion (EAPA) enforcement</li></ul></div>
-          <div><h4>Documents checked</h4><ul><li>Mill test certificates</li><li>Melt-and-pour and smelt-and-cast records</li><li>Invoices and certificates of origin</li></ul></div>
-          <div><h4>Evidence produced</h4><ul><li>Origin record per heat or lot</li><li>Duty exposure per producer</li><li>Red-flag screening trail</li></ul></div>
-        </div>
+      <div class="lbl">Core: shared by every solution</div>
+      <div class="core"><h3>VeriPura Core™</h3><p>Orchestrator and agent library, patent-pending.</p></div>
+      <div class="parts">
+        <div><b>Rule discovery</b>Finds the rules for any product, origin and destination.</div>
+        <div><b>Agent library</b>50+ specialists that check documents and flag gaps.</div>
+        <div><b>Evidence record</b>Tamper-evident folders, anchored and shareable.</div>
+        <div><b>Decision routing</b>The right person gets the file. Your team decides.</div>
       </div>
     </div>
   </div>
 </section>
-
-<section id="why">
-  <div class="wrap">
-    <h2 class="title">Why build on VeriPura Core.</h2>
-    <p class="intro">Most tools solve one step. VeriPura Core runs the whole loop and keeps the proof.</p>
-    <div class="tablewrap">
-      <table>
-        <thead>
-          <tr><th scope="col">Capability</th><th scope="col">Classification tools</th><th scope="col">Document automation</th><th scope="col">Regulatory agent platforms</th><th scope="col" class="us">VeriPura Core</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Finds which rules apply</td><td class="p">Tariff rules only</td><td class="n">No</td><td class="y">Yes</td><td class="us">Yes, any route and product, down to local jurisdiction</td></tr>
-          <tr><td>Reads and checks documents</td><td class="n">No</td><td class="y">Yes</td><td class="p">Limited</td><td class="us">Yes, field by field</td></tr>
-          <tr><td>HS classification</td><td class="y">Yes</td><td class="n">No</td><td class="n">No</td><td class="us">Yes</td></tr>
-          <tr><td>Lineage through splits and manufacturing</td><td class="n">No</td><td class="n">No</td><td class="n">No</td><td class="us">Yes</td></tr>
-          <tr><td>Independently verifiable record</td><td class="n">No</td><td class="p">Audit logs</td><td class="p">Audit logs</td><td class="us">Ledger-anchored, W3C credentials</td></tr>
-          <tr><td>Licensable and trainable on your data</td><td class="n">Subscription</td><td class="p">Configurable</td><td class="p">Custom builds</td><td class="us">License, co-develop or managed</td></tr>
-        </tbody>
-      </table>
-    </div>
+<section class="dark" id="coreteaser">
+  <div class="wrap teaser">
+    <div><h2 class="title" style="margin-bottom:10px">Inside VeriPura Core.</h2><p class="intro" style="margin:0">One orchestrator, 50+ specialist agents and a verifiable record. See how it works, how we tune it and how IT teams connect to it.</p></div>
+    <a class="btn btn-solid" href="core.html">Explore Core</a>
   </div>
 </section>
-
 <section class="alt" id="models">
   <div class="wrap">
-    <h2 class="title">Three ways to work with us.</h2>
-    <p class="intro">Most enterprises start with a pilot in shadow mode. Software platforms and in-house AI teams usually build on a license, calling our agents from their own systems.</p>
+    <h2 class="title">Two ways to work with us.</h2>
+    <p class="intro">Most enterprises start with a pilot in shadow mode. Teams that want the outcome without the build can have us run the agents.</p>
     <div class="models">
       <div class="model lead">
         <h3>Co-development pilot</h3>
@@ -611,133 +519,38 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
         <a class="btn btn-solid" href="#contact">Start a pilot</a>
       </div>
       <div class="model">
-        <h3>Licensed core</h3>
-        <p class="for">For software platforms, service providers and in-house AI teams</p>
-        <ul>
-          <li>Embed the orchestrator and agents in your product</li>
-          <li>White-label or co-branded</li>
-          <li>Rule libraries and model updates included</li>
-          <li>Individual agents or the full pipeline</li>
-        </ul>
-        <a class="btn btn-ghost" href="#contact">Discuss a license</a>
-      </div>
-      <div class="model">
         <h3>Managed agents</h3>
         <p class="for">For teams that want the outcome, not the build</p>
         <ul>
           <li>We run and maintain the agents for you</li>
-          <li>Your people handle only exceptions</li>
+          <li>Your people handle only exceptions and make every decision</li>
           <li>Priced per transaction or per site</li>
         </ul>
         <a class="btn btn-ghost" href="#contact">Talk to us</a>
       </div>
     </div>
-    <p class="path">A typical path: 4 weeks to baseline your current process, 4 weeks to build in shadow mode, 4 weeks running live on exceptions, then a decision to expand.</p>
   </div>
 </section>
 
-<section id="custom">
+<section id="about">
   <div class="wrap">
-    <h2 class="title">How we train the core for your industry.</h2>
-    <p class="intro">Most of the value comes from rules and retrieval. We fine-tune only the narrow, high-volume steps where it pays.</p>
-    <div class="layers">
-      <div class="layer"><h3>Rules and sources</h3><p>Versioned rulebooks and the source documents behind them, so every answer cites the exact version it relied on.</p><p class="ex">Example: a jurisdiction profile per state, or duty rates per producer and review period.</p></div>
-      <div class="layer"><h3>Trained specialists</h3><p>Small, fast models tuned on your documents for the steps that run thousands of times a day.</p><p class="ex">Example: reading grade stamps, test reports or certificates in your suppliers' formats.</p></div>
-      <div class="layer"><h3>Orchestration and judgment</h3><p>A frontier model with tools handles routing and exceptions, where inputs are new and mistakes are costly.</p><p class="ex">Example: drafting a supplier request when a declaration is incomplete.</p></div>
-    </div>
-    <div class="eval">
-      <h3>Measured, not promised</h3>
-      <p>Every pilot starts with a labeled test set from your own documents. We report extraction accuracy per field, flag precision and recall, and false-hold rate. Each reviewer decision becomes training data, so accuracy improves with use.</p>
+    <h2 class="title">About VeriPura.</h2>
+    <p class="intro">VeriPura builds orchestrated compliance agents that find the rules that apply, check the documents against them and record a result anyone can verify. VeriPura Core is the engine. VeriPura Food, the first industry solution, was run in parallel with real documentation for beef exports from Brazil into the UK. VeriPura provides information, and your team makes every decision.</p>
+    <div class="aboutgrid">
+      <div class="acard"><h3><a href="https://www.linkedin.com/in/onnostienen/" target="_blank" rel="noopener noreferrer">Onno Stienen</a></h3><p class="role">CEO and co-founder</p><p>18+ years in import and export compliance across Southeast Asia and Europe.</p></div>
+      <div class="acard"><h3><a href="https://www.linkedin.com/in/thomassoberlin/" target="_blank" rel="noopener noreferrer">Thomas Oberlin</a></h3><p class="role">COO and co-founder</p><p>Serial entrepreneur and patent holder with a background in B2B go-to-market.</p></div>
+      <div class="acard"><h3>John Wotherspoon</h3><p class="role">CTO</p><p>35+ years in enterprise solutions architecture, including SAP delivery, and a decade building blockchain products for real-world use cases.</p></div>
     </div>
   </div>
 </section>
 
-<section class="alt" id="developers">
+<section class="alt" id="media">
   <div class="wrap">
-    <h2 class="title">For your AI and engineering team.</h2>
-    <p class="intro">Keep your orchestrator, your interface and your roadmap. VeriPura Core plugs in as the compliance layer your own agents call. Your team builds the experience. We maintain the rules, the trained specialists and the evidence trail.</p>
-    <p class="scope">Use any agent on its own, or the full orchestrated pipeline. Call HS classification, document extraction or regulation discovery individually from your own orchestrator, and add more agents as you need them.</p>
-    <div class="dev">
-      <div class="split">
-        <div>
-          <h3>Your team owns</h3>
-          <ul>
-            <li>The agent or copilot your users talk to</li>
-            <li>Workflow design inside your ERP and apps</li>
-            <li>How verdicts show up for your people</li>
-            <li>The credit for shipping it</li>
-          </ul>
-        </div>
-        <div>
-          <h3>VeriPura Core supplies</h3>
-          <ul>
-            <li>Rules for any product, origin and destination, kept current</li>
-            <li>Extraction and HS models tuned for your documents</li>
-            <li>Cross-document and red-flag checks</li>
-            <li>A verifiable record legal and audit will accept</li>
-          </ul>
-        </div>
-      </div>
-      <figure class="code" aria-label="Illustrative MCP tool call">
-        <figcaption><span>Your agent calls VeriPura Core over MCP</span><span>Illustrative</span></figcaption>
-<pre><code><span class="c">// tool call from your own agent</span>
-check_compliance({
-  hs_code: <span class="s">"4412.31"</span>,
-  origin: <span class="s">"MY"</span>,
-  destination: { country: <span class="s">"US"</span>, region: <span class="s">"FL"</span>, county: <span class="s">"Broward"</span> },
-  documents: [<span class="s">"invoice.pdf"</span>, <span class="s">"lacey_declaration.pdf"</span>, <span class="s">"mill_cert.pdf"</span>]
-})
-
-<span class="c">// response</span>
-{
-  verdict: <span class="s">"hold"</span>,
-  requirements_found: <span class="n">14</span>,
-  findings: [{
-    check: <span class="s">"lacey_declaration"</span>,
-    result: <span class="s">"missing_field"</span>,
-    detail: <span class="s">"species not declared for core veneer"</span>,
-    rule_source: <span class="s">"APHIS Lacey Act guidance, version 2026-01"</span>,
-    confidence: <span class="n">0.97</span>
-  }],
-  evidence_id: <span class="s">"vp:folder:4471-B"</span>,
-  anchored: <span class="n">true</span>
-}</code></pre>
-      </figure>
-    </div>
-    <div class="devgrid">
-      <div><h3>Agents à la carte</h3><p>Every agent is a separate tool over MCP or REST. Use one, several, or our orchestrator too. Priced per call.</p></div>
-      <div><h3>Verdicts you can debug</h3><p>Each answer returns its sources, rule versions and confidence scores, so your engineers can see why, not just what.</p></div>
-      <div><h3>Evaluations you can rerun</h3><p>We share the labeled test sets and accuracy reports for your documents. Your team can rerun them on every release.</p></div>
-      <div><h3>Your environment, your data</h3><p>Deploy in your cloud with your keys. Your data never trains models for anyone else.</p></div>
-    </div>
-    <div class="ctas devcta">
-      <a class="btn btn-solid" href="#contact" data-interest="Sandbox and API access">Request sandbox access</a>
-      <a class="btn btn-ghost" href="#contact">Talk to an engineer</a>
-    </div>
-  </div>
-</section>
-
-<section class="dark" id="trust">
-  <div class="wrap">
-    <div class="two">
-      <div>
-        <h3>Fits the systems you already run</h3>
-        <ul>
-          <li><b>API and webhooks</b>Push events in, get verdicts and holds back.</li>
-          <li><b>ERP integration</b>Compliance status travels with the lot or batch inside SAP and similar systems.</li>
-          <li><b>File drops for legacy sites</b>Prove value before a system migration reaches that site.</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Trust and IP</h3>
-        <ul>
-          <li><b>Your data stays yours</b>Customer data is never used to train models for other customers.</li>
-          <li><b>Clear model ownership</b>Ownership of models fine-tuned on your data is agreed in the contract.</li>
-          <li><b>Deployment options</b>Hosted by us, in your cloud, or hybrid.</li>
-          <li><b>Patent-pending core</b>The orchestration and verification approach is protected and licensable.</li>
-        </ul>
-      </div>
-    </div>
+    <h2 class="title">VeriPura in the media.</h2>
+    <p class="intro">Programmes, press and profiles featuring VeriPura.</p>
+    <ul class="media">
+      <li><p class="src">Incubator programme, SPACE-F Batch 7, Thailand</p><h3><a href="https://www.space-f.co/" target="_blank" rel="noopener noreferrer">VeriPura in SPACE-F</a></h3><p>VeriPura took part in the SPACE-F Batch 7 incubator, Thailand's FoodTech incubator and accelerator, in the food safety, traceability and shelf-life category.</p></li>
+    </ul>
   </div>
 </section>
 
@@ -752,7 +565,7 @@ check_compliance({
         <div class="person"><div><h3>John Wotherspoon, CTO</h3><p>35+ years in enterprise solutions architecture, including SAP delivery, and a decade building blockchain products for real-world use cases.</p></div></div>
       </div>
     </div>
-    <form id="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+    <form id="form" action="https://formspree.io/f/xvkzqnzr" method="POST" novalidate>
       <input type="hidden" name="_subject" value="New enquiry from veripura.com">
       <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
       <div class="row">
@@ -764,9 +577,8 @@ check_compliance({
         <label>I'm interested in
           <select name="interest">
             <option>A co-development pilot</option>
-            <option>Licensing the core</option>
             <option>Managed agents</option>
-            <option>Sandbox and API access</option>
+            <option>Hosted API access</option>
             <option>Something else</option>
           </select>
         </label>
@@ -790,7 +602,7 @@ check_compliance({
       <p class="sent" id="sent" role="status">Sent. Someone from our team will reply within one business day.</p>
       <p class="formerr" id="formerr" role="alert" style="display:none;font-weight:600;color:var(--miss)">Something went wrong. Please email us or book a call instead.</p>
       <p class="formnote">We use your details only to reply to your request. <a href="privacy.html">Privacy notice</a>.</p>
-      <p class="formnote">Prefer to talk first? <a href="https://calendar.app.google/Xe4rLSCFsGeATWD49">Book a call</a>.</p>
+      <p class="formnote">Prefer to talk first? <a href="https://calendar.app.google/UpE7dGj2z54ZJy8K7">Book a call</a>.</p>
     </form>
   </div>
 </section>
@@ -798,7 +610,8 @@ check_compliance({
 <footer>
   <div class="wrap">
     <span>VeriPura Core is part of VeriPura. © 2026</span>
-    <span><a href="privacy.html">Privacy</a>  |  <a href="food.html">VeriPura Food™</a>  |  <a href="https://investors.veripura.com/">Investor relations</a></span>
+    <span><a href="#about">About</a>  |  <a href="#media">In the media</a>  |  <a href="core.html">VeriPura Core</a>  |  <a href="privacy.html">Privacy</a>  |  <a href="food.html">VeriPura Food™</a></span>
+    <div class="social" aria-label="VeriPura on social media"><a href="https://www.linkedin.com/company/veripura/" target="_blank" rel="noopener noreferrer" aria-label="VeriPura on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a><a href="https://x.com/VeriPura" target="_blank" rel="noopener noreferrer" aria-label="VeriPura on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="https://www.instagram.com/veri.pura/" target="_blank" rel="noopener noreferrer" aria-label="VeriPura on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.64-.07-4.85s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.69.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg></a><a href="https://t.me/VeriPura" target="_blank" rel="noopener noreferrer" aria-label="VeriPura on Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.01-1.252-.242-1.865-.44-.752-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a></div>
   </div>
 </footer>
 
@@ -821,40 +634,23 @@ check_compliance({
   const items=[...document.querySelectorAll('#checks li')];
   const verdict=document.getElementById('verdict');
   const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const finish=()=>{verdict.textContent='Hold: 1 missing, 1 flag';verdict.classList.add('hold');};
+  const finish=()=>{verdict.textContent='Review: 1 missing, 1 flag';verdict.classList.add('hold');};
   if(reduce){items.forEach(li=>li.classList.add('on'));finish();return;}
   items.forEach((li,i)=>setTimeout(()=>li.classList.add('on'),500+i*550));
   setTimeout(finish,500+items.length*550);
 })();
 
-// Tabs with arrow-key support
-(function(){
-  const tabs=[...document.querySelectorAll('[role="tab"]')];
-  const select=t=>{
-    tabs.forEach(x=>{const on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});
-    t.focus();
-  };
-  tabs.forEach((t,i)=>{
-    t.addEventListener('click',()=>select(t));
-    t.addEventListener('keydown',e=>{
-      const k=e.key;
-      if(['ArrowDown','ArrowRight'].includes(k)){e.preventDefault();select(tabs[(i+1)%tabs.length]);}
-      if(['ArrowUp','ArrowLeft'].includes(k)){e.preventDefault();select(tabs[(i-1+tabs.length)%tabs.length]);}
-    });
-  });
-})();
 
 // Preselect interest from developer CTA
 document.querySelectorAll('[data-interest]').forEach(a=>a.addEventListener('click',()=>{const s=document.querySelector('select[name="interest"]');if(s)s.value=a.dataset.interest;}));
 
-// Form submission: set FORM_ENDPOINT to your Formspree URL to make it live
+// Form submission via Formspree (AJAX)
 (function(){
   const form=document.getElementById('form'),sent=document.getElementById('sent'),err=document.getElementById('formerr');
   const endpoint=form.getAttribute('action');
   form.addEventListener('submit',async e=>{
     e.preventDefault();
     if(!form.checkValidity()){form.reportValidity();return;}
-    if(endpoint.includes('YOUR_FORM_ID')){sent.style.display='block';return;} // mockup mode
     const btn=form.querySelector('button[type="submit"]');btn.disabled=true;err.style.display='none';
     try{
       const r=await fetch(endpoint,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
@@ -866,3 +662,5 @@ document.querySelectorAll('[data-interest]').forEach(a=>a.addEventListener('clic
 </script>
 </body>
 </html>
+
+</body></html>
