@@ -8,12 +8,13 @@ Use this for every industry solution page and every tool that lives under one (f
 
 ## 1. Naming and brand
 
-- Company and landing page: **VeriPura**.
+- Company and landing page: **VeriPura™**. The brand carries the ™ mark, so does every product and solution name built on it.
+- **™ rule:** put ™ (as `<sup class="tm">™</sup>`) on the header lockup, on the first mention of the brand in the hero or page text, and after each product or solution name (VeriPura Core™, VeriPura Food™, VeriPura Halal Guardian™). Do not repeat it on every mention in running text. Plain text contexts (email, page titles, meta descriptions) use "VeriPura™" once.
 - Product engine: **VeriPura Core™**. Core is a product, not the company name.
 - Industry solutions: **VeriPura Food™**, then Building Supplies, Cosmetics, Supplements, Pharma. Never "Edition".
-- Tools inside a solution: plain product names, for example Consignment Check, Label Validator, Halal Guardian. Full name on first use: "VeriPura Halal Guardian".
+- Tools inside a solution: plain product names, for example Consignment Check, Label Validator, Halal Guardian. Full name on first use: "VeriPura Halal Guardian™".
 - Only Food is live. Other industries are shown as examples (dashed card, "Example" tag).
-- Header lockup: logo mark (30px) + "VeriPura" + industry word in the accent color + small superscript ™. Markup: `<a class="brand"><img class="logo"><span>VeriPura <span class="prod">Food</span><sup class="tm">™</sup></span></a>`.
+- Header lockup: logo mark (30px) + "VeriPura" + industry word in the accent color + small superscript ™. Industry pages: `<a class="brand"><img class="logo"><span>VeriPura <span class="prod">Food</span><sup class="tm">™</sup></span></a>`. Landing page (no industry word): `<span>VeriPura<sup class="tm">™</sup></span>`.
 - A solution page shows "Built on VeriPura Core™" as a small link beside the nav buttons (hidden under 1180px).
 - No emoji in the brand, headings, nav or buttons.
 
@@ -144,12 +145,12 @@ Current page (from the copy provided): dark navy with emerald and gold accents, 
 Do:
 1. Replace the palette with the section 3 tokens, light by default with the dark toggle. Use the **Food accent** (#0B7285), not green or gold.
 2. Swap fonts for Schibsted Grotesk and JetBrains Mono. Remove serif headlines.
-3. Header: logo mark + "VeriPura Halal Guardian" with the tool name in the accent color, ™ superscript, "Built on VeriPura Core™" link, theme toggle, "Sign in" button. Add a "VeriPura Food" link back to veripura.com food page. Remove the emoji.
+3. Header: logo mark + "VeriPura Halal Guardian" with the tool name in the accent color, ™ superscript after the full name, "Built on VeriPura Core™" link, theme toggle, "Sign in" button. Add a "VeriPura Food" link back to veripura.com food page. Remove the emoji.
 4. Hero: kicker "VeriPura Food™ tool", H1 in sentence case ("Review halal packaging artwork before it goes to print."), lede 20px, solid CTA "Upload artwork", ghost CTA "Try sample artwork".
 5. Market selector: pill buttons using `.toolstrip` styling; the "More" list in a dropdown. Selected pill uses `--ink` fill.
 6. Results panel: use the evidence-folder pattern with Done, Review and Mismatch tags. Show findings and the fixes needed. Keep a score only if it is labeled as an information score, not a verdict, and never as pass or fail.
 7. Pricing: three `.model` cards, the lead card (best value) with the offset shadow. One solid button per card.
-8. Footer: Terms, Privacy, FAQ, Press, copyright line "VeriPura™", "Powered by VeriPura™ Core". Replace the "Food Label Artwork Validator" copyright text.
+8. Footer: Terms, Privacy, FAQ, Press, copyright line "VeriPura™", "Powered by VeriPura Core™". Replace the "Food Label Artwork Validator" copyright text.
 9. Fix the stylesheet: load fonts with `<link>`, not a late `@import`; fix the `aria-labelledby` ids reported by Chrome.
 10. Add breadcrumbs (Home / Food / Halal Guardian) or a back link, favicons from section 9, and the same dark mode behavior.
 
