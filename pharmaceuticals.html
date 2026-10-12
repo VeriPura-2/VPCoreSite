@@ -386,6 +386,40 @@ ol.flow.light p{color:var(--ink-2);font-weight:500}
 .crumbs a{color:var(--slate);text-decoration:none}
 .crumbs a:hover{color:var(--seal);text-decoration:underline}
 .crumbs [aria-current]{color:var(--ink);font-weight:600}
+
+/* Mobile and tablet pass: media queries only, desktop layout above 1120px is unchanged */
+.menu-toggle{display:none}
+.menu-cta{display:none}
+@media (max-width:1120px){
+  .menu-toggle{all:unset;display:inline-flex;align-items:center;gap:8px;cursor:pointer;font:600 14px/1 var(--sans);color:var(--ink);padding:0 14px;min-height:44px;box-sizing:border-box;border:1.5px solid var(--line);border-radius:8px}
+  .menu-toggle:focus-visible{outline:3px solid var(--seal);outline-offset:2px}
+  .nav ul.open{display:flex;flex-direction:column;gap:0;position:absolute;left:0;right:0;top:100%;background:var(--paper);border-bottom:1px solid var(--line);padding:6px 20px 14px;box-shadow:0 12px 24px rgba(15,36,68,.12)}
+  .nav ul.open li{border-bottom:1px solid var(--line)}
+  .nav ul.open li:last-child{border-bottom:0}
+  .nav ul.open a{display:flex;align-items:center;min-height:48px;font-size:16px}
+}
+@media (max-width:640px){
+  .nav ul.open li.menu-cta{display:block;padding-top:12px;border-bottom:0}
+  .nav ul.open li.menu-cta a{justify-content:center;background:var(--ink);color:var(--white);border-radius:8px;font-weight:600}
+}
+@media (max-width:900px){
+  html,body{overflow-x:clip}
+  .theme-toggle{min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center}
+  .social a{width:44px;height:44px}
+  .social{gap:8px}
+  footer .wrap a{display:inline-block;padding:12px 4px}
+  .faq summary{padding:14px 0}
+  .tool a,.tools a{display:inline-block;padding:10px 0}
+}
+@media (max-width:480px){
+  .nav .wrap{gap:8px}
+  .nav-right{gap:8px}
+  .theme-toggle,.menu-toggle{padding-left:10px;padding-right:10px}
+  .brand{min-width:0;font-size:15px}
+  .brand span{white-space:normal;line-height:1.1}
+  .nav-right{flex:none}
+  .nav-right .btn{padding:11px 12px;font-size:14px}
+}
 </style>
 </head>
 <body>
@@ -759,6 +793,21 @@ document.querySelectorAll('[data-role]').forEach(a=>a.addEventListener('click',(
 (function(){
   const items=[...document.querySelectorAll('.crumbs li')].map((li,i)=>{const a=li.querySelector('a');return{"@type":"ListItem",position:i+1,name:li.textContent.trim(),item:a?new URL(a.getAttribute('href'),location.href).href:location.href.split('#')[0]};});
   const s=document.createElement('script');s.type='application/ld+json';s.text=JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:items});document.head.appendChild(s);
+})();
+
+// Mobile menu: the section links collapse into a button below 1120px
+(function(){
+  const ul=document.querySelector('.nav ul'),right=document.querySelector('.nav-right');
+  if(!ul||!right)return;
+  const btn=document.createElement('button');btn.type='button';btn.className='menu-toggle';btn.textContent='Menu';
+  btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-controls','navlinks');ul.id='navlinks';
+  right.insertBefore(btn,right.firstChild);
+  const cta=right.querySelector('.btn');
+  if(cta){const li=document.createElement('li');li.className='menu-cta';const a=document.createElement('a');a.href=cta.getAttribute('href');a.textContent=cta.textContent;li.appendChild(a);ul.appendChild(li);}
+  const set=o=>{ul.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);btn.textContent=o?'Close':'Menu';};
+  btn.addEventListener('click',()=>set(!ul.classList.contains('open')));
+  ul.addEventListener('click',e=>{if(e.target.closest('a'))set(false);});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')set(false);});
 })();
 </script>
 </body>
