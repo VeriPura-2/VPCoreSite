@@ -345,7 +345,7 @@ section.dark .kicker{background:rgba(255,255,255,.1);color:#9FE3EC}
 @media (max-width:760px){.vs{grid-template-columns:1fr}}
 
 /* Tools */
-.tools{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .tool{background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:26px;display:flex;flex-direction:column;gap:10px}
 .tool h3{margin:0;font-size:20px}
 .tool p{margin:0;color:var(--slate);font-weight:500;font-size:15.5px}
@@ -593,7 +593,7 @@ check_compliance({
     <div class="rulecards">
       <div class="tool"><h3>Border and food safety rules</h3><p>For example EU 2017/625, FDA FSMA and UK import requirements.</p></div>
       <div class="tool"><h3>Traceability and deforestation</h3><p>For example FSMA 204, EUDR and UK forest-risk rules.</p></div>
-      <div class="tool"><h3>Buyer-required certifications</h3><p>For example halal, organic and kosher, which differ by country and certifier.</p></div>
+      <div class="tool"><h3>Buyer-required certifications</h3><p>For example <a href="https://halal.veripura.com/">halal</a>, organic and kosher, which differ by country and certifier.</p></div>
       <div class="tool"><h3>Origin and trade documents</h3><p>For example certificates of origin, preferential origin claims, and orchard or establishment registrations.</p></div>
     </div>
 
@@ -609,10 +609,11 @@ check_compliance({
 <section id="tools">
   <div class="wrap">
     <h2 class="title">Try the food-tuned agents.</h2>
-    <p class="intro">Two ways to see the food-tuned agents at work. Sign in with Google, upload a document and see what they find. The same agents are available to your own systems through the API.</p>
+    <p class="intro">Three ways to see the food-tuned agents at work. Sign in with Google, upload a document and see what they find. The same agents are available to your own systems through the API.</p>
     <div class="tools">
       <div class="tool"><h3>Consignment Check</h3><p>Upload a purchase order. Up to 50 orchestrated agents identify the route, the regulatory framework and every document required. Then upload your documents to check each one, and the bundle as a whole.</p><a href="https://core.veripura.com/">Check a consignment</a></div>
       <div class="tool"><h3>Label</h3><p>Upload any food label and validate it against the labeling requirements of any country of destination.</p><a href="https://label.veripura.com/">Check a label</a></div>
+      <div class="tool"><h3>VeriPura Halal Guardian</h3><p>Upload packaging artwork and review it against halal requirements for Indonesia, Malaysia, the GCC and other export markets. You get findings to review before the artwork goes to print or to a certifier.</p><a href="https://halal.veripura.com/">Check halal artwork</a></div>
     </div>
   </div>
 </section>
