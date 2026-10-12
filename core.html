@@ -423,7 +423,7 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
     <ol class="flow">
       <li><span class="n">Step 1</span><h3>Receive the event</h3><p>A purchase order, receipt, work order, shipment or rule change arrives through API, ERP or file drop.</p></li>
       <li><span class="n">Step 2</span><h3>Load the rulebook</h3><p>The orchestrator attaches the right profile: product, origin, destination and jurisdiction.</p></li>
-      <li><span class="n">Step 3</span><h3>Run the specialists</h3><p>Agents work in parallel. Each returns pass, fail or missing evidence, with sources cited.</p></li>
+      <li><span class="n">Step 3</span><h3>Run the specialists</h3><p>Agents work in parallel. Each returns its findings or flags missing evidence, with sources cited.</p></li>
       <li><span class="n">Step 4</span><h3>Route to a decision</h3><p>Complete files go to your team to decide. Gaps and flags go to a named person with a drafted fix.</p></li>
     </ol>
     <div class="rules">
@@ -498,7 +498,7 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
     </div>
     <div class="eval">
       <h3>Measured, not promised</h3>
-      <p>Every pilot starts with a labeled test set from your own documents. We report extraction accuracy per field, flag precision and recall, and false-hold rate. Each reviewer decision becomes training data, so accuracy improves with use.</p>
+      <p>Every pilot measures accuracy for your documents. Each reviewer decision becomes training data, so accuracy improves with use.</p>
     </div>
   </div>
 </section>
