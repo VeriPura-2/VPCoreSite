@@ -8,6 +8,7 @@
 - Only VeriPura Food is live. Building Supplies, Cosmetics, Supplements and Pharma are examples of what VeriPura Core can be tuned for.
 - Teams can use VeriPura through the portal, or call the agents from their own systems through the hosted API.
 - Pilots start with one real consignment.
+- The orchestration and verification approach is covered under VeriPura's USPTO filing, U.S. provisional patent application 64/088,697.
 
 ## Pages
 

@@ -26,7 +26,7 @@ Use this for every industry solution page and every tool that lives under one (f
 4. **Access.** Hosted API only. No licensing, no deploy-in-your-cloud, no code handover. Say "engage the rules through our hosted API", never "plug our agents into your app".
 5. **No timelines or durations** (no "12-week pilot", no schedules) without Thomas's approval.
 6. **Accuracy claims.** Say "measured accuracy for your documents in every pilot". Do not promise labeled test sets or published accuracy reports.
-7. **Patent.** Exact wording: "covered under VeriPura's USPTO filing, U.S. provisional application 64/088,697". Never "protected".
+7. **Patent.** Exact wording: "covered under VeriPura's USPTO filing, U.S. provisional patent application 64/088,697". Never "protected".
 8. **No em dashes.** Use commas, periods or parentheses.
 9. Short sentences. Sentence case headings with a final period on section titles ("What we check."). Active voice. Concrete nouns (consignment, certificate, label, artwork).
 10. Unsubstantiated numbers (costs avoided, rejection fees) need a source or come out.
