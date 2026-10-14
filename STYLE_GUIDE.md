@@ -69,7 +69,7 @@ Industry accent (`--accent`, `--accent-bg`, dark accent in dark mode):
 
 **The accent is used in three places only:** the industry word in the header lockup, the kicker pill, and the hero evidence-folder border and offset shadow. Everything else is navy, slate and white. Do not introduce a new accent for a tool; it inherits its solution's accent.
 
-Dark mode: follows `prefers-color-scheme`, with a manual toggle ("Dark mode" button) that sets `data-theme` on `<html>` and is remembered. Every page defines tokens three times: light `:root`, `@media (prefers-color-scheme:dark){:root:not([data-theme="light"])}`, and `:root[data-theme="dark"]`. Pass, flag and miss colors are never the only signal; always pair with a label.
+Dark mode: follows `prefers-color-scheme`, with a manual toggle (a sun or moon icon button) that sets `data-theme` on `<html>` and is remembered. Every page defines tokens three times: light `:root`, `@media (prefers-color-scheme:dark){:root:not([data-theme="light"])}`, and `:root[data-theme="dark"]`. Pass, flag and miss colors are never the only signal; always pair with a label.
 
 ## 4. Typography
 
@@ -94,7 +94,7 @@ Dark mode: follows `prefers-color-scheme`, with a manual toggle ("Dark mode" but
 
 - **Nav**: sticky, blurred `--nav-bg`, 64px high. Links 15px weight 500. Right side: "Built on VeriPura Core™", theme toggle, solid CTA button. Below 1120px the links collapse into a Menu button with 48px rows; below 640px the nav CTA moves into the menu.
 - **Food tools dropdown** (solution pages with several tools): label "Food tools" with a chevron. Opens on hover, focus or click, Escape closes. Items are tool name plus a one-line description. In the mobile menu it shows as a flat list.
-- **Breadcrumbs**: under the nav on every page except the landing page. Home / Industry solutions / This page. Matching JSON-LD is built in the browser.
+- **Breadcrumbs**: under the nav on every page except the landing page. Home / Industry solutions / This page. Matching JSON-LD is written into the page HTML with canonical URLs.
 - **Buttons**: `.btn` 15px weight 600, padding 13px 18px, 8px radius. `.btn-solid` for the single primary action, `.btn-ghost` for secondary. One solid button per view.
 - **Tool strip**: pill links under the hero naming the solution's tools.
 - **Tool card** (`.tool`): surface, 1.5px line border, title, two or three sentences, one text link pinned to the bottom. Three across on desktop.
