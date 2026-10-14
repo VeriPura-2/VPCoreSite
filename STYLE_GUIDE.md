@@ -74,7 +74,7 @@ Dark mode: follows `prefers-color-scheme`, with a manual toggle (a sun or moon i
 ## 4. Typography
 
 - Sans: **Schibsted Grotesk** (400 to 900), fallback `system-ui`. Mono: **JetBrains Mono** (400, 500) for step numbers and code.
-- Load from Google Fonts with `<link>` tags (preconnect first). Do not use CSS `@import`, it breaks if not on the first line.
+- Self-hosted from `/fonts/` (variable Schibsted Grotesk, JetBrains Mono 400 and 500, latin and latin-ext, woff2). Declare with `@font-face` and `font-display:swap` at the top of the page stylesheet, and preload the main sans file. Do not load fonts from Google Fonts or any third party.
 - Body 17px, line-height 1.55, weight 450. Supporting copy weight 500.
 - H1: `clamp(40px,5.6vw,68px)`, weight 800, line-height 1.02, letter-spacing -.03em, max 12ch.
 - Section title (`h2.title`): `clamp(30px,3.6vw,44px)`, weight 800, letter-spacing -.02em, max 20ch.
@@ -151,7 +151,7 @@ Do:
 6. Results panel: use the evidence-folder pattern with Done, Review and Mismatch tags. Show findings and the fixes needed. Keep a score only if it is labeled as an information score, not a verdict, and never as pass or fail.
 7. Pricing: three `.model` cards, the lead card (best value) with the offset shadow. One solid button per card.
 8. Footer: Terms, Privacy, FAQ, Press, copyright line "VeriPura™", "Powered by VeriPura Core™". Replace the "Food Label Artwork Validator" copyright text.
-9. Fix the stylesheet: load fonts with `<link>`, not a late `@import`; fix the `aria-labelledby` ids reported by Chrome.
+9. Fix the stylesheet: self-host fonts with `@font-face`, not a late `@import`; fix the `aria-labelledby` ids reported by Chrome.
 10. Add breadcrumbs (Home / Food / Halal Guardian) or a back link, favicons from section 9, and the same dark mode behavior.
 
 Copy to change (rules in section 2):
