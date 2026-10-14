@@ -22,7 +22,7 @@ Use this for every industry solution page and every tool that lives under one (f
 
 1. **Information, not decisions.** VeriPura never approves, clears or passes a shipment or artwork. Use "findings", "review", "what to review and fix". Never "Hold", "Cleared", "Pass", "Fail", "Approved", "Compliant", "Guaranteed", "Assurance".
 2. The user's team makes the decision. Say so where results are shown ("Your team makes the decision").
-3. **Maturity.** Anything not built is labeled "Under development". Do not describe it as available.
+3. **Maturity.** Anything not built is labeled "Under development". Do not describe it as available. The exception is code figures, which carry the single label "Illustrative".
 4. **Access.** Hosted API only. No licensing, no deploy-in-your-cloud, no code handover. Say "engage the rules through our hosted API", never "plug our agents into your app".
 5. **No timelines or durations** (no "12-week pilot", no schedules) without Thomas's approval.
 6. **Accuracy claims.** Say "measured accuracy for your documents in every pilot". Do not promise labeled test sets or published accuracy reports.
