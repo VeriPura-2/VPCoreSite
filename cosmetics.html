@@ -173,6 +173,8 @@ ol.flow{margin:0;padding:0}
 .status.live{background:var(--pass-bg);color:var(--pass)}
 .status.cfg{background:var(--tint-2);color:var(--seal)}
 .status.dev{background:var(--flag-bg);color:var(--flag)}
+a.status{text-decoration:none}
+a.status:hover{text-decoration:underline}
 .legend{margin-top:32px;font-size:14px;color:var(--slate);display:flex;gap:18px;flex-wrap:wrap;align-items:center}
 @media (max-width:900px){.lib{grid-template-columns:1fr}.lib .col + .col{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
 
@@ -473,7 +475,7 @@ ol.flow.light p{color:var(--ink-2);font-weight:500}
 <header class="hero" id="top">
   <div class="wrap">
     <div>
-      <span class="kicker">VeriPura Core™, tuned for cosmetics <span class="status dev" style="margin-left:8px">Under development</span></span>
+      <span class="kicker">VeriPura Core™, tuned for cosmetics <a class="status cfg" href="#contact" style="margin-left:8px">Discuss a pilot</a></span>
       <h1>Stop banned ingredients at the document, not the border.</h1>
       <p class="lede">VeriPura Cosmetics™ is VeriPura Core tuned for cosmetics. Agents trained on ingredient, labeling, claims and registration rules check every document against the requirements of any country of origin and any country of destination before the shipment moves, not at the border. Each shipment gets findings, the fixes it needs, and a record anyone can verify. Engage it from your own systems, or have us run the checks for you.</p>
       <div class="ctas">
