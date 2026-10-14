@@ -30,7 +30,7 @@ Use this for every industry solution page and every tool that lives under one (f
 8. **No em dashes.** Use commas, periods or parentheses.
 9. Short sentences. Sentence case headings with a final period on section titles ("What we check."). Active voice. Concrete nouns (consignment, certificate, label, artwork).
 10. Unsubstantiated numbers (costs avoided, rejection fees) need a source or come out.
-11. CTA wording: "Send us a shipment" for pilots on Food pages, "Check a label", "Check halal artwork" for tools. Not "Free check".
+11. CTA wording: "Free trial" on Food pages. "Discuss a pilot" on all other industry pages. "Check a label", "Check halal artwork" for tools. Not "Send us a shipment" or "Free check". The page does not state trial length or terms (see rule 5); the CTA leads to a conversation.
 
 ## 3. Color
 
