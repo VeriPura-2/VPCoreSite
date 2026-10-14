@@ -342,15 +342,16 @@ tbody tr:last-child td{border-bottom:0}
 .person .av.initials{display:grid;place-items:center;font-weight:700;font-size:20px;color:var(--ink-2);background:var(--tint-2)}
 .person h3{margin:0;font-size:17px}
 .person p{margin:2px 0 0;font-size:15px;color:var(--slate)}
-form{background:var(--surface);border:1.5px solid var(--ink);border-radius:14px;padding:28px;display:grid;gap:16px}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-label{font-size:14px;font-weight:600;display:grid;gap:6px}
+form{background:var(--surface);border:1.5px solid var(--ink);border-radius:14px;padding:28px;display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+label{font-size:14px;font-weight:600;display:grid;gap:6px;min-width:0}
+input,select,textarea{width:100%;min-width:0;max-width:100%}
 input,select,textarea{font:inherit;font-size:16px;padding:11px 12px;border:1.5px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)}
 input:focus,select:focus,textarea:focus{outline:none;border-color:var(--seal);box-shadow:0 0 0 3px rgba(46,85,201,.18)}
 textarea{min-height:120px;resize:vertical}
 .formnote{font-size:13.5px;color:var(--slate);margin:0}
 .sent{display:none;font-weight:600;color:var(--pass)}
-@media (max-width:860px){.contact{grid-template-columns:1fr}.row{grid-template-columns:1fr}}
+@media (max-width:860px){.contact{grid-template-columns:minmax(0,1fr)}.row{grid-template-columns:minmax(0,1fr)}}
 
 footer{padding:36px 0;font-size:14px;color:var(--slate);border-top:1px solid var(--line)}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
