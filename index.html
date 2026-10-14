@@ -953,23 +953,24 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
   // Start: first visit shows Food; later visits start at the next industry after the last one shown
   let cur=0;
   try{const s=localStorage.getItem('vp-folder');const k=DATA.findIndex(d=>d.id===s);cur=k<0?0:(k+1)%N;}catch(e){cur=Math.floor(Math.random()*N);}
-  let timers=[],shown=0,userPaused=false,hovering=false;
+  let timers=[],shown=0,userPaused=false,hovering=false,done=false;
   const clear=()=>{timers.forEach(clearTimeout);timers=[];};
   const reset=e=>{e.querySelectorAll('.checks li').forEach(li=>li.classList.remove('on'));const v=e.querySelector('.verdict');v.textContent='Checking';v.classList.remove('hold');};
   const setLabel=d=>{
     const name=d.live?'VeriPura Food<sup class="tm">™</sup>':esc(d.name);
-    label.innerHTML='<a href="'+d.href+'">'+name+'</a>'+(d.live?'<span class="status live">Live</span>':'<span class="eg">Example</span>')+'<span class="sp"></span>'+(reduce||N<2?'':'<button class="folder-pause" type="button" aria-pressed="'+userPaused+'">'+(userPaused?'Play':'Pause')+'</button>');
+    label.innerHTML='<a href="'+d.href+'">'+name+'</a>'+(d.live?'<span class="status live">Live</span>':'<span class="eg">Example</span>')+'<span class="sp"></span>'+(reduce||N<2?'':'<button class="folder-pause" type="button" aria-pressed="'+userPaused+'">'+btnText()+'</button>');
   };
+  const btnText=()=>done?'Replay':(userPaused?'Play':'Pause');
   const held=()=>userPaused||hovering||document.hidden;
   function show(i){
-    clear();cur=i;shown++;
+    clear();cur=i;shown++;done=false;
     const d=DATA[i],e=els[i];
     reset(e);
     els.forEach((x,k)=>{x.classList.toggle('is-active',k===i);x.setAttribute('aria-hidden',k===i?'false':'true');});
     setLabel(d);
     try{localStorage.setItem('vp-folder',d.id);}catch(_){}
     const items=[...e.querySelectorAll('.checks li')],v=e.querySelector('.verdict');
-    const finish=()=>{v.textContent=d.verdict;v.classList.add('hold');};
+    const finish=()=>{v.textContent=d.verdict;v.classList.add('hold');if(shown>=N){done=true;const b=label.querySelector('.folder-pause');if(b)b.textContent=btnText();}};
     if(reduce){items.forEach(li=>li.classList.add('on'));finish();return;}
     items.forEach((li,k)=>timers.push(setTimeout(()=>li.classList.add('on'),500+k*550)));
     timers.push(setTimeout(finish,500+items.length*550));
@@ -984,11 +985,12 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
   }
   label.addEventListener('click',e=>{
     const b=e.target.closest('.folder-pause');if(!b)return;
+    if(done||(userPaused&&shown>=N)){userPaused=false;hovering=false;shown=0;show((cur+1)%N);return;} // pass finished: Play/Replay starts a new pass
     userPaused=!userPaused;if(!userPaused)hovering=false;
-    b.setAttribute('aria-pressed',userPaused);b.textContent=userPaused?'Play':'Pause';
+    b.setAttribute('aria-pressed',userPaused);b.textContent=btnText();
   });
-  box.addEventListener('mouseenter',()=>{hovering=true;});
-  box.addEventListener('mouseleave',()=>{hovering=false;});
+  box.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')hovering=true;});
+  box.addEventListener('pointerleave',e=>{if(e.pointerType==='mouse')hovering=false;});
   box.addEventListener('focusin',()=>{hovering=true;});
   box.addEventListener('focusout',()=>{hovering=false;});
   show(cur);
