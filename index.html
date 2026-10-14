@@ -157,6 +157,18 @@ a{color:var(--seal)}
 .anchor{padding:14px 20px;background:var(--brand);color:var(--brand-text);font-family:var(--mono);font-size:12.5px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .anchor b{color:var(--on-brand);font-weight:500}
 .folder-foot{font-size:12.5px;color:var(--slate);padding:10px 20px;background:var(--paper);border-top:1px solid var(--line)}
+.folderbox{min-width:0}
+.folder-label{display:flex;align-items:center;gap:10px;margin:0 0 12px;font-size:14px;font-weight:600}
+.folder-label a{color:var(--ink);text-decoration:none}
+.folder-label a:hover{color:var(--seal)}
+.folder-label .sp{flex:1}
+.folder-pause{all:unset;cursor:pointer;font:600 13px/1 var(--sans);color:var(--slate);padding:8px 10px;margin:-8px -10px -8px 0;border-radius:6px}
+.folder-pause:hover{color:var(--seal)}
+.folder-pause:focus-visible{outline:3px solid var(--seal);outline-offset:2px}
+.folder-stack{display:grid}
+.folder-stack .folder{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .45s ease,visibility 0s linear .45s}
+.folder-stack .folder.is-active{opacity:1;visibility:visible;transition:opacity .45s ease,visibility 0s}
+@media (prefers-reduced-motion:reduce){.folder-stack .folder,.folder-stack .folder.is-active{transition:none}}
 
 /* Sections */
 section{padding:88px 0}
@@ -425,24 +437,29 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
       <p class="note">Patent-pending. 50+ specialist agents, tuned first for food in VeriPura Food™.</p>
     </div>
 
-    <div class="folder" aria-label="Illustrative evidence folder">
+    <div class="folderbox" id="folderbox">
+      <div class="folder-label" id="folderlabel"><a href="food.html">VeriPura Food<sup class="tm">™</sup></a><span class="status live">Live</span></div>
+      <div class="folder-stack" id="folderstack">
+    <div class="folder is-active" aria-label="Illustrative evidence folder: VeriPura Food™">
       <div class="folder-head">
         <div>
-          <h2>Evidence folder: inbound plywood lot 4471-B</h2>
-          <p>Imported via Malaysia, delivering to a job in Broward County, FL</p>
+          <h2>Evidence folder: chilled beef consignment BR-2207</h2>
+          <p>Santos, Brazil to Tilbury, United Kingdom</p>
         </div>
-        <span class="verdict" id="verdict">Checking</span>
+        <span class="verdict">Checking</span>
       </div>
-      <ul class="checks" id="checks">
-        <li class="pass"><span class="dot"></span><div><strong>Rules found</strong><span class="d">14 requirements across federal, state and county</span></div><span class="tag">Done</span></li>
-        <li class="pass"><span class="dot"></span><div><strong>HS code assigned</strong><span class="d">4412.31, in Lacey Act and AD/CVD scope</span></div><span class="tag">Done</span></li>
-        <li class="pass"><span class="dot"></span><div><strong>Documents read</strong><span class="d">212 fields extracted from 8 documents</span></div><span class="tag">Done</span></li>
-        <li class="miss"><span class="dot"></span><div><strong>Lacey declaration</strong><span class="d">Species and country of harvest missing for core veneer</span></div><span class="tag">Missing</span></li>
-        <li class="flag"><span class="dot"></span><div><strong>Red-flag screen</strong><span class="d">Price 18% below market on a duty-covered product</span></div><span class="tag">Flagged</span></li>
-        <li class="pass"><span class="dot"></span><div><strong>Jurisdiction check</strong><span class="d">Product approval valid for high-velocity hurricane zone</span></div><span class="tag">Pass</span></li>
+      <ul class="checks">
+        <li class="pass"><span class="dot"></span><div><strong>Rules found</strong><span class="d">UK import, health certificate and forest-risk requirements</span></div><span class="tag">Done</span></li>
+        <li class="pass"><span class="dot"></span><div><strong>HS code assigned</strong><span class="d">0201.30, fresh or chilled boneless beef</span></div><span class="tag">Done</span></li>
+        <li class="pass"><span class="dot"></span><div><strong>Documents read</strong><span class="d">Health certificate, origin, cold chain and due diligence records</span></div><span class="tag">Done</span></li>
+        <li class="miss"><span class="dot"></span><div><strong>Export health certificate</strong><span class="d">Establishment number not on the approved UK list</span></div><span class="tag">Mismatch</span></li>
+        <li class="flag"><span class="dot"></span><div><strong>Forest-risk due diligence</strong><span class="d">Geolocation record missing for one supplier farm</span></div><span class="tag">Flagged</span></li>
+        <li class="pass"><span class="dot"></span><div><strong>Cold chain log</strong><span class="d">Format accepted, temperature record complete</span></div><span class="tag">Matched</span></li>
       </ul>
-      <div class="anchor"><span>Anchored <b>0x9f3c71…e21a</b></span><span>Routed to <b>Trade compliance</b></span></div>
+      <div class="anchor"><span>Anchored <b>0x4b17a2…c90d</b></span><span>Routed to <b>Import compliance</b></span></div>
       <div class="folder-foot">Illustrative example. All data is fictional. Your team makes the decision.</div>
+    </div>
+      </div>
     </div>
   </div>
 </header>
@@ -670,15 +687,311 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
   btn.addEventListener('click',()=>{const next=isDark()?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('vp-theme',next);}catch(e){}label();});
 })();
 
-// One orchestrated moment: the evidence folder fills in on load
+// Rotating evidence folders: one industry per visit start (next in sequence), then one pass through all five
 (function(){
-  const items=[...document.querySelectorAll('#checks li')];
-  const verdict=document.getElementById('verdict');
+  const DATA=[
+ {
+  "id": "food",
+  "name": "VeriPura Food™",
+  "href": "food.html",
+  "live": true,
+  "title": "Evidence folder: chilled beef consignment BR-2207",
+  "sub": "Santos, Brazil to Tilbury, United Kingdom",
+  "rows": [
+   [
+    "pass",
+    "Rules found",
+    "UK import, health certificate and forest-risk requirements",
+    "Done"
+   ],
+   [
+    "pass",
+    "HS code assigned",
+    "0201.30, fresh or chilled boneless beef",
+    "Done"
+   ],
+   [
+    "pass",
+    "Documents read",
+    "Health certificate, origin, cold chain and due diligence records",
+    "Done"
+   ],
+   [
+    "miss",
+    "Export health certificate",
+    "Establishment number not on the approved UK list",
+    "Mismatch"
+   ],
+   [
+    "flag",
+    "Forest-risk due diligence",
+    "Geolocation record missing for one supplier farm",
+    "Flagged"
+   ],
+   [
+    "pass",
+    "Cold chain log",
+    "Format accepted, temperature record complete",
+    "Matched"
+   ]
+  ],
+  "hash": "0x4b17a2…c90d",
+  "route": "Import compliance",
+  "verdict": "Review: 1 mismatch, 1 flag"
+ },
+ {
+  "id": "building-supplies",
+  "name": "Building Supplies",
+  "href": "building-supplies.html",
+  "live": false,
+  "title": "Evidence folder: hardwood plywood shipment HP-5520",
+  "sub": "Haiphong, Vietnam to Savannah, United States",
+  "rows": [
+   [
+    "pass",
+    "Rules found",
+    "US import, duty order, Lacey Act and formaldehyde requirements",
+    "Done"
+   ],
+   [
+    "pass",
+    "HS code assigned",
+    "4412.33, plywood with hardwood outer plies",
+    "Done"
+   ],
+   [
+    "pass",
+    "Documents read",
+    "Commercial invoice, certificate of origin, Lacey Act declaration, formaldehyde certificate",
+    "Done"
+   ],
+   [
+    "miss",
+    "Certificate of origin",
+    "Veneer supplier located outside the stated country of origin",
+    "Mismatch"
+   ],
+   [
+    "flag",
+    "Lacey Act declaration",
+    "Species name missing for the core veneer",
+    "Flagged"
+   ],
+   [
+    "pass",
+    "Formaldehyde certification",
+    "Certifier record confirmed with the third-party certifier",
+    "Matched"
+   ]
+  ],
+  "hash": "0x4b17a2…c90d",
+  "route": "Trade compliance",
+  "verdict": "Review: 1 mismatch, 1 flag"
+ },
+ {
+  "id": "cosmetics",
+  "name": "Cosmetics",
+  "href": "cosmetics.html",
+  "live": false,
+  "title": "Evidence folder: face serum shipment CS-4418",
+  "sub": "Busan, South Korea to Los Angeles, United States",
+  "rows": [
+   [
+    "pass",
+    "Rules found",
+    "US cosmetics, color additive and labeling requirements",
+    "Done"
+   ],
+   [
+    "pass",
+    "HS code assigned",
+    "3304.99, skin care preparations",
+    "Done"
+   ],
+   [
+    "pass",
+    "Documents read",
+    "Formula, ingredient list, label artwork, certificate of analysis",
+    "Done"
+   ],
+   [
+    "miss",
+    "Label claims",
+    "Claim \"treats acne\" makes the product a drug in the US",
+    "Mismatch"
+   ],
+   [
+    "flag",
+    "Color additive",
+    "Batch certification reference missing for one colorant",
+    "Flagged"
+   ],
+   [
+    "pass",
+    "Ingredient list",
+    "No prohibited substances for the destination",
+    "Matched"
+   ]
+  ],
+  "hash": "0x4b17a2…c90d",
+  "route": "Regulatory affairs",
+  "verdict": "Review: 1 mismatch, 1 flag"
+ },
+ {
+  "id": "supplements",
+  "name": "Vitamins and Supplements",
+  "href": "supplements.html",
+  "live": false,
+  "title": "Evidence folder: botanical capsules shipment VS-6203",
+  "sub": "Mumbai, India to Hamburg, Germany",
+  "rows": [
+   [
+    "pass",
+    "Rules found",
+    "EU food supplement, novel food and labeling requirements",
+    "Done"
+   ],
+   [
+    "pass",
+    "HS code assigned",
+    "2106.90, food preparations not elsewhere specified",
+    "Done"
+   ],
+   [
+    "pass",
+    "Documents read",
+    "Formula, certificate of analysis, label artwork, certificate of origin",
+    "Done"
+   ],
+   [
+    "miss",
+    "Botanical ingredient",
+    "Ingredient not authorised as a food in the EU",
+    "Mismatch"
+   ],
+   [
+    "flag",
+    "Health claim",
+    "Claim wording differs from the authorised EU claim",
+    "Flagged"
+   ],
+   [
+    "pass",
+    "Certificate of analysis",
+    "Results confirmed with the issuing laboratory",
+    "Matched"
+   ]
+  ],
+  "hash": "0x4b17a2…c90d",
+  "route": "Quality and regulatory",
+  "verdict": "Review: 1 mismatch, 1 flag"
+ },
+ {
+  "id": "pharmaceuticals",
+  "name": "Pharmaceuticals",
+  "href": "pharmaceuticals.html",
+  "live": false,
+  "title": "Evidence folder: active ingredient shipment PH-7731",
+  "sub": "Hyderabad, India to Antwerp, Belgium",
+  "rows": [
+   [
+    "pass",
+    "Rules found",
+    "EU import, GMP and active substance requirements",
+    "Done"
+   ],
+   [
+    "pass",
+    "HS code assigned",
+    "2941.10, penicillins and their derivatives",
+    "Done"
+   ],
+   [
+    "pass",
+    "Documents read",
+    "Certificate of analysis, GMP certificate, written confirmation, temperature log",
+    "Done"
+   ],
+   [
+    "miss",
+    "Written confirmation",
+    "Manufacturing site differs from the site on the GMP certificate",
+    "Mismatch"
+   ],
+   [
+    "flag",
+    "Temperature log",
+    "Gap in the temperature record during transit",
+    "Flagged"
+   ],
+   [
+    "pass",
+    "GMP certificate",
+    "Certificate confirmed in the public EU GMP database",
+    "Matched"
+   ]
+  ],
+  "hash": "0x4b17a2…c90d",
+  "route": "Quality assurance",
+  "verdict": "Review: 1 mismatch, 1 flag"
+ }
+];
+  const DWELL=6000; // each folder stays about 6 seconds (5 to 7 range)
+  const stack=document.getElementById('folderstack'),label=document.getElementById('folderlabel'),box=document.getElementById('folderbox');
+  if(!stack||!label||!box)return;
   const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const finish=()=>{verdict.textContent='Review: 1 missing, 1 flag';verdict.classList.add('hold');};
-  if(reduce){items.forEach(li=>li.classList.add('on'));finish();return;}
-  items.forEach((li,i)=>setTimeout(()=>li.classList.add('on'),500+i*550));
-  setTimeout(finish,500+items.length*550);
+  const esc=t=>String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  const build=d=>{
+    const rows=d.rows.map(r=>'<li class="'+r[0]+'"><span class="dot"></span><div><strong>'+r[1]+'</strong><span class="d">'+r[2]+'</span></div><span class="tag">'+r[3]+'</span></li>').join('');
+    const t=document.createElement('div');
+    t.innerHTML='<div class="folder" aria-hidden="true" aria-label="Illustrative evidence folder: '+esc(d.name)+'"><div class="folder-head"><div><h2>'+d.title+'</h2><p>'+d.sub+'</p></div><span class="verdict">Checking</span></div><ul class="checks">'+rows+'</ul><div class="anchor"><span>Anchored <b>'+d.hash+'</b></span><span>Routed to <b>'+d.route+'</b></span></div><div class="folder-foot">Illustrative example. All data is fictional. Your team makes the decision.</div></div>';
+    return t.firstElementChild;
+  };
+  const els=DATA.map(build);
+  stack.innerHTML='';els.forEach(e=>stack.appendChild(e));
+  const N=DATA.length;
+  // Start: first visit shows Food; later visits start at the next industry after the last one shown
+  let cur=0;
+  try{const s=localStorage.getItem('vp-folder');const k=DATA.findIndex(d=>d.id===s);cur=k<0?0:(k+1)%N;}catch(e){cur=Math.floor(Math.random()*N);}
+  let timers=[],shown=0,userPaused=false,hovering=false;
+  const clear=()=>{timers.forEach(clearTimeout);timers=[];};
+  const reset=e=>{e.querySelectorAll('.checks li').forEach(li=>li.classList.remove('on'));const v=e.querySelector('.verdict');v.textContent='Checking';v.classList.remove('hold');};
+  const setLabel=d=>{
+    const name=d.live?'VeriPura Food<sup class="tm">™</sup>':esc(d.name);
+    label.innerHTML='<a href="'+d.href+'">'+name+'</a>'+(d.live?'<span class="status live">Live</span>':'<span class="eg">Example</span>')+'<span class="sp"></span>'+(reduce||N<2?'':'<button class="folder-pause" type="button" aria-pressed="'+userPaused+'">'+(userPaused?'Play':'Pause')+'</button>');
+  };
+  const held=()=>userPaused||hovering||document.hidden;
+  function show(i){
+    clear();cur=i;shown++;
+    const d=DATA[i],e=els[i];
+    reset(e);
+    els.forEach((x,k)=>{x.classList.toggle('is-active',k===i);x.setAttribute('aria-hidden',k===i?'false':'true');});
+    setLabel(d);
+    try{localStorage.setItem('vp-folder',d.id);}catch(_){}
+    const items=[...e.querySelectorAll('.checks li')],v=e.querySelector('.verdict');
+    const finish=()=>{v.textContent=d.verdict;v.classList.add('hold');};
+    if(reduce){items.forEach(li=>li.classList.add('on'));finish();return;}
+    items.forEach((li,k)=>timers.push(setTimeout(()=>li.classList.add('on'),500+k*550)));
+    timers.push(setTimeout(finish,500+items.length*550));
+    schedule(DWELL);
+  }
+  function schedule(ms){
+    if(shown>=N)return; // one full pass, then stay on the last folder
+    timers.push(setTimeout(function tick(){
+      if(held()){timers.push(setTimeout(tick,500));return;}
+      show((cur+1)%N);
+    },ms));
+  }
+  label.addEventListener('click',e=>{
+    const b=e.target.closest('.folder-pause');if(!b)return;
+    userPaused=!userPaused;if(!userPaused)hovering=false;
+    b.setAttribute('aria-pressed',userPaused);b.textContent=userPaused?'Play':'Pause';
+  });
+  box.addEventListener('mouseenter',()=>{hovering=true;});
+  box.addEventListener('mouseleave',()=>{hovering=false;});
+  box.addEventListener('focusin',()=>{hovering=true;});
+  box.addEventListener('focusout',()=>{hovering=false;});
+  show(cur);
 })();
 
 
