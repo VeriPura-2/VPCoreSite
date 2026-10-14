@@ -5,6 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>VeriPura Food: VeriPura Core tuned for food</title>
 <meta name="description" content="VeriPura Food is VeriPura Core tuned for food: agents trained on food import rules check every document against the border requirements of any destination before the container moves.">
+<link rel="canonical" href="https://www.veripura.com/food.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VeriPura">
+<meta property="og:title" content="VeriPura Food: VeriPura Core tuned for food">
+<meta property="og:description" content="VeriPura Food is VeriPura Core tuned for food: agents trained on food import rules check every document against the border requirements of any destination before the container moves.">
+<meta property="og:url" content="https://www.veripura.com/food.html">
+<meta property="og:image" content="https://www.veripura.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="VeriPura: compliance agents that prove their work, with an illustrative evidence folder.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@VeriPura">
+<meta name="twitter:title" content="VeriPura Food: VeriPura Core tuned for food">
+<meta name="twitter:description" content="VeriPura Food is VeriPura Core tuned for food: agents trained on food import rules check every document against the border requirements of any destination before the container moves.">
+<meta name="twitter:image" content="https://www.veripura.com/og-image.png">
 <!-- ROUGH MOCKUP of the VeriPura Food site (food subdomain). Copy drafts for internal review. -->
 <link rel="icon" href="favicon.ico?v=2" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2"><link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png?v=2">
@@ -450,6 +465,7 @@ ol.flow.light p{color:var(--ink-2);font-weight:500}
   .nav-right .btn{padding:11px 12px;font-size:14px}
 }
 </style>
+<script type="application/ld+json" id="seo-ld">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","@id":"https://www.veripura.com/food.html#app","name":"VeriPura Food","description":"VeriPura Food is VeriPura Core tuned for food: agents trained on food import rules check every document against the border requirements of any destination before the container moves.","url":"https://www.veripura.com/food.html","applicationCategory":"BusinessApplication","operatingSystem":"Web","publisher":{"@type":"Organization","name":"VeriPura","url":"https://www.veripura.com/"}},{"@type":"WebPage","@id":"https://www.veripura.com/food.html#webpage","url":"https://www.veripura.com/food.html","name":"VeriPura Food: VeriPura Core tuned for food","description":"VeriPura Food is VeriPura Core tuned for food: agents trained on food import rules check every document against the border requirements of any destination before the container moves.","isPartOf":{"@type":"WebSite","name":"VeriPura","url":"https://www.veripura.com/"},"publisher":{"@type":"Organization","name":"VeriPura","url":"https://www.veripura.com/"},"about":{"@id":"https://www.veripura.com/food.html#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.veripura.com/"},{"@type":"ListItem","position":2,"name":"Industry solutions","item":"https://www.veripura.com/#solutions"},{"@type":"ListItem","position":3,"name":"VeriPura Food","item":"https://www.veripura.com/food.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is VeriPura Food™?","acceptedAnswer":{"@type":"Answer","text":"VeriPura Core tuned for food. It checks phytosanitary and health certificates, certificates of origin and analysis, and regulatory declarations against the requirements of any country of origin and any country of destination before a container departs."}},{"@type":"Question","name":"How does it relate to VeriPura Core™?","acceptedAnswer":{"@type":"Answer","text":"VeriPura Food™ is the industry solution built on VeriPura Core™ tuned for food: the same orchestrated agent engine, with agents trained on food rules, documents and certifiers. Food is where the engine was built and tested first. Other industries, such as cosmetics and pharmaceuticals, have their own tuned editions."}},{"@type":"Question","name":"Is VeriPura Core™ patent-pending?","acceptedAnswer":{"@type":"Answer","text":"Yes. The orchestration and verification approach is covered under VeriPura's USPTO filing, U.S. provisional patent application 64/088,697. The filing secures our date for later non-provisional and foreign patent filings."}},{"@type":"Question","name":"Can our IT team use it directly?","acceptedAnswer":{"@type":"Answer","text":"Yes, through our hosted API. Talk to an engineer to discuss what your team needs."}},{"@type":"Question","name":"Which documents does it check?","acceptedAnswer":{"@type":"Answer","text":"Phytosanitary certificates, health certificates, certificates of origin, certificates of analysis, common entry documents, FDA Prior Notice submissions, fumigation certificates and the other documents the destination market requires."}},{"@type":"Question","name":"Which frameworks does it cover?","acceptedAnswer":{"@type":"Answer","text":"Any framework for any country of origin and any country of destination, wherever the rules can be obtained, plus buyer-required certifications such as halal and organic. Examples include EU Regulation 2017/625, TRACES NT, FDA FSMA, FSMA 204 traceability, EUDR and UK FRCR."}},{"@type":"Question","name":"How does it prevent FDA automatic detentions?","acceptedAnswer":{"@type":"Answer","text":"Detentions are usually triggered by documentation errors such as a wrong product code in Prior Notice, a missing field or an authority mismatch. VeriPura checks each relevant field before departure and flags issues while they can still be fixed."}},{"@type":"Question","name":"How does it help with deforestation rules?","acceptedAnswer":{"@type":"Answer","text":"For beef, soy, cocoa, coffee and palm oil, VeriPura checks due diligence records such as geolocation data and deforestation statements as part of the pre-shipment check, and flags gaps before departure."}},{"@type":"Question","name":"What does a pilot look like?","acceptedAnswer":{"@type":"Answer","text":"It starts with one real consignment. We show every rule that applied, what was missing and any red flags. Your team makes the decision. If it's useful, a paid pilot follows in shadow mode, with the fee credited toward a contract."}}]}]}</script>
 </head>
 <body>
 <nav class="nav" aria-label="Main">
@@ -821,11 +837,6 @@ document.querySelectorAll('[data-role]').forEach(a=>a.addEventListener('click',(
   });
 })();
 
-// Breadcrumb structured data, built from the page's own trail so URLs follow the live domain
-(function(){
-  const items=[...document.querySelectorAll('.crumbs li')].map((li,i)=>{const a=li.querySelector('a');return{"@type":"ListItem",position:i+1,name:li.textContent.trim(),item:a?new URL(a.getAttribute('href'),location.href).href:location.href.split('#')[0]};});
-  const s=document.createElement('script');s.type='application/ld+json';s.text=JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:items});document.head.appendChild(s);
-})();
 
 // Food tools dropdown: click toggles, outside click or Escape closes
 (function(){
