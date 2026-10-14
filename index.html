@@ -162,9 +162,20 @@ a{color:var(--seal)}
 .folder-label a{color:var(--ink);text-decoration:none}
 .folder-label a:hover{color:var(--seal)}
 .folder-label .sp{flex:1}
-.folder-pause{all:unset;cursor:pointer;font:600 13px/1 var(--sans);color:var(--slate);padding:8px 10px;margin:-8px -10px -8px 0;border-radius:6px}
+.folder-pause{all:unset;cursor:pointer;font:600 14px/1 var(--sans);color:var(--slate);padding:14px 10px;min-height:44px;box-sizing:border-box;border-radius:6px}
 .folder-pause:hover{color:var(--seal)}
 .folder-pause:focus-visible{outline:3px solid var(--seal);outline-offset:2px}
+.folder-nav{display:flex;align-items:center;gap:6px;margin:0 0 12px}
+.folder-nav .sp{flex:1}
+.fn-btn{all:unset;cursor:pointer;box-sizing:border-box;width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border:1.5px solid var(--line);border-radius:8px;color:var(--ink)}
+.fn-btn:hover{border-color:var(--ink)}
+.fn-btn:focus-visible,.fn-dot:focus-visible{outline:3px solid var(--seal);outline-offset:2px}
+.fn-dots{display:flex;align-items:center}
+.fn-dot{all:unset;cursor:pointer;box-sizing:border-box;width:24px;height:44px;display:inline-flex;align-items:center;justify-content:center}
+.fn-dot::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--line);transition:background .2s,transform .2s}
+.fn-dot:hover::before{background:var(--slate)}
+.fn-dot[aria-current="true"]::before{background:var(--ink);transform:scale(1.25)}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .folder-stack{display:grid}
 .folder-stack .folder{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .45s ease,visibility 0s linear .45s}
 .folder-stack .folder.is-active{opacity:1;visibility:visible;transition:opacity .45s ease,visibility 0s}
@@ -687,7 +698,8 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
   btn.addEventListener('click',()=>{const next=isDark()?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('vp-theme',next);}catch(e){}label();});
 })();
 
-// Rotating evidence folders: one industry per visit start (next in sequence), then one pass through all five
+// Rotating evidence folders: one industry per visit start (next in sequence), then one automatic pass through all five.
+// Arrows, dots and Pause/Play give manual control; any manual choice stops the automatic rotation.
 (function(){
   const DATA=[
  {
@@ -950,27 +962,40 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
   const els=DATA.map(build);
   stack.innerHTML='';els.forEach(e=>stack.appendChild(e));
   const N=DATA.length;
+  const plain=d=>d.name.replace('\u2122','');
+  // Controls are built once so keyboard focus is never lost when the folder changes
+  const chev=p=>'<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="'+p+'"/></svg>';
+  const nav=document.createElement('div');nav.className='folder-nav';nav.id='foldernav';
+  nav.innerHTML='<button class="fn-btn" type="button" data-act="prev" aria-label="Previous industry">'+chev('M15 6l-6 6 6 6')+'</button>'
+    +'<div class="fn-dots" role="group" aria-label="Choose an industry">'+DATA.map((d,k)=>'<button class="fn-dot" type="button" data-i="'+k+'" aria-label="Show '+esc(plain(d))+'"></button>').join('')+'</div>'
+    +'<button class="fn-btn" type="button" data-act="next" aria-label="Next industry">'+chev('M9 6l6 6-6 6')+'</button>'
+    +'<span class="sp"></span>'+(reduce?'':'<button class="folder-pause" type="button" aria-pressed="false">Pause</button>')
+    +'<span class="sr-only" role="status" id="folderstatus"></span>';
+  label.after(nav);
+  const dots=[...nav.querySelectorAll('.fn-dot')],pauseBtn=nav.querySelector('.folder-pause'),status=nav.querySelector('#folderstatus');
   // Start: first visit shows Food; later visits start at the next industry after the last one shown
   let cur=0;
   try{const s=localStorage.getItem('vp-folder');const k=DATA.findIndex(d=>d.id===s);cur=k<0?0:(k+1)%N;}catch(e){cur=Math.floor(Math.random()*N);}
   let timers=[],shown=0,userPaused=false,hovering=false,done=false;
   const clear=()=>{timers.forEach(clearTimeout);timers=[];};
   const reset=e=>{e.querySelectorAll('.checks li').forEach(li=>li.classList.remove('on'));const v=e.querySelector('.verdict');v.textContent='Checking';v.classList.remove('hold');};
-  const setLabel=d=>{
-    const name=d.live?'VeriPura Food<sup class="tm">™</sup>':esc(d.name);
-    label.innerHTML='<a href="'+d.href+'">'+name+'</a>'+(d.live?'<span class="status live">Live</span>':'<span class="eg">Example</span>')+'<span class="sp"></span>'+(reduce||N<2?'':'<button class="folder-pause" type="button" aria-pressed="'+userPaused+'">'+btnText()+'</button>');
-  };
   const btnText=()=>done?'Replay':(userPaused?'Play':'Pause');
+  const syncPause=()=>{if(!pauseBtn)return;pauseBtn.textContent=btnText();pauseBtn.setAttribute('aria-pressed',userPaused&&!done);};
+  const setLabel=d=>{
+    const name=d.live?'VeriPura Food<sup class="tm">\u2122</sup>':esc(d.name);
+    label.innerHTML='<a href="'+d.href+'">'+name+'</a>'+(d.live?'<span class="status live">Live</span>':'<span class="eg">Example</span>');
+    dots.forEach((x,k)=>x.setAttribute('aria-current',k===cur?'true':'false'));
+  };
   const held=()=>userPaused||hovering||document.hidden;
-  function show(i){
-    clear();cur=i;shown++;done=false;
+  function show(i,manual){
+    clear();cur=i;done=false;if(!manual)shown++;
     const d=DATA[i],e=els[i];
     reset(e);
     els.forEach((x,k)=>{x.classList.toggle('is-active',k===i);x.setAttribute('aria-hidden',k===i?'false':'true');});
-    setLabel(d);
+    setLabel(d);syncPause();
     try{localStorage.setItem('vp-folder',d.id);}catch(_){}
     const items=[...e.querySelectorAll('.checks li')],v=e.querySelector('.verdict');
-    const finish=()=>{v.textContent=d.verdict;v.classList.add('hold');if(shown>=N){done=true;const b=label.querySelector('.folder-pause');if(b)b.textContent=btnText();}};
+    const finish=()=>{v.textContent=d.verdict;v.classList.add('hold');if(!manual&&shown>=N){done=true;syncPause();}};
     if(reduce){items.forEach(li=>li.classList.add('on'));finish();return;}
     items.forEach((li,k)=>timers.push(setTimeout(()=>li.classList.add('on'),500+k*550)));
     timers.push(setTimeout(finish,500+items.length*550));
@@ -983,11 +1008,23 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
       show((cur+1)%N);
     },ms));
   }
-  label.addEventListener('click',e=>{
-    const b=e.target.closest('.folder-pause');if(!b)return;
-    if(done||(userPaused&&shown>=N)){userPaused=false;hovering=false;shown=0;show((cur+1)%N);return;} // pass finished: Play/Replay starts a new pass
-    userPaused=!userPaused;if(!userPaused)hovering=false;
-    b.setAttribute('aria-pressed',userPaused);b.textContent=btnText();
+  // Manual navigation: go to a folder and stop the automatic rotation
+  function go(i){
+    userPaused=true;hovering=false;
+    show(((i%N)+N)%N,true);
+    syncPause();
+    status.textContent='Showing '+plain(DATA[cur])+(DATA[cur].live?'':' example');
+  }
+  nav.addEventListener('click',e=>{
+    const t=e.target.closest('button');if(!t)return;
+    if(t.dataset.act==='prev'){go(cur-1);return;}
+    if(t.dataset.act==='next'){go(cur+1);return;}
+    if(t.dataset.i!==undefined){go(+t.dataset.i);return;}
+    if(t===pauseBtn){
+      if(done||(userPaused&&shown>=N)){userPaused=false;hovering=false;shown=0;show((cur+1)%N);return;} // pass finished: Play/Replay starts a new pass
+      userPaused=!userPaused;if(!userPaused)hovering=false;
+      syncPause();
+    }
   });
   box.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')hovering=true;});
   box.addEventListener('pointerleave',e=>{if(e.pointerType==='mouse')hovering=false;});
