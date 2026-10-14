@@ -102,7 +102,7 @@ Dark mode: follows `prefers-color-scheme`, with a manual toggle (a sun or moon i
 - **Status tags**: `Live` (pass colors), `Under development` (flag colors), `Example` (dashed outline).
 - **Evidence folder** (hero visual): illustrative, labeled "Illustrative example. All data is fictional. Your team makes the decision." Items show Done, Mismatch or Review tags. Final state reads "Review: 1 mismatch, 1 flag".
 - **Dark flow** (nine stages grouped Find, Check, Prove): mono step numbers, hairline dividers.
-- **Code figure**: navy block, caption bar "Your system calls VeriPura Food" and "Illustrative, under development". Response uses `status: "review"` and `findings`, never a verdict.
+- **Code figure**: navy block, caption bar "Your system calls VeriPura Food" and "Illustrative". Response uses `status: "review"` and `findings`, never a verdict.
 - **FAQ**: native `<details>`, 18px bold summary, "+" marker, hairline borders. Include the patent question.
 - **Form**: labels 14px weight 600 above inputs, 16px inputs (prevents iOS zoom), `--seal` focus ring `0 0 0 3px rgba(46,85,201,.18)`. Submit via Formspree. Privacy link beside the form.
 - **Footer**: slate text, links About, In the media, Core, Privacy, social icons (34px circles).
