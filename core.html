@@ -548,12 +548,12 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
       <div class="capgrid">
       <article class="cap" data-s="live">
         <header><h4>A checklist for every trade route</h4><span class="status live">Live</span></header>
-        <p>The documents a shipment needs depend on what it is and where it is going. Core builds that list per route, including wine and seafood papers for the EU and UK.</p>
+        <p>The documents a shipment needs depend on what it is and where it is going. Core builds that list per route, for any origin to any destination.</p>
         <p class="why">No more finding out at the border that a certificate was required.</p>
       </article>
       <article class="cap" data-s="live">
         <header><h4>Customs tariff and HS code finder</h4><span class="status live">Live</span></header>
-        <p>Search the customs tariffs of 14 jurisdictions in one place, with AI-assisted code suggestions, legal notes and duty rates.</p>
+        <p>Search customs tariffs in one place, with AI-assisted code suggestions, legal notes and duty rates.</p>
         <p class="why">The right code decides the duty and the rules that apply.</p>
       </article>
       <article class="cap" data-s="live">
@@ -562,7 +562,7 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
       </article>
       <article class="cap" data-s="live">
         <header><h4>Always-current reference data</h4><span class="status live">Live</span></header>
-        <p>Core keeps its own copies of 14 national tariff schedules and watches 17 live feeds, such as FDA and EU food alerts (RASFF), EU law changes, UK food safety, disasters and BRCGS, GLOBALG.A.P. and IFS updates. Rule changes are mapped to the products, suppliers and open orders they affect. An operations dashboard shows what is fresh and what did not refresh.</p>
+        <p>Core keeps its own copies of national tariff schedules and watches live feeds, for example food alerts (RASFF, FDA), law changes, disasters and scheme updates (BRCGS, GLOBALG.A.P., IFS). Rule changes are mapped to the products, suppliers and open orders they affect. An operations dashboard shows what is fresh and what did not refresh.</p>
         <p class="why">The rules behind each result are kept up to date automatically.</p>
       </article>
       <article class="cap" data-s="dev">
@@ -572,7 +572,6 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
       <article class="cap" data-s="dev">
         <header><h4>EU Forced Labour Regulation</h4><span class="status dev">Under development</span></header>
         <p>The EU ban on products made with forced labor applies from 14 December 2027. We have researched what it requires and planned how Core supports it.</p>
-        <p class="why">Research is done.</p>
       </article>
       </div>
     </div>
@@ -627,9 +626,9 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
         <p class="why">A report from an unaccredited lab is flagged for review, not accepted as evidence.</p>
       </article>
       <article class="cap" data-s="live">
-        <header><h4>EU border checks</h4><span class="status live">Live</span></header>
-        <p>Organic certificates, deforestation declarations with plot maps, seafood catch certificates, wine certificates and composite foods, plus an estimate of what a rejection would cost in demurrage.</p>
-        <p class="why">Built around the checks EU border posts actually apply.</p>
+        <header><h4>Border document checks</h4><span class="status live">Live</span></header>
+        <p>Organic certificates, deforestation declarations with plot maps, seafood catch certificates, wine certificates and composite foods.</p>
+        <p class="why">Built around the checks border posts actually apply.</p>
       </article>
       <article class="cap" data-s="dev">
         <header><h4>Quality-scheme certificates</h4><span class="status dev">Under development</span></header>
@@ -641,9 +640,8 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
         <p>Core checks the issuing body of a religious certificate against the official list of recognized bodies, including whether its recognition has lapsed. For halal it knows 23 recognized bodies, and it can look a certificate up on national registers.</p>
       </article>
       <article class="cap" data-s="dev">
-        <header><h4>Packaging rules (UK EPR)</h4><span class="status dev">Under development</span></header>
-        <p>Checks whether a packaging producer is on the UK government register, now covering all 12,069 producers rather than the first 500.</p>
-        <p class="why">Waiting on its next production deployment.</p>
+        <header><h4>Packaging rules</h4><span class="status dev">Under development</span></header>
+        <p>Checks whether a packaging producer is on the government register where the destination requires one, for example UK EPR.</p>
       </article>
       <article class="cap" data-s="dev">
         <header><h4>Nutrition and ingredients audit</h4><span class="status dev">Under development</span></header>
@@ -652,8 +650,7 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
       </article>
       <article class="cap" data-s="dev">
         <header><h4>Misleading “green” label claims</h4><span class="status dev">Under development</span></header>
-        <p>Scans labels in six languages for vague claims such as “eco-friendly” or “climate neutral” with no proof, under the new EU rules that apply from 27 September 2026.</p>
-        <p class="why">In testing. It only warns, and the rule list still needs sign-off from our compliance owner.</p>
+        <p>Scans labels for vague claims such as “eco-friendly” or “climate neutral” with no proof. It only warns.</p>
       </article>
       </div>
     </div>
@@ -663,13 +660,11 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
       <div class="capgrid">
       <article class="cap" data-s="live">
         <header><h4>Forced-labor screening</h4><span class="status live">Live</span></header>
-        <p>Screens suppliers against the US government's list of banned entities for goods linked to high-risk regions.</p>
-        <p class="why">Covers the US law today. The EU law comes next.</p>
+        <p>Screens suppliers against government lists of banned entities for goods linked to high-risk regions, for example the US list.</p>
       </article>
       <article class="cap" data-s="dev">
         <header><h4>Sanctions screening</h4><span class="status dev">Under development</span></header>
         <p>Checks the companies on a shipment against the full sanctions lists. A match raises a critical alert.</p>
-        <p class="why">Working on our development system. Being rolled out to production.</p>
       </article>
       <article class="cap" data-s="dev">
         <header><h4>Provenance and duty</h4><span class="status dev">Under development</span></header>
@@ -728,7 +723,6 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
       <article class="cap" data-s="dev">
         <header><h4>Talk to your shipment (text or voice)</h4><span class="status dev">Under development</span></header>
         <p>Ask the Consignment Guardian what is wrong, what is missing or what to do next, by typing or by speaking. It answers from that shipment's own documents and checks.</p>
-        <p class="why">Voice runs through a separate service that is still being finished.</p>
       </article>
       <article class="cap" data-s="live">
         <header><h4>Partner connections (API)</h4><span class="status live">Live</span></header>
@@ -737,7 +731,7 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
       </article>
       </div>
     </div>
-    <div class="legend"><span><span class="status live">Live</span> working in the product</span><span><span class="status dev">Under development</span> built but not yet in production everywhere, in testing, or planned. The note on each card says which.</span></div>
+    <div class="legend"><span><span class="status live">Live</span> working in the product</span><span><span class="status dev">Under development</span> in testing, or planned.</span></div>
   </div>
 </section>
 
