@@ -30,6 +30,7 @@ Use this for every industry solution page and every tool that lives under one (f
 8. **No em dashes.** Use commas, periods or parentheses.
 9. Short sentences. Sentence case headings with a final period on section titles ("What we check."). Active voice. Concrete nouns (consignment, certificate, label, artwork).
 10. Unsubstantiated numbers (costs avoided, rejection fees) need a source or come out.
+    - **Exception (Thomas, 15 Oct 2026):** the core.html hero line "US$600 per day" for port delays from incomplete or inaccurate documentation stays without a source. Quote it in US$ everywhere. This exception covers that line only.
 11. CTA wording: "Free trial" on Food pages. "Discuss a pilot" on all other industry pages. "Check a label", "Check halal artwork" for tools. Not "Send us a shipment" or "Free check". The page does not state trial length or terms (see rule 5); the CTA leads to a conversation.
 
 ## 3. Color
@@ -99,7 +100,7 @@ Dark mode: follows `prefers-color-scheme`, with a manual toggle (a sun or moon i
 - **Tool strip**: pill links under the hero naming the solution's tools.
 - **Tool card** (`.tool`): surface, 1.5px line border, title, two or three sentences, one text link pinned to the bottom. Three across on desktop.
 - **Solution card** (`.app`): live solution has an ink border and offset shadow with a green "Live" tag. Example solutions have a dashed border, transparent fill and an "Example" tag with a dashed outline.
-- **Capability cards** (core.html, "What Core covers today"): grouped Find, Collect, Check, Screen, Prove, Work with your team. Each card carries one status, Live or Under development, plus an optional one-line note saying why (for example "Built and tested. Not in production yet."). Filter buttons: All, Live, Under development. Date the list ("Status as of ...") and update it when statuses change.
+- **Capability cards** (core.html, "What Core covers today"): grouped Find, Collect, Check, Screen, Prove, Work with your team. Each card carries one status, Live or Under development, plus an optional one-line note saying why (for example "Built and tested. Not in production yet."). Filter buttons: All, Live, Under development. Do not print a date on the list. Say "Statuses are updated as capabilities ship" and keep the cards current.
 - **Status tags**: `Live` (pass colors), `Under development` (flag colors), `Example` (dashed outline). On example industry pages, the tag in the hero kicker is a link reading "Discuss a pilot" that goes to the contact form, not "Under development".
 - **Evidence folder** (hero visual): illustrative, labeled "Illustrative example. All data is fictional. Your team makes the decision." Items show Done, Matched, Mismatch, Review or Not checked tags (Not checked uses the slate dot and tint fill). Never use Pass or Fail. A check that could not run is Not checked, never Matched. Final state reads "Review: 1 mismatch, 1 flag".
 - **Dark flow** (nine stages grouped Find, Check, Prove): mono step numbers, hairline dividers.
