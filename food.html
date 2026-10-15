@@ -421,6 +421,23 @@ ol.flow.light p{color:var(--ink-2);font-weight:500}
 @media (max-width:960px){.rulecards{grid-template-columns:1fr 1fr}}
 @media (max-width:900px){ol.flow.light{grid-template-columns:1fr}ol.flow.light li{border-right:0;border-bottom:1px solid var(--line)}ol.flow.light li:last-child{border-bottom:0}}
 @media (max-width:560px){.rulecards{grid-template-columns:1fr}}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.filters button{font:600 15px/1 var(--sans);cursor:pointer;min-height:44px;padding:0 16px;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:999px}
+.filters button:hover{border-color:var(--ink)}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--btn-fg);border-color:var(--ink)}
+.filters button:focus-visible{outline:3px solid var(--seal);outline-offset:3px}
+#capcount{margin:0 0 4px}
+.capgroup{margin-top:44px}
+.capgroup h3{font-size:26px;letter-spacing:-.02em;margin:0 0 20px}
+.capgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.cap{border:1.5px solid var(--line);border-radius:12px;padding:20px;background:var(--paper);display:grid;gap:10px;align-content:start;min-width:0}
+.cap header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.cap h4{font-size:19px;line-height:1.25;margin:0}
+.cap p{margin:0;font-size:15.5px;color:var(--ink-2);font-weight:500}
+.cap .why{color:var(--slate);font-size:14.5px}
+.cap .status{white-space:nowrap;flex:none}
+.cap[hidden],.capgroup[hidden]{display:none}
+@media (max-width:860px){.capgrid{grid-template-columns:1fr}}
 @media (max-width:1260px){.nav-right .built{display:none}}
 @media (max-width:640px){.nav-right .btn{display:none}.nav .wrap{gap:12px}}
 .contact>*{min-width:0}
@@ -642,13 +659,92 @@ check_compliance({
 <section class="alt" id="coverage">
   <div class="wrap">
     <h2 class="title">What we check.</h2>
-    <p class="intro">Tuned for food, VeriPura Core can check any food product moving from any origin to any destination, wherever the rules can be obtained. The rules below are examples only.</p>
+    <p class="intro">Tuned for food, VeriPura Core can check any food product moving from any origin to any destination, wherever the rules can be obtained. Your team makes the decision.</p>
+    <h3 class="subhead" style="margin-top:32px">Example rules.</h3>
+    <p class="intro" style="margin-bottom:20px">The rules in this row are examples only.</p>
     <div class="rulecards">
       <div class="tool"><h3>Border and food safety rules</h3><p>For example EU 2017/625, FDA FSMA and UK import requirements.</p></div>
       <div class="tool"><h3>Traceability and deforestation</h3><p>For example FSMA 204, EUDR and UK forest-risk rules.</p></div>
       <div class="tool"><h3>Buyer-required certifications</h3><p>For example <a href="https://halal.veripura.com/">halal</a>, organic and kosher, which differ by country and certifier.</p></div>
       <div class="tool"><h3>Origin and trade documents</h3><p>For example certificates of origin, preferential origin claims, and orchard or establishment registrations.</p></div>
     </div>
+
+    <h3 class="subhead">What Core covers for food today.</h3>
+    <p class="intro" style="margin-bottom:24px">Every capability carries its status. Statuses are updated as capabilities ship.</p>
+    <div class="filters" role="group" aria-label="Filter by status">
+      <button type="button" data-f="all" aria-pressed="true">All</button>
+      <button type="button" data-f="live" aria-pressed="false">Live</button>
+      <button type="button" data-f="dev" aria-pressed="false">Under development</button>
+    </div>
+    <p class="formnote" id="capcount" role="status"></p>
+    <div class="capgroup" id="cap-border">
+      <h3>Border and certificates</h3>
+      <div class="capgrid">
+      <article class="cap" data-s="live">
+        <header><h4>EU border checks</h4><span class="status live">Live</span></header>
+        <p>Organic certificates, deforestation declarations with plot maps, seafood catch certificates, wine certificates and composite foods.</p>
+        <p class="why">Built around the checks EU border posts actually apply.</p>
+      </article>
+      <article class="cap" data-s="live">
+        <header><h4>Halal certificate and certifier checks</h4><span class="status live">Live</span></header>
+        <p>Core knows 23 recognized halal bodies. For goods going to the UAE, Turkey and Singapore it checks the issuing body against the official list, including whether its recognition has lapsed.</p>
+        <p class="why">The Indonesian and Malaysian register lookups are not switched on in every environment yet.</p>
+      </article>
+      <article class="cap" data-s="dev">
+        <header><h4>Quality-scheme certificates</h4><span class="status dev">Under development</span></header>
+        <p>BRCGS, GLOBALG.A.P., FSSC 22000 and organic certificates are checked for expiry. The newest rule flags a missing BRCGS site code or GLOBALG.A.P. number, because a certificate nobody can look up is not proof.</p>
+        <p class="why">Built and tested. Not in production yet.</p>
+      </article>
+      </div>
+    </div>
+    <div class="capgroup" id="cap-lab">
+      <h3>Lab evidence</h3>
+      <div class="capgrid">
+      <article class="cap" data-s="live">
+        <header><h4>Lab reports and accreditation</h4><span class="status live">Live</span></header>
+        <p>Reads lab reports, or takes them directly from the lab by API. Core checks that the lab is accredited by a recognized national body, that the sample matches the container and seal, and that results are within legal limits for pesticides, heavy metals and pathogens.</p>
+        <p class="why">A report from an unaccredited lab is flagged for review.</p>
+      </article>
+      </div>
+    </div>
+    <div class="capgroup" id="cap-label">
+      <h3>Labels and ingredients</h3>
+      <div class="capgrid">
+      <article class="cap" data-s="live">
+        <header><h4>Additives and allergens</h4><span class="status live">Live</span></header>
+        <p>Through the Label Validator, Core checks additives and allergens, including banned colorants and EU allergen rules.</p>
+      </article>
+      <article class="cap" data-s="dev">
+        <header><h4>Nutrition and ingredients audit</h4><span class="status dev">Under development</span></header>
+        <p>Paste a product specification and Core checks it against the target market's rules: additives, and a mass-balance check on the recipe.</p>
+        <p class="why">An early check before you print a label.</p>
+      </article>
+      </div>
+    </div>
+    <div class="capgroup" id="cap-trace">
+      <h3>Traceability and cold chain</h3>
+      <div class="capgrid">
+      <article class="cap" data-s="dev">
+        <header><h4>Pallet labels and traceability events</h4><span class="status dev">Under development</span></header>
+        <p>Makes GS1 pallet labels (pallet code, item code, lot) and reads GS1 traceability events (EPCIS). Core flags impossible timelines, such as harvest after shipping, outputs larger than inputs and cold-chain breaches.</p>
+      </article>
+      <article class="cap" data-s="dev">
+        <header><h4>Cold chain and sensors</h4><span class="status dev">Under development</span></header>
+        <p>Shows container temperature readings during transit. Core compares them with the limits for the goods and raises a flag when a limit is breached.</p>
+        <p class="why">Needs sensor data from the carrier or the container.</p>
+      </article>
+      </div>
+    </div>
+    <div class="capgroup" id="cap-ref">
+      <h3>Reference data</h3>
+      <div class="capgrid">
+      <article class="cap" data-s="live">
+        <header><h4>Food alerts and scheme updates</h4><span class="status live">Live</span></header>
+        <p>Core watches live feeds including FDA and EU food alerts (RASFF), UK food safety, and BRCGS, GLOBALG.A.P. and IFS updates. Rule changes are mapped to the products, suppliers and open orders they affect.</p>
+      </article>
+      </div>
+    </div>
+    <div class="legend"><span><span class="status live">Live</span> working in the product</span><span><span class="status dev">Under development</span> built but not yet in production everywhere, in testing, or planned. The note on each card says which.</span></div>
 
     <h3 class="subhead">Any route, set up on request.</h3>
     <ol class="flow light">
@@ -867,6 +963,20 @@ document.querySelectorAll('[data-role]').forEach(a=>a.addEventListener('click',(
   btn.addEventListener('click',()=>set(!ul.classList.contains('open')));
   ul.addEventListener('click',e=>{if(e.target.closest('a'))set(false);});
   document.addEventListener('keydown',e=>{if(e.key==='Escape')set(false);});
+})();
+
+// Capability filter
+(function(){
+  const btns=document.querySelectorAll('.filters button'),caps=document.querySelectorAll('.cap'),groups=document.querySelectorAll('.capgroup'),count=document.getElementById('capcount');
+  if(!btns.length)return;
+  function apply(f){
+    let n=0;
+    caps.forEach(c=>{const show=f==='all'||c.dataset.s===f;c.hidden=!show;if(show)n++;});
+    groups.forEach(g=>{g.hidden=!g.querySelector('.cap:not([hidden])');});
+    count.textContent='Showing '+n+' of '+caps.length+' capabilities.';
+  }
+  btns.forEach(b=>b.addEventListener('click',()=>{btns.forEach(x=>x.setAttribute('aria-pressed',String(x===b)));apply(b.dataset.f);}));
+  apply('all');
 })();
 </script>
 </body>
