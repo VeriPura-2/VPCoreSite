@@ -9,7 +9,7 @@
 - Teams can use VeriPura through the portal, or call the agents from their own systems through the hosted API.
 - Pilots start with one real consignment.
 - When VeriPura Core cannot check something, it says so. A missing document is a finding, and an offline register shows as Not checked, never as a match.
-- VeriPura Core labels every capability Live or Under development. Core reads documents by content, cross-checks them, chases missing papers, screens suppliers and records every document on a tamper-evident trail anchored on a public ledger.
+- VeriPura Core labels every capability Live or Under development. Core reads documents by content, cross-checks them, chases missing papers, screens suppliers and records every document on a tamper-evident trail anchored on a public blockchain.
 - The orchestration and verification approach is covered under VeriPura's USPTO filing, U.S. provisional patent application 64/088,697.
 
 ## Pages
