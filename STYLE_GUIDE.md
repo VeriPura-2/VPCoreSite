@@ -1,6 +1,6 @@
 # VeriPura Style Guide
 
-Source of truth: the live static site (repo VeriPura-2/VPCoreSite). Where this guide and the HTML disagree, the HTML wins, then fix this guide. Reference pages: `food.html` (industry solution), `core.html` (product), `index.html` (landing).
+Source of truth: the live static site (repo VeriPura-2/VPCoreSite). Where this guide and the HTML disagree, the HTML wins, then fix this guide. Reference pages: food.veripura.com (industry solution, source file `food.html`), `core.html` (product), `index.html` (landing).
 
 Use this for every industry solution page and every tool that lives under one (for example halal.veripura.com).
 
@@ -14,6 +14,7 @@ Use this for every industry solution page and every tool that lives under one (f
 - Industry solutions: **VeriPura Food™**, then Building Supplies, Cosmetics, Supplements, Pharma. Never "Edition".
 - Tools inside a solution: plain product names, for example Consignment Check, Label Validator, Halal Guardian. Full name on first use: "VeriPura Halal Guardian™".
 - Only Food is live. Other industries are shown as examples (dashed card, "Example" tag).
+- **Food has its own subdomain:** VeriPura Food™ lives at https://food.veripura.com/. Link to it with that absolute URL, never `food.html`. A page served from the subdomain links back to veripura.com pages (home, Core, privacy) with absolute https://www.veripura.com/ URLs.
 - Header lockup: logo mark (30px) + "VeriPura" + industry word in the accent color + small superscript ™. Industry pages: `<a class="brand"><img class="logo"><span>VeriPura <span class="prod">Food</span><sup class="tm">™</sup></span></a>`. Landing page (no industry word): `<span>VeriPura<sup class="tm">™</sup></span>`.
 - A solution page shows "Built on VeriPura Core™" as a small link beside the nav buttons (hidden under 1180px).
 - No emoji in the brand, headings, nav or buttons.
@@ -95,11 +96,11 @@ Dark mode: follows `prefers-color-scheme`, with a manual toggle (a sun or moon i
 
 - **Nav**: sticky, blurred `--nav-bg`, 64px high. Links 15px weight 500. Right side: "Built on VeriPura Core™", theme toggle, solid CTA button. Below 1120px the links collapse into a Menu button with 48px rows; below 640px the nav CTA moves into the menu.
 - **Food tools dropdown** (solution pages with several tools): label "Food tools" with a chevron. Opens on hover, focus or click, Escape closes. Items are tool name plus a one-line description. In the mobile menu it shows as a flat list.
-- **Breadcrumbs**: under the nav on every page except the landing page. Home / Industry solutions / This page. Matching JSON-LD is written into the page HTML with canonical URLs.
+- **Breadcrumbs**: under the nav on every page except the landing page. Home / Industry solutions / This page. Matching JSON-LD is written into the page HTML with canonical URLs. The Food page canonical, `og:url` and breadcrumb item is https://food.veripura.com/; Home and Industry solutions point to https://www.veripura.com/.
 - **Buttons**: `.btn` 15px weight 600, padding 13px 18px, 8px radius. `.btn-solid` for the single primary action, `.btn-ghost` for secondary. One solid button per view.
 - **Tool strip**: pill links under the hero naming the solution's tools.
 - **Tool card** (`.tool`): surface, 1.5px line border, title, two or three sentences, one text link pinned to the bottom. Three across on desktop.
-- **Solution card** (`.app`): live solution has an ink border and offset shadow with a green "Live" tag. Example solutions have a dashed border, transparent fill and an "Example" tag with a dashed outline.
+- **Solution card** (`.app`): live solution has an ink border and offset shadow with a green "Live" tag (the Food card links to https://food.veripura.com/). Example solutions have a dashed border, transparent fill and an "Example" tag with a dashed outline.
 - **Capability cards** (core.html, "What Core covers today"): grouped Find, Collect, Check, Screen, Prove, Work with your team. Each card carries one status, Live or Under development, plus an optional one-line note saying why (for example "Built and tested. Not in production yet."). Filter buttons: All, Live, Under development. Do not print a date on the list. Say "Statuses are updated as capabilities ship" and keep the cards current.
 - **Status tags**: `Live` (pass colors), `Under development` (flag colors), `Example` (dashed outline). On example industry pages, the tag in the hero kicker is a link reading "Discuss a pilot" that goes to the contact form, not "Under development".
 - **Evidence folder** (hero visual): illustrative, labeled "Illustrative example. All data is fictional. Your team makes the decision." Items show Done, Matched, Mismatch, Review or Not checked tags (Not checked uses the slate dot and tint fill). Never use Pass or Fail. A check that could not run is Not checked, never Matched. Final state reads "Review: 1 mismatch, 1 flag".
@@ -147,14 +148,14 @@ Current page (from the copy provided): dark navy with emerald and gold accents, 
 Do:
 1. Replace the palette with the section 3 tokens, light by default with the dark toggle. Use the **Food accent** (#0B7285), not green or gold.
 2. Swap fonts for Schibsted Grotesk and JetBrains Mono. Remove serif headlines.
-3. Header: logo mark + "VeriPura Halal Guardian" with the tool name in the accent color, ™ superscript after the full name, "Built on VeriPura Core™" link, theme toggle, "Sign in" button. Add a "VeriPura Food" link back to veripura.com food page. Remove the emoji.
+3. Header: logo mark + "VeriPura Halal Guardian" with the tool name in the accent color, ™ superscript after the full name, "Built on VeriPura Core™" link, theme toggle, "Sign in" button. Add a "VeriPura Food" link back to https://food.veripura.com/. Remove the emoji.
 4. Hero: kicker "VeriPura Food™ tool", H1 in sentence case ("Review halal packaging artwork before it goes to print."), lede 20px, solid CTA "Upload artwork", ghost CTA "Try sample artwork".
 5. Market selector: pill buttons using `.toolstrip` styling; the "More" list in a dropdown. Selected pill uses `--ink` fill.
 6. Results panel: use the evidence-folder pattern with Done, Review and Mismatch tags. Show findings and the fixes needed. Keep a score only if it is labeled as an information score, not a verdict, and never as pass or fail.
 7. Pricing: three `.model` cards, the lead card (best value) with the offset shadow. One solid button per card.
 8. Footer: Terms, Privacy, FAQ, Press, copyright line "VeriPura™", "Powered by VeriPura Core™". Replace the "Food Label Artwork Validator" copyright text.
 9. Fix the stylesheet: self-host fonts with `@font-face`, not a late `@import`; fix the `aria-labelledby` ids reported by Chrome.
-10. Add breadcrumbs (Home / Food / Halal Guardian) or a back link, favicons from section 9, and the same dark mode behavior.
+10. Add breadcrumbs (Home / Food / Halal Guardian, with Food linking to https://food.veripura.com/) or a back link, favicons from section 9, and the same dark mode behavior.
 
 Copy to change (rules in section 2):
 - "Export Assurance" tag: remove or replace with "Pre-audit review". "Assurance" implies a guarantee.
