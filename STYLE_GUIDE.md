@@ -1,6 +1,6 @@
 # VeriPura Style Guide
 
-Source of truth: the live static site (repo VeriPura-2/VPCoreSite). Where this guide and the HTML disagree, the HTML wins, then fix this guide. Reference pages: `food.html` (industry solution), `core.html` (product), `index.html` (landing).
+Source of truth: the live static site (repo VeriPura-2/VPCoreSite). Where this guide and the HTML disagree, the HTML wins, then fix this guide. Reference pages: food.veripura.com (industry solution, source file `food.html`), `core.html` (product), `index.html` (landing).
 
 Use this for every industry solution page and every tool that lives under one (for example halal.veripura.com).
 
