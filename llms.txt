@@ -8,12 +8,14 @@
 - Only VeriPura Food is live. Building Supplies, Cosmetics, Supplements and Pharma are examples of what VeriPura Core can be tuned for.
 - Teams can use VeriPura through the portal, or call the agents from their own systems through the hosted API.
 - Pilots start with one real consignment.
+- When VeriPura Core cannot check something, it says so. A missing document is a finding, and an offline register shows as Not checked, never as a match.
+- VeriPura Core labels every capability Live or Under development. Core reads documents by content, cross-checks them, chases missing papers, screens suppliers and records every document on a tamper-evident trail anchored on a public ledger.
 - The orchestration and verification approach is covered under VeriPura's USPTO filing, U.S. provisional patent application 64/088,697.
 
 ## Pages
 
 - [VeriPura home](https://www.veripura.com/): VeriPura™ builds orchestrated compliance agents that find the rules, check the documents and record a verifiable result. Industry solutions for food, cosmetics, supplements, pharmaceuticals and building supplies, built on VeriPura Core.
-- [VeriPura Core](https://www.veripura.com/core.html): VeriPura Core™ is the orchestrated compliance agent engine behind VeriPura. It finds the rules, checks the documents and records a verifiable result. Trained with you for regulated supply chains in any industry.
+- [VeriPura Core](https://www.veripura.com/core.html): VeriPura Core™ reads the documents for a shipment, checks them against the rules of the destination, says plainly what it could not check and records a verifiable result. Tuned with you for any regulated supply chain.
 - [VeriPura Food (live)](https://www.veripura.com/food.html): VeriPura Food™ is VeriPura Core tuned for food: agents trained on food import rules check every document against the border requirements of any destination before the container moves.
 - [VeriPura Building Supplies (example)](https://www.veripura.com/building-supplies.html): VeriPura Building Supplies™ is VeriPura Core tuned for building materials: agents check origin, duty, timber, forced-labor and carbon documents against the requirements of any destination before goods ship.
 - [VeriPura Cosmetics (example)](https://www.veripura.com/cosmetics.html): VeriPura Cosmetics™ is VeriPura Core tuned for cosmetics: agents check formulas, labels, claims and registrations against the requirements of any destination before products ship.

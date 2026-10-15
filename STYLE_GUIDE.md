@@ -99,8 +99,9 @@ Dark mode: follows `prefers-color-scheme`, with a manual toggle (a sun or moon i
 - **Tool strip**: pill links under the hero naming the solution's tools.
 - **Tool card** (`.tool`): surface, 1.5px line border, title, two or three sentences, one text link pinned to the bottom. Three across on desktop.
 - **Solution card** (`.app`): live solution has an ink border and offset shadow with a green "Live" tag. Example solutions have a dashed border, transparent fill and an "Example" tag with a dashed outline.
+- **Capability cards** (core.html, "What Core covers today"): grouped Find, Collect, Check, Screen, Prove, Work with your team. Each card carries one status, Live or Under development, plus an optional one-line note saying why (for example "Built and tested. Not in production yet."). Filter buttons: All, Live, Under development. Date the list ("Status as of ...") and update it when statuses change.
 - **Status tags**: `Live` (pass colors), `Under development` (flag colors), `Example` (dashed outline). On example industry pages, the tag in the hero kicker is a link reading "Discuss a pilot" that goes to the contact form, not "Under development".
-- **Evidence folder** (hero visual): illustrative, labeled "Illustrative example. All data is fictional. Your team makes the decision." Items show Done, Mismatch or Review tags. Final state reads "Review: 1 mismatch, 1 flag".
+- **Evidence folder** (hero visual): illustrative, labeled "Illustrative example. All data is fictional. Your team makes the decision." Items show Done, Matched, Mismatch, Review or Not checked tags (Not checked uses the slate dot and tint fill). Never use Pass or Fail. A check that could not run is Not checked, never Matched. Final state reads "Review: 1 mismatch, 1 flag".
 - **Dark flow** (nine stages grouped Find, Check, Prove): mono step numbers, hairline dividers.
 - **Code figure**: navy block, caption bar "Your system calls VeriPura Food" and "Illustrative". Response uses `status: "review"` and `findings`, never a verdict.
 - **FAQ**: native `<details>`, 18px bold summary, "+" marker, hairline borders. Include the patent question.

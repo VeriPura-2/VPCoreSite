@@ -440,6 +440,8 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
 .app.ex{border-style:dashed;background:transparent}
 .app.ex:hover{border-style:solid}
 .egnote{margin:20px 0 0;font-size:14.5px;color:var(--slate)}
+.teaser-btn{background:var(--on-brand);color:var(--brand);border-color:var(--on-brand)}
+.teaser-btn:hover{background:var(--brand-text);border-color:var(--brand-text)}
 .teaser{display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 </style>
 <script type="application/ld+json" id="seo-ld">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.veripura.com/#org","name":"VeriPura","url":"https://www.veripura.com/","logo":{"@type":"ImageObject","url":"https://www.veripura.com/vp-logo.png"},"sameAs":["https://www.linkedin.com/company/veripura/","https://x.com/VeriPura","https://www.instagram.com/veri.pura/","https://t.me/VeriPura"],"description":"VeriPura™ builds orchestrated compliance agents that find the rules, check the documents and record a verifiable result. Industry solutions for food, cosmetics, supplements, pharmaceuticals and building supplies, built on VeriPura Core."},{"@type":"WebSite","@id":"https://www.veripura.com/#website","url":"https://www.veripura.com/","name":"VeriPura","publisher":{"@id":"https://www.veripura.com/#org"}},{"@type":"WebPage","@id":"https://www.veripura.com/#webpage","url":"https://www.veripura.com/","name":"VeriPura™: compliance agents that prove their work","description":"VeriPura™ builds orchestrated compliance agents that find the rules, check the documents and record a verifiable result. Industry solutions for food, cosmetics, supplements, pharmaceuticals and building supplies, built on VeriPura Core.","isPartOf":{"@id":"https://www.veripura.com/#website"}}]}</script>
@@ -587,9 +589,15 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
   </div>
 </section>
 <section class="dark" id="coreteaser">
-  <div class="wrap teaser">
-    <div><h2 class="title" style="margin-bottom:10px">Inside VeriPura Core.</h2><p class="intro" style="margin:0">One orchestrator, 50+ specialist agents and a verifiable record. See how it works, how we tune it and how IT teams connect to it.</p></div>
-    <a class="btn btn-solid" href="core.html">Explore Core</a>
+  <div class="wrap">
+    <h2 class="title">Inside VeriPura Core.</h2>
+    <p class="intro">One orchestrator, 50+ specialist agents and a verifiable record. Here is what that means for a shipment.</p>
+    <div class="problem">
+      <div><h3>It reads every paper.</h3><p>Drop a whole folder for a shipment. Core reads each file by its content, files it against the checklist for the route and cross-checks weights, dates, names and certificate numbers.</p></div>
+      <div><h3>It says so when it cannot check.</h3><p>A register that is offline shows as Not checked, never as a match. Every result shows the date of the data behind it.</p></div>
+      <div><h3>It leaves a record anyone can verify.</h3><p>Every document is fingerprinted on upload and anchored on a public ledger, so nothing is changed or back-dated quietly.</p></div>
+    </div>
+    <div class="ctas" style="margin-top:40px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn teaser-btn" href="core.html">Explore Core</a></div>
   </div>
 </section>
 <section class="alt" id="models">

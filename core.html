@@ -66,12 +66,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>VeriPura Core™: the orchestrated compliance agent engine</title>
-<meta name="description" content="VeriPura Core™ is the orchestrated compliance agent engine behind VeriPura. It finds the rules, checks the documents and records a verifiable result. Trained with you for regulated supply chains in any industry.">
+<meta name="description" content="VeriPura Core™ reads the documents for a shipment, checks them against the rules of the destination, says plainly what it could not check and records a verifiable result. Tuned with you for any regulated supply chain.">
 <link rel="canonical" href="https://www.veripura.com/core.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="VeriPura">
 <meta property="og:title" content="VeriPura Core™: the orchestrated compliance agent engine">
-<meta property="og:description" content="VeriPura Core™ is the orchestrated compliance agent engine behind VeriPura. It finds the rules, checks the documents and records a verifiable result. Trained with you for regulated supply chains in any industry.">
+<meta property="og:description" content="VeriPura Core™ reads the documents for a shipment, checks them against the rules of the destination, says plainly what it could not check and records a verifiable result. Tuned with you for any regulated supply chain.">
 <meta property="og:url" content="https://www.veripura.com/core.html">
 <meta property="og:image" content="https://www.veripura.com/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -80,7 +80,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@VeriPura">
 <meta name="twitter:title" content="VeriPura Core™: the orchestrated compliance agent engine">
-<meta name="twitter:description" content="VeriPura Core™ is the orchestrated compliance agent engine behind VeriPura. It finds the rules, checks the documents and records a verifiable result. Trained with you for regulated supply chains in any industry.">
+<meta name="twitter:description" content="VeriPura Core™ reads the documents for a shipment, checks them against the rules of the destination, says plainly what it could not check and records a verifiable result. Tuned with you for any regulated supply chain.">
 <meta name="twitter:image" content="https://www.veripura.com/og-image.png">
 <meta name="twitter:image:alt" content="VeriPura: compliance agents that prove their work, with an illustrative evidence folder.">
 <!-- ROUGH MOCKUP for veripura.com. Copy and claims are drafts for internal review. -->
@@ -422,15 +422,52 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
 .app.ex:hover{border-style:solid}
 .egnote{margin:20px 0 0;font-size:14.5px;color:var(--slate)}
 .teaser{display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+
+/* Findings sample and capabilities (what Core does) */
+.checks li.on.na .dot{background:var(--slate)}
+.na .tag{background:var(--tint-2);color:var(--slate)}
+.sample{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:start}
+.sample .folder{min-width:0}
+.sample .folder-head{flex-wrap:wrap}
+.sample .folder-head h3{font-size:16px;margin:0 0 4px;font-weight:700}
+.sample .verdict{white-space:normal}
+.promise h3{font-size:26px;letter-spacing:-.02em;line-height:1.15;margin:0 0 14px}
+.promise p{margin:0;color:var(--ink-2);font-weight:500}
+.promise p+p{margin-top:14px}
+@media (max-width:960px){.sample{grid-template-columns:1fr;gap:36px}}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.filters button{font:600 15px/1 var(--sans);cursor:pointer;min-height:44px;padding:0 16px;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:999px}
+.filters button:hover{border-color:var(--ink)}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--btn-fg);border-color:var(--ink)}
+.filters button:focus-visible{outline:3px solid var(--seal);outline-offset:3px}
+#capcount{margin:0 0 4px}
+.capgroup{margin-top:44px}
+.capgroup h3{font-size:26px;letter-spacing:-.02em;margin:0 0 4px}
+.capgroup .what{margin:0 0 20px;color:var(--slate);font-size:15.5px;font-weight:500}
+.capgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.cap{border:1.5px solid var(--line);border-radius:12px;padding:20px;background:var(--paper);display:grid;gap:10px;align-content:start;min-width:0}
+.cap header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.cap h4{font-size:19px;line-height:1.25;margin:0}
+.cap p{margin:0;font-size:15.5px;color:var(--ink-2);font-weight:500}
+.cap .why{color:var(--slate);font-size:14.5px}
+.status.dev{display:inline-block;grid-template-columns:none;gap:0}
+.cap .status{white-space:nowrap;flex:none}
+@media (max-width:860px){.capgrid{grid-template-columns:1fr}}
+.behind{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 40px}
+.behind>div{border-top:2px solid var(--ink);padding-top:16px}
+.behind h3{font-size:19px;margin:0 0 6px}
+.behind p{margin:0;color:var(--slate);font-size:15.5px;font-weight:500}
+@media (max-width:860px){.behind{grid-template-columns:1fr}}
+.ways{margin:20px 0 0;padding-left:20px;display:grid;gap:8px;color:var(--ink-2);font-weight:500;max-width:36em}
 </style>
-<script type="application/ld+json" id="seo-ld">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.veripura.com/core.html#webpage","url":"https://www.veripura.com/core.html","name":"VeriPura Core™: the orchestrated compliance agent engine","description":"VeriPura Core™ is the orchestrated compliance agent engine behind VeriPura. It finds the rules, checks the documents and records a verifiable result. Trained with you for regulated supply chains in any industry.","isPartOf":{"@type":"WebSite","name":"VeriPura","url":"https://www.veripura.com/"},"publisher":{"@type":"Organization","name":"VeriPura","url":"https://www.veripura.com/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.veripura.com/"},{"@type":"ListItem","position":2,"name":"VeriPura Core","item":"https://www.veripura.com/core.html"}]}]}</script>
+<script type="application/ld+json" id="seo-ld">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.veripura.com/core.html#webpage","url":"https://www.veripura.com/core.html","name":"VeriPura Core™: the orchestrated compliance agent engine","description":"VeriPura Core™ reads the documents for a shipment, checks them against the rules of the destination, says plainly what it could not check and records a verifiable result. Tuned with you for any regulated supply chain.","isPartOf":{"@type":"WebSite","name":"VeriPura","url":"https://www.veripura.com/"},"publisher":{"@type":"Organization","name":"VeriPura","url":"https://www.veripura.com/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.veripura.com/"},{"@type":"ListItem","position":2,"name":"VeriPura Core","item":"https://www.veripura.com/core.html"}]}]}</script>
 </head>
 <body>
 
 <nav class="nav" aria-label="Main">
   <div class="wrap">
     <a class="brand" href="index.html"><img class="logo" src="data:image/png;base64,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" alt="" width="30" height="30"><span>VeriPura <span class="prod">Core</span><sup class="tm">™</sup></span></a>
-    <ul><li><a href="#how">How it works</a></li><li><a href="#agents">Agents</a></li><li><a href="#custom">Tuning</a></li><li><a href="#developers">For developers</a></li><li><a href="#trust">Trust and IP</a></li><li><a href="index.html#solutions">Industry solutions</a></li><li><a href="index.html#about">About</a></li></ul>
+    <ul><li><a href="#how">How it works</a></li><li><a href="#capabilities">Coverage</a></li><li><a href="#custom">Tuning</a></li><li><a href="#developers">For developers</a></li><li><a href="#trust">Trust and IP</a></li><li><a href="index.html#solutions">Industry solutions</a></li><li><a href="index.html#about">About</a></li></ul>
     <div class="nav-right">
       <button class="theme-toggle" id="theme" type="button" aria-label="Switch to dark mode"><svg class="ic ic-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
       <a class="btn btn-solid" href="#contact">Start a pilot</a>
@@ -441,18 +478,18 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
 
 <header class="hero" id="top"><div class="wrap" style="grid-template-columns:1fr"><div>
 <h1 style="font-size:clamp(34px,4.6vw,56px);max-width:none">The engine behind every industry solution.</h1>
-<p class="lede" style="max-width:46em">An orchestrator, a library of 50+ specialist agents and a tamper-evident evidence record. Core finds the rules for any product, origin and destination, checks the documents against them and routes the result to a person who decides.</p>
+<p class="lede" style="max-width:46em">VeriPura Core<sup class="tm">™</sup> reads the certificates, lab reports and invoices for a shipment, checks them against the rules of the destination and shows what to review while the goods are still at the origin. An orchestrator runs 50+ specialist agents and writes a tamper-evident record. Your team makes the decision.</p>
 <div class="ctas"><a class="btn btn-solid" href="#contact">Start a pilot</a><a class="btn btn-ghost" href="index.html#solutions">See industry solutions</a></div>
 <p class="note">Patent-pending. Tuned first for food in VeriPura Food™.</p></div></div></header>
 <section class="dark" id="how">
   <div class="wrap">
     <h2 class="title">One orchestrator, many specialists, one verifiable record.</h2>
-    <p class="intro">Every business event goes to an orchestrator (ours, or your own). It decides which specialist agents need to run, shows where the evidence is incomplete and names the person who must decide.</p>
+    <p class="intro">Every business event goes to an orchestrator (ours, or your own). It decides which specialist agents need to run, shows where the evidence is incomplete and names the person who must decide. For a shipment, it works like this.</p>
     <ol class="flow">
-      <li><span class="n">Step 1</span><h3>Receive the event</h3><p>A purchase order, receipt, work order, shipment or rule change arrives through API, ERP or file drop.</p></li>
-      <li><span class="n">Step 2</span><h3>Load the rulebook</h3><p>The orchestrator attaches the right profile: product, origin, destination and jurisdiction.</p></li>
-      <li><span class="n">Step 3</span><h3>Run the specialists</h3><p>Agents work in parallel. Each returns its findings or flags missing evidence, with sources cited.</p></li>
-      <li><span class="n">Step 4</span><h3>Route to a decision</h3><p>Complete files go to your team to decide. Gaps and flags go to a named person with a drafted fix.</p></li>
+      <li><span class="n">Step 1</span><h3>Name the route</h3><p>Product, origin, destination. Core works out which papers that trade needs and builds the checklist.</p></li>
+      <li><span class="n">Step 2</span><h3>Upload the papers</h3><p>Drop in everything in one go, through the portal, API or a file drop. Core recognizes each document, reads it and files it against the checklist.</p></li>
+      <li><span class="n">Step 3</span><h3>Core cross-checks</h3><p>Do weights, dates, names and certificate numbers agree across documents? Is anything expired, missing or altered? Specialists run in parallel and cite their sources.</p></li>
+      <li><span class="n">Step 4</span><h3>Review the findings</h3><p>One page with every finding and the proof behind it, routed to a named person with a drafted fix. Your team decides. Border staff can verify the record by QR code.</p></li>
     </ol>
     <div class="rules">
       <div><h3>Information, not decisions</h3><p>VeriPura provides the information and a risk score. Your people make every decision: holds, supplier exits, filings and statements to authorities.</p></div>
@@ -461,61 +498,261 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
   </div>
 </section>
 
-<section id="agents">
+<section id="honest">
   <div class="wrap">
-    <h2 class="title">An agent library we configure for your industry.</h2>
-    <p class="intro">Agents are grouped by the job they do. Food import agents are built and tested today. The rest of the library is under development on the same core and is configured and trained for each new industry.</p>
-    <div class="lib">
-      <div class="col">
-        <h3>Find</h3>
-        <p class="what">Work out what applies.</p>
-        <dl>
-          <dt>Regulation discovery</dt>
-          <dd>Identifies the import, export and certification rules for any product, origin and destination, wherever the rules can be obtained.</dd>
-          <dt>Document requirements</dt>
-          <dd>Turns the applicable rules into the exact document set a transaction needs.</dd>
-          <dt>Jurisdiction profiles <span class="status dev">Under development</span></dt>
-          <dd>Versioned rulebooks per country, state or local authority, resolved from an address.</dd>
-          <dt>Regulatory watch</dt>
-          <dd>Detects rule changes and maps the impact to products, suppliers and open orders.</dd>
-        </dl>
+    <h2 class="title">Three answers, never a fake one.</h2>
+    <p class="intro">Each check ends as matched, flagged for review (a mismatch or a gap) or not checked. This is the main difference between Core and a checklist tool.</p>
+    <div class="sample">
+      <div class="folder" aria-label="Illustrative Consignment Passport">
+        <div class="folder-head">
+          <div>
+            <h3>Consignment Passport: organic coffee</h3>
+            <p>Peru to the Netherlands</p>
+          </div>
+          <span class="verdict hold">Review: 1 mismatch, 1 not checked</span>
+        </div>
+        <ul class="checks">
+          <li class="pass on"><span class="dot"></span><div><strong>Weights agree</strong><span class="d">Invoice, packing list and bill of lading show the same weights</span></div><span class="tag">Matched</span></li>
+          <li class="miss on"><span class="dot"></span><div><strong>Organic certificate</strong><span class="d">Expired before the vessel sailed</span></div><span class="tag">Mismatch</span></li>
+          <li class="na on"><span class="dot"></span><div><strong>Certifier's online register</strong><span class="d">Could not be reached today. Core says so and does not guess.</span></div><span class="tag">Not checked</span></li>
+        </ul>
+        <div class="anchor"><span>Anchored <b>0x9d2e…41ab</b></span><span>Routed to <b>Import compliance</b></span></div>
+        <div class="folder-foot">Illustrative example. All data is fictional. Your team makes the decision.</div>
       </div>
-      <div class="col">
-        <h3>Check</h3>
-        <p class="what">Test the evidence against the rules.</p>
-        <dl>
-          <dt>Document extraction</dt>
-          <dd>Reads certificates, declarations and labels in any format or language, field by field.</dd>
-          <dt>HS classification</dt>
-          <dd>Assigns codes with confidence scores and checks them against declared goods.</dd>
-          <dt>Cross-document consistency</dt>
-          <dd>Finds mismatched names, quantities, dates, authorities and expiries between documents.</dd>
-          <dt>Provenance and duty <span class="status dev">Under development</span></dt>
-          <dd>Checks origin, species or material and duty exposure per producer and period.</dd>
-          <dt>Red-flag sentinel <span class="status dev">Under development</span></dt>
-          <dd>Watches price outliers, supplier enforcement news and new routing patterns.</dd>
-        </dl>
-      </div>
-      <div class="col">
-        <h3>Prove</h3>
-        <p class="what">Leave a record anyone can verify.</p>
-        <dl>
-          <dt>Evidence folder</dt>
-          <dd>One tamper-evident folder per lot, shipment, component or job.</dd>
-          <dt>Lineage <span class="status dev">Under development</span></dt>
-          <dd>Follows evidence through splits, blends and bills of materials.</dd>
-          <dt>Verifiable credentials</dt>
-          <dd>Machine-readable attestations for buyers, auditors and authorities.</dd>
-          <dt>Audit pack</dt>
-          <dd>Assembles the full evidence trail for a customs request, claim or customer audit.</dd>
-        </dl>
+      <div class="promise">
+        <h3>When Core cannot check something, it says so.</h3>
+        <p>Many systems turn a failed lookup into a green tick. Core does not. A missing document is a finding. A register that is offline shows as Not checked. Every result also shows the date of the data behind it.</p>
+        <p>We went through the checks one by one and removed every place where a problem could quietly show up as a match. For a product that sells trust, that matters more than any single feature.</p>
       </div>
     </div>
-    <div class="legend"><span><span class="status dev">Under development</span> built on the core, being trained per industry</span></div>
   </div>
 </section>
 
-<section id="custom">
+<section class="alt" id="capabilities">
+  <div class="wrap">
+    <h2 class="title">What Core covers today.</h2>
+    <p class="intro" style="margin-bottom:24px">Every capability carries its status, so you can see what is working in the product and what is not. Status as of 15 October 2026.</p>
+    <div class="filters" role="group" aria-label="Filter by status">
+      <button type="button" data-f="all" aria-pressed="true">All</button>
+      <button type="button" data-f="live" aria-pressed="false">Live</button>
+      <button type="button" data-f="dev" aria-pressed="false">Under development</button>
+    </div>
+    <p class="formnote" id="capcount" role="status"></p>
+    <div class="capgroup" id="cap-find">
+      <h3>Find</h3>
+      <p class="what">Work out what applies, and keep the rules current.</p>
+      <div class="capgrid">
+      <article class="cap" data-s="live">
+        <header><h4>A checklist for every trade route</h4><span class="status live">Live</span></header>
+        <p>The documents a shipment needs depend on what it is and where it is going. Core builds that list per route, including wine and seafood papers for the EU and UK.</p>
+        <p class="why">No more finding out at the border that a certificate was required.</p>
+      </article>
+      <article class="cap" data-s="live">
+        <header><h4>Customs tariff and HS code finder</h4><span class="status live">Live</span></header>
+        <p>Search the customs tariffs of 14 jurisdictions in one place, with AI-assisted code suggestions, legal notes and duty rates.</p>
+        <p class="why">The right code decides the duty and the rules that apply.</p>
+      </article>
+      <article class="cap" data-s="live">
+        <header><h4>Customs and tariff advice</h4><span class="status live">Live</span></header>
+        <p>For the EU, UK and Philippines, plus a halal advisory, Core suggests the right customs code from the official tariff and shows what the rules say about entry. It never claims to be the final authority, and unsure cases go to a human reviewer.</p>
+        <p class="why">Malaysia is built and not yet deployed.</p>
+      </article>
+      <article class="cap" data-s="live">
+        <header><h4>Always-current reference data</h4><span class="status live">Live</span></header>
+        <p>Core keeps its own copies of 14 national tariff schedules and watches 17 live feeds, such as FDA and EU food alerts (RASFF), EU law changes, UK food safety, disasters and BRCGS, GLOBALG.A.P. and IFS updates. Rule changes are mapped to the products, suppliers and open orders they affect. An operations dashboard shows what is fresh and what did not refresh.</p>
+        <p class="why">The rules behind each result are kept up to date automatically.</p>
+      </article>
+      <article class="cap" data-s="dev">
+        <header><h4>Jurisdiction profiles</h4><span class="status dev">Under development</span></header>
+        <p>Versioned rulebooks per country, state or local authority, resolved from an address.</p>
+      </article>
+      <article class="cap" data-s="dev">
+        <header><h4>EU Forced Labour Regulation</h4><span class="status dev">Under development</span></header>
+        <p>The EU ban on products made with forced labor applies from 14 December 2027. We have researched what it requires and planned how Core supports it.</p>
+        <p class="why">Nothing built yet.</p>
+      </article>
+      </div>
+    </div>
+    <div class="capgroup" id="cap-collect">
+      <h3>Collect</h3>
+      <p class="what">Get the papers in, even from people who will never log in to a new system.</p>
+      <div class="capgrid">
+      <article class="cap" data-s="live">
+        <header><h4>Smart Ingestion: drop a whole folder</h4><span class="status live">Live</span></header>
+        <p>Drop every file for a shipment at once. Core reads each file by its content, never its file name, then decides where the whole batch belongs: an existing shipment, matched by seller and buyer names, or a new one built around the bill of lading, invoice or purchase order. One drop is one shipment.</p>
+        <p class="why">Files it does not recognize are not dropped. They wait for you, and the admin team can teach Core the new document type.</p>
+      </article>
+      <article class="cap" data-s="live">
+        <header><h4>Secure upload links for suppliers</h4><span class="status live">Live</span></header>
+        <p>Send a supplier a one-time link. They upload the document without an account, Core checks it on arrival, and the shipment updates. Expired or used links stop working.</p>
+        <p class="why">Gets papers from people who will never log in to a new system.</p>
+      </article>
+      <article class="cap" data-s="live">
+        <header><h4>Compliance Concierge: chases missing papers</h4><span class="status live">Live</span></header>
+        <p>When a document is missing, or a certificate is about to expire (30, 14 and 7 days out), the Concierge goes after it. It emails the issuer, searches public registers and messages people by WhatsApp, LINE or SMS. Whatever it finds goes to a person for review before it counts.</p>
+        <p class="why">Replaces hours a week of chasing suppliers.</p>
+      </article>
+      <article class="cap" data-s="live">
+        <header><h4>Expiry alerts you control</h4><span class="status live">Live</span></header>
+        <p>Company certificates are stored once and tracked. Choose how you hear about problems: channels, which alerts and quiet hours.</p>
+        <p class="why">No surprise expiries, and no 3 a.m. messages.</p>
+      </article>
+      </div>
+    </div>
+    <div class="capgroup" id="cap-check">
+      <h3>Check</h3>
+      <p class="what">Test the evidence against the rules.</p>
+      <div class="capgrid">
+      <article class="cap" data-s="live">
+        <header><h4>Reads and cross-checks documents</h4><span class="status live">Live</span></header>
+        <p>Upload invoices, certificates, packing lists and lab reports together. Core sorts them, pulls out the facts and compares them with each other.</p>
+        <p class="why">Replaces someone reading forty pages and comparing numbers by hand.</p>
+      </article>
+      <article class="cap" data-s="live">
+        <header><h4>Catches route and detail mismatches</h4><span class="status live">Live</span></header>
+        <p>If a document shows a different route than the one declared, say Vietnam instead of Thailand, Core asks you and re-checks only the documents affected. Conflicts are resolved with a recorded name and reason.</p>
+        <p class="why">Fixed in one step, with a paper trail.</p>
+      </article>
+      <article class="cap" data-s="live">
+        <header><h4>Spots forged or altered documents</h4><span class="status live">Live</span></header>
+        <p>Looks for handwriting, stamps and signatures, and for signs a document was edited after it was issued.</p>
+        <p class="why">Certificate fraud is common on high-risk trade routes.</p>
+      </article>
+      <article class="cap" data-s="live">
+        <header><h4>Lab reports and accreditation</h4><span class="status live">Live</span></header>
+        <p>Reads lab reports, or takes them directly from the lab by API. Core checks that the lab is accredited by a recognized national body, that the sample matches the container and seal, and that results are within legal limits for pesticides, heavy metals and pathogens.</p>
+        <p class="why">A report from an unaccredited lab is flagged for review, not accepted as evidence.</p>
+      </article>
+      <article class="cap" data-s="live">
+        <header><h4>EU border checks</h4><span class="status live">Live</span></header>
+        <p>Organic certificates, deforestation declarations with plot maps, seafood catch certificates, wine certificates and composite foods, plus an estimate of what a rejection would cost in demurrage.</p>
+        <p class="why">Built around the checks EU border posts actually apply.</p>
+      </article>
+      <article class="cap" data-s="dev">
+        <header><h4>Quality-scheme certificates</h4><span class="status dev">Under development</span></header>
+        <p>BRCGS, GLOBALG.A.P., FSSC 22000 and organic certificates are checked for expiry. The newest rule flags a missing BRCGS site code or GLOBALG.A.P. number, because a certificate nobody can look up is not proof.</p>
+        <p class="why">The stricter rules are built and tested. They are not in production yet.</p>
+      </article>
+      <article class="cap" data-s="dev">
+        <header><h4>Halal certificate and certifier checks</h4><span class="status dev">Under development</span></header>
+        <p>Core knows 23 recognized halal bodies. For goods going to the UAE, Turkey and Singapore it checks the issuing body against the official list, including whether its recognition has lapsed. It can also look a certificate up on the Indonesian and Malaysian registers.</p>
+        <p class="why">Built and tested. The register lookups are not switched on in every environment yet.</p>
+      </article>
+      <article class="cap" data-s="dev">
+        <header><h4>Packaging rules (UK EPR)</h4><span class="status dev">Under development</span></header>
+        <p>Checks whether a packaging producer is on the UK government register, now covering all 12,069 producers rather than the first 500.</p>
+        <p class="why">Waiting on its next production deployment.</p>
+      </article>
+      <article class="cap" data-s="dev">
+        <header><h4>Nutrition and ingredients audit</h4><span class="status dev">Under development</span></header>
+        <p>Paste a product specification and Core checks it against the target market's rules: additives, and a mass-balance check on the recipe.</p>
+        <p class="why">An early check before you print a label.</p>
+      </article>
+      <article class="cap" data-s="dev">
+        <header><h4>Misleading “green” label claims</h4><span class="status dev">Under development</span></header>
+        <p>Scans labels in six languages for vague claims such as “eco-friendly” or “climate neutral” with no proof, under the new EU rules that apply from 27 September 2026.</p>
+        <p class="why">In testing. It only warns, and the rule list still needs sign-off from our compliance owner.</p>
+      </article>
+      </div>
+    </div>
+    <div class="capgroup" id="cap-screen">
+      <h3>Screen</h3>
+      <p class="what">Screen the parties and the journey.</p>
+      <div class="capgrid">
+      <article class="cap" data-s="live">
+        <header><h4>Forced-labor screening</h4><span class="status live">Live</span></header>
+        <p>Screens suppliers against the US government's list of banned entities for goods linked to high-risk regions.</p>
+        <p class="why">Covers the US law today. The EU law comes next.</p>
+      </article>
+      <article class="cap" data-s="dev">
+        <header><h4>Sanctions screening</h4><span class="status dev">Under development</span></header>
+        <p>Checks the companies on a shipment against the full sanctions lists. A match raises a critical alert.</p>
+        <p class="why">Working on our development system. Being rolled out to production.</p>
+      </article>
+      <article class="cap" data-s="dev">
+        <header><h4>Provenance and duty</h4><span class="status dev">Under development</span></header>
+        <p>Checks origin, species or material and duty exposure per producer and period.</p>
+      </article>
+      <article class="cap" data-s="dev">
+        <header><h4>Red-flag sentinel</h4><span class="status dev">Under development</span></header>
+        <p>Watches price outliers, supplier enforcement news and new routing patterns.</p>
+      </article>
+      <article class="cap" data-s="dev">
+        <header><h4>Cold chain and sensors</h4><span class="status dev">Under development</span></header>
+        <p>Shows container temperature readings during transit. Core compares them with the limits for the goods and raises a flag when a limit is breached.</p>
+        <p class="why">Needs sensor data from the carrier or the container.</p>
+      </article>
+      <article class="cap" data-s="dev">
+        <header><h4>Pallet labels and traceability events</h4><span class="status dev">Under development</span></header>
+        <p>Makes GS1 pallet labels (pallet code, item code, lot) and reads GS1 traceability events (EPCIS). Core flags impossible timelines, such as harvest after shipping, outputs larger than inputs and cold-chain breaches.</p>
+        <p class="why">The standard format for retailer and supply-chain traceability.</p>
+      </article>
+      </div>
+    </div>
+    <div class="capgroup" id="cap-prove">
+      <h3>Prove</h3>
+      <p class="what">Leave a record anyone can verify.</p>
+      <div class="capgrid">
+      <article class="cap" data-s="live">
+        <header><h4>Consignment Passport</h4><span class="status live">Live</span></header>
+        <p>One page of findings for the whole shipment: a risk score, every flag and the evidence behind it. A fingerprint of it is sealed on a public ledger (IOTA), so it cannot be changed quietly later. Border posts can verify it by QR code, and the full trail can be assembled into an audit pack for a customs request, claim or customer audit.</p>
+        <p class="why">Proof that stands up when someone asks what you knew, and when.</p>
+      </article>
+      <article class="cap" data-s="live">
+        <header><h4>Witness Engine: tamper-evident evidence trail</h4><span class="status live">Live</span></header>
+        <p>Every document is fingerprinted the moment it is uploaded. The fingerprints are linked in time order and anchored on the public ledger, so anyone can later check that nothing was changed or back-dated. Records can be shared as W3C Verifiable Credentials.</p>
+        <p class="why">The audit trail you can show a regulator or a buyer.</p>
+      </article>
+      <article class="cap" data-s="dev">
+        <header><h4>Lineage</h4><span class="status dev">Under development</span></header>
+        <p>Follows evidence through splits, blends and bills of materials.</p>
+      </article>
+      </div>
+    </div>
+    <div class="capgroup" id="cap-team">
+      <h3>Work with your team</h3>
+      <p class="what">Keep your people in control.</p>
+      <div class="capgrid">
+      <article class="cap" data-s="live">
+        <header><h4>Control room for your compliance team</h4><span class="status live">Live</span></header>
+        <p>A review queue for cases Core is unsure about, live health of every checker, anomaly alerts, audit logs and user management. Reviewer decisions feed back in to train the system.</p>
+        <p class="why">People stay in control, and Core learns from them.</p>
+      </article>
+      <article class="cap" data-s="live">
+        <header><h4>Sign-off by the people responsible</h4><span class="status live">Live</span></header>
+        <p>Exporter, freight forwarder and importer can each acknowledge an issue with a stated reason, such as a natural weight loss from drying. The decision is recorded with the findings.</p>
+        <p class="why">Clear accountability instead of an email chain.</p>
+      </article>
+      <article class="cap" data-s="dev">
+        <header><h4>Talk to your shipment (text or voice)</h4><span class="status dev">Under development</span></header>
+        <p>Ask the Consignment Guardian what is wrong, what is missing or what to do next, by typing or by speaking. It answers from that shipment's own documents and checks.</p>
+        <p class="why">Voice runs through a separate service that is still being finished.</p>
+      </article>
+      <article class="cap" data-s="live">
+        <header><h4>Partner connections (API)</h4><span class="status live">Live</span></header>
+        <p>Labs and other services can send evidence straight into Core through our hosted API. Our Label Validator asks Core to check additives and allergens, including banned colorants and EU allergen rules.</p>
+        <p class="why">One set of rules, used by every product.</p>
+      </article>
+      </div>
+    </div>
+    <div class="legend"><span><span class="status live">Live</span> working in the product</span><span><span class="status dev">Under development</span> built but not yet in production everywhere, in testing, or planned. The note on each card says which.</span></div>
+  </div>
+</section>
+
+<section id="behind">
+  <div class="wrap">
+    <h2 class="title">What sits behind the results.</h2>
+    <p class="intro">The parts you do not see, but that make the results believable.</p>
+    <div class="behind">
+      <div><h3>More than 50 specialist agents</h3><p>Each one knows a single area: organic, halal, sanctions, food safety schemes, packaging, labeling, cold chain and more. One coordinating agent per shipment pulls their findings together.</p></div>
+      <div><h3>Rules come from sources, not guesses</h3><p>Rules are read from official sources and reviewed before they count. Rules nobody has reviewed yet are kept apart and labeled as such.</p></div>
+      <div><h3>Data that stays fresh</h3><p>Registers and lists are refreshed on a schedule. If a list is too old for a check to be trusted, Core says it cannot confirm instead of using it.</p></div>
+      <div><h3>People stay in charge</h3><p>When Core is unsure, it sends the case to a human reviewer. Their decisions go back in and make the next check better.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="custom">
   <div class="wrap">
     <h2 class="title">How we tune Core for each solution.</h2>
     <p class="intro">Most of the value comes from rules and retrieval. We fine-tune only the narrow, high-volume steps where it pays.</p>
@@ -531,7 +768,7 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
   </div>
 </section>
 
-<section class="alt" id="developers">
+<section id="developers">
   <div class="wrap">
     <h2 class="title">For your AI and engineering team.</h2>
     <p class="intro">Keep your orchestrator, your interface and your roadmap. Your systems engage VeriPura Core through our hosted API. Your team builds the experience. We maintain the rules, the trained specialists and the evidence trail.</p>
@@ -619,11 +856,17 @@ check_compliance({
   </div>
 </section>
 
-<section id="contact">
+<section class="alt" id="contact">
   <div class="wrap contact">
     <div>
       <h2 class="title">Tell us the compliance problem you'd hand to an agent first.</h2>
       <p class="intro" style="margin-bottom:0">You'll work directly with the founders and the engineers who build the agents, not an onboarding team.</p>
+      <p class="intro" style="margin:20px 0 0;font-size:17px">Core is built to be the checking layer under other products, not only a screen of its own. Partners can come in three ways:</p>
+      <ul class="ways">
+        <li>Run a pilot on a real trade corridor and see the findings on your own shipments.</li>
+        <li>Connect through our hosted API: send evidence in, or ask Core for a check.</li>
+        <li>Tell us which registers, certificates or countries matter most to your customers.</li>
+      </ul>
       <div class="people">
         <div class="person"><div><h3>Onno Stienen, CEO and co-founder</h3><p>18+ years in import and export compliance across Southeast Asia and Europe.</p></div></div>
         <div class="person"><div><h3>Thomas Oberlin, COO and co-founder</h3><p>Serial entrepreneur and patent holder with a background in B2B go-to-market.</p></div></div>
@@ -715,6 +958,21 @@ document.querySelectorAll('[data-interest]').forEach(a=>a.addEventListener('clic
   });
 })();
 
+
+
+// Capability filter
+(function(){
+  const btns=document.querySelectorAll('.filters button'),caps=document.querySelectorAll('.cap'),groups=document.querySelectorAll('.capgroup'),count=document.getElementById('capcount');
+  if(!btns.length)return;
+  function apply(f){
+    let n=0;
+    caps.forEach(c=>{const show=f==='all'||c.dataset.s===f;c.hidden=!show;if(show)n++;});
+    groups.forEach(g=>{g.hidden=!g.querySelector('.cap:not([hidden])');});
+    count.textContent='Showing '+n+' of '+caps.length+' capabilities.';
+  }
+  btns.forEach(b=>b.addEventListener('click',()=>{btns.forEach(x=>x.setAttribute('aria-pressed',String(x===b)));apply(b.dataset.f);}));
+  apply('all');
+})();
 
 // Mobile menu: the section links collapse into a button below 1120px
 (function(){
