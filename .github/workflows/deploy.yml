@@ -10,7 +10,6 @@ jobs:
   web-deploy:
     name: Deploy to Web Server
     runs-on: ubuntu-latest
-    environment: GIT_TO_WEB
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
