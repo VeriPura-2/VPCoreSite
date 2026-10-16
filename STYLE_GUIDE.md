@@ -131,7 +131,7 @@ Dark mode: follows `prefers-color-scheme`, with a manual toggle (a sun or moon i
 8. Two ways to work with us: co-development pilot, managed agents
 9. Partners (dark, optional)
 10. FAQ
-11. Contact: "Talk to us." on Food (form, Contact link in nav and footer, free-trial link in the intro). Other industry pages keep "Start with one consignment." with the "Discuss a pilot" route. Form, social, calendar link
+11. Contact: "Talk to us." on Food (form, Contact link in nav and footer, free-trial link in the intro). Other industry pages keep their "Start with one ..." title with the "Discuss a pilot" route. Form, social, calendar link
 12. Footer
 
 ## 8. Mobile and accessibility
