@@ -468,6 +468,17 @@ ol.flow.light p{color:var(--ink-2);font-weight:500}
   .nav-right{flex:none}
   .nav-right .btn{padding:11px 12px;font-size:14px}
 }
+
+/* Audit trail */
+.fnote{font-size:13px;color:var(--slate);margin:12px 0 0}
+.stag{font-size:13px;font-weight:600;padding:3px 8px;border-radius:5px;white-space:nowrap;display:inline-block}
+.stag.ok{background:var(--pass-bg);color:var(--pass)}
+.stag.miss{background:var(--miss-bg);color:var(--miss)}
+table.trail{border-collapse:collapse;width:100%;min-width:640px;font-size:15px}
+table.trail th,table.trail td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+table.trail thead th{font-size:14px;color:var(--slate);font-weight:600;background:var(--paper)}
+table.trail tbody tr:last-child td{border-bottom:0}
+.trail-result{margin:14px 0 0;font-weight:600}
 </style>
 <script type="application/ld+json" id="seo-ld">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.veripura.com/pharmaceuticals.html#webpage","url":"https://www.veripura.com/pharmaceuticals.html","name":"VeriPura Pharma™: VeriPura Core tuned for pharmaceuticals","description":"VeriPura Pharma™ is VeriPura Core tuned for pharmaceuticals: agents check licences, GMP certificates, batch and cold chain records against the requirements of any destination before products ship.","isPartOf":{"@type":"WebSite","name":"VeriPura","url":"https://www.veripura.com/"},"publisher":{"@type":"Organization","name":"VeriPura","url":"https://www.veripura.com/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.veripura.com/"},{"@type":"ListItem","position":2,"name":"Industry solutions","item":"https://www.veripura.com/#solutions"},{"@type":"ListItem","position":3,"name":"Pharmaceuticals","item":"https://www.veripura.com/pharmaceuticals.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is VeriPura Pharma™?","acceptedAnswer":{"@type":"Answer","text":"VeriPura Core tuned for pharmaceuticals. It checks licences, GMP and GDP certificates, certificates of analysis, batch records and cold chain data against the requirements of any country of origin and any country of destination before a shipment departs."}},{"@type":"Question","name":"How does it relate to VeriPura Core™?","acceptedAnswer":{"@type":"Answer","text":"VeriPura Pharma™ is the industry solution built on VeriPura Core™ tuned for pharmaceuticals: the same orchestrated agent engine, with agents trained on pharmaceuticals rules, documents and certifiers. Other industries, such as food, cosmetics and supplements, have their own tuned editions."}},{"@type":"Question","name":"Is VeriPura Core™ patent-pending?","acceptedAnswer":{"@type":"Answer","text":"Yes. The orchestration and verification approach is covered under VeriPura's USPTO filing, U.S. provisional patent application 64/088,697. The filing secures our date for later non-provisional and foreign patent filings."}},{"@type":"Question","name":"Can our IT team use it directly?","acceptedAnswer":{"@type":"Answer","text":"Yes, through our hosted API. Talk to an engineer to discuss what your team needs."}},{"@type":"Question","name":"Which documents does it check?","acceptedAnswer":{"@type":"Answer","text":"Certificates of analysis, GMP and GDP certificates, written confirmations, import licences, marketing authorisations, batch records, temperature logs, controlled substance permits and the other documents the destination market requires."}},{"@type":"Question","name":"Which frameworks does it cover?","acceptedAnswer":{"@type":"Answer","text":"Any framework for any country of origin and any country of destination, wherever the rules can be obtained. Examples include EU Directive 2001/83/EC and the Falsified Medicines Directive, EU GMP and GDP, the US Drug Supply Chain Security Act and FDA import requirements, and WHO guidelines."}},{"@type":"Question","name":"How does it help against falsified products?","acceptedAnswer":{"@type":"Answer","text":"Agents compare each document with the others and with independent sources, such as public registers of manufacturing sites, and flag mismatches that could point to a substandard or falsified product before the shipment moves."}},{"@type":"Question","name":"Does it replace our qualified person or regulatory team?","acceptedAnswer":{"@type":"Answer","text":"No. It prepares the evidence and flags issues. Your qualified people make the decisions."}},{"@type":"Question","name":"What does a pilot look like?","acceptedAnswer":{"@type":"Answer","text":"It starts with one real shipment. We show every rule that applied, what was missing and any red flags. Your team makes the decision. If it's useful, a paid pilot follows in shadow mode, with the fee credited toward a contract."}}]}]}</script>
 </head>
@@ -501,7 +512,7 @@ ol.flow.light p{color:var(--ink-2);font-weight:500}
         <a class="btn btn-solid" href="#contact">Discuss a pilot</a>
         <a class="btn btn-ghost" href="#developers">For IT and AI teams</a>
       </div>
-      <p class="note">Built on VeriPura Core™ and its 50+ specialist agents. Tuned to your products, routes and documents.</p>
+      <p class="note">Built on VeriPura Core™ and its 70+ specialist agents. Tuned to your products, routes and documents.</p>
     </div>
 
     <div class="folder" aria-label="Illustrative evidence folder">
@@ -521,7 +532,7 @@ ol.flow.light p{color:var(--ink-2);font-weight:500}
         <li class="pass"><span class="dot"></span><div><strong>GMP certificate</strong><span class="d">Certificate confirmed in the public EU GMP database</span></div><span class="tag">Matched</span></li>
       </ul>
       <div class="anchor"><span>Anchored <b>0x4b17a2…c90d</b></span><span>Routed to <b>Quality assurance</b></span></div>
-      <div class="folder-foot">Illustrative example. All data is fictional. Your team makes the decision.</div>
+      <div class="folder-foot">Illustrative example. Your team makes the decision.</div>
     </div>
   </div>
 </header>
@@ -819,6 +830,26 @@ check_compliance({
       <li><span class="n">Step 2</span><h3>Core finds the requirements</h3><p>The agents identify the HS code, the rules that apply and every document the shipment needs.</p></li>
       <li><span class="n">Step 3</span><h3>Agents trained and checked</h3><p>The agents are trained and tested on sample documents for that route, then put to work on it.</p></li>
     </ol>
+  </div>
+</section>
+
+<section id="trail" style="padding-bottom:0">
+  <div class="wrap">
+    <h2 class="title">Every check leaves a trail.</h2>
+    <p class="intro">For each document, you see which agent ran which check, when it ran, and what it found. The same trail applies in VeriPura Core™ and in every industry solution built on it.</p>
+    <div class="tablewrap">
+      <table class="trail">
+        <thead><tr><th scope="col">Agent</th><th scope="col">Time</th><th scope="col">Parameter</th><th scope="col">Status</th><th scope="col">Details</th></tr></thead>
+        <tbody>
+          <tr><td>Document Guard</td><td>13:58</td><td>Signature</td><td><span class="stag miss">Missing</span></td><td>Carrier signature or sign-off</td></tr>
+          <tr><td>Document Guard</td><td>13:58</td><td>Seals and stamps</td><td><span class="stag miss">Missing</span></td><td>Carrier or terminal stamps</td></tr>
+          <tr><td>Document Guard</td><td>13:58</td><td>Commercial value</td><td><span class="stag ok">Matched</span></td><td>Price for the packaged medicines matches expected value</td></tr>
+          <tr><td>Document Guard</td><td>13:58</td><td>HS classification</td><td><span class="stag ok">Matched</span></td><td>HS code for the packaged medicines matches destination requirements</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="trail-result">Review: 2 missing, 2 matched.</p>
+    <p class="fnote">Illustrative example. A fictional bill of lading for packaged medicines.</p>
   </div>
 </section>
 

@@ -443,6 +443,26 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
 .teaser-btn{background:var(--on-brand);color:var(--brand);border-color:var(--on-brand)}
 .teaser-btn:hover{background:var(--brand-text);border-color:var(--brand-text)}
 .teaser{display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+
+/* Core and industry solutions */
+.engine{margin:36px 0 8px;display:grid;gap:10px}
+.erow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.eb{border:1.5px dashed var(--line);border-radius:12px;padding:16px;background:transparent;display:flex;flex-direction:column;gap:8px;min-width:0}
+.eb b{font-size:16px;font-weight:700}
+.eb span{font-size:13px;color:var(--slate);font-weight:600}
+.eb.live{border:1.5px solid var(--ink);box-shadow:6px 6px 0 var(--shadow);background:var(--surface)}
+.eb.live .status{align-self:flex-start}
+.ecore{border-radius:12px;padding:20px 22px;background:var(--brand);color:var(--on-brand);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+.ecore b{font-size:19px}
+.ecore span{font-size:14.5px;color:var(--brand-text);font-weight:500}
+.fnote{font-size:13px;color:var(--slate);margin:12px 0 0}
+@media (max-width:960px){.erow{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.erow{grid-template-columns:1fr}}
+.outcomes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.outcomes div{border-top:2px solid var(--ink);padding-top:16px}
+.outcomes h3{font-size:19px;margin:0 0 6px}
+.outcomes p{margin:0;color:var(--slate);font-size:15.5px;font-weight:500}
+@media (max-width:860px){.outcomes{grid-template-columns:1fr}}
 </style>
 <script type="application/ld+json" id="seo-ld">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.veripura.com/#org","name":"VeriPura","url":"https://www.veripura.com/","logo":{"@type":"ImageObject","url":"https://www.veripura.com/vp-logo.png"},"sameAs":["https://www.linkedin.com/company/veripura/","https://x.com/VeriPura","https://www.instagram.com/veri.pura/","https://t.me/VeriPura"],"description":"VeriPura™ builds orchestrated compliance agents that find the rules, check the documents and record a verifiable result. Industry solutions for food, cosmetics, supplements, pharmaceuticals and building supplies, built on VeriPura Core."},{"@type":"WebSite","@id":"https://www.veripura.com/#website","url":"https://www.veripura.com/","name":"VeriPura","publisher":{"@id":"https://www.veripura.com/#org"}},{"@type":"WebPage","@id":"https://www.veripura.com/#webpage","url":"https://www.veripura.com/","name":"VeriPura™: compliance agents that prove their work","description":"VeriPura™ builds orchestrated compliance agents that find the rules, check the documents and record a verifiable result. Industry solutions for food, cosmetics, supplements, pharmaceuticals and building supplies, built on VeriPura Core.","isPartOf":{"@id":"https://www.veripura.com/#website"}}]}</script>
 </head>
@@ -462,13 +482,13 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
 <header class="hero" id="top">
   <div class="wrap">
     <div>
-      <h1>Compliance agents that prove their work.</h1>
-      <p class="lede">VeriPura builds orchestrated compliance agents. They find the rules that apply to a shipment, product or job, check every document against them, and record a result anyone can verify. Each industry solution is built on VeriPura Core™, our engine.</p>
+      <h1>Find document errors before the cargo moves.</h1>
+      <p class="lede">Certificates, lab reports, invoices and packing lists, checked against the destination's rules and against each other. Your team fixes issues before shipment, not at the port. Each industry solution is built on VeriPura Core™, our engine.</p>
       <div class="ctas">
         <a class="btn btn-solid" href="#solutions">See industry solutions</a>
         <a class="btn btn-ghost" href="core.html">How Core works</a>
       </div>
-      <p class="note">Patent-pending. 50+ specialist agents, tuned first for food in VeriPura Food™.</p>
+      <p class="note">Patent-pending. 70+ specialist agents, tuned first for food in VeriPura Food™.</p>
     </div>
 
     <div class="folderbox" id="folderbox">
@@ -491,12 +511,39 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
         <li class="pass"><span class="dot"></span><div><strong>Cold chain log</strong><span class="d">Format accepted, temperature record complete</span></div><span class="tag">Matched</span></li>
       </ul>
       <div class="anchor"><span>Anchored <b>0x4b17a2…c90d</b></span><span>Routed to <b>Import compliance</b></span></div>
-      <div class="folder-foot">Illustrative example. All data is fictional. Your team makes the decision.</div>
+      <div class="folder-foot">Illustrative example. Your team makes the decision.</div>
     </div>
       </div>
     </div>
   </div>
 </header>
+
+<section class="alt" id="engine">
+  <div class="wrap">
+    <h2 class="title">Core is the engine. Food is Core for one industry.</h2>
+    <p class="intro">VeriPura Core™ works out which rules apply to a shipment, checks the documents against those rules and against each other, and leaves a record that can be verified later. It runs on 70+ specialist agents. Industry solutions, such as VeriPura Food™, are Core tuned for one industry.</p>
+    <div class="outcomes">
+      <div><h3>Catch errors early.</h3><p>Mismatches and gaps surface while they are still cheap to fix.</p></div>
+      <div><h3>Avoid delays.</h3><p>Fix the paperwork before it reaches the port.</p></div>
+      <div><h3>Save review time.</h3><p>Your team reviews findings instead of reading every page.</p></div>
+    </div>
+    <div class="engine">
+      <div class="erow">
+        <a class="eb live" href="food.html" style="text-decoration:none;color:inherit"><b>Food</b><span class="status live">Live</span></a>
+        <div class="eb"><b>Building Supplies</b><span>Example</span></div>
+        <div class="eb"><b>Cosmetics</b><span>Example</span></div>
+        <div class="eb"><b>Supplements</b><span>Example</span></div>
+        <div class="eb"><b>Pharma</b><span>Example</span></div>
+      </div>
+      <div class="ecore"><b>VeriPura Core™</b><span>Rules, agents, evidence record</span></div>
+    </div>
+    <p class="fnote">Illustrative.</p>
+    <div class="rules">
+      <div><h3>Have your own AI or IT team?</h3><p>Engage Core through our hosted API and keep your own interface.</p></div>
+      <div><h3>No platform team?</h3><p>Use the industry solution as it is.</p></div>
+    </div>
+  </div>
+</section>
 
 <section id="solutions">
   <div class="wrap">
@@ -581,7 +628,7 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
       <div class="core"><h3>VeriPura Core™</h3><p>Orchestrator and agent library, patent-pending.</p></div>
       <div class="parts">
         <div><b>Rule discovery</b>Finds the rules for any product, origin and destination.</div>
-        <div><b>Agent library</b>50+ specialists that check documents and flag gaps.</div>
+        <div><b>Agent library</b>70+ specialists that check documents and flag gaps.</div>
         <div><b>Evidence record</b>Tamper-evident folders, anchored and shareable.</div>
         <div><b>Decision routing</b>The right person gets the file. Your team decides.</div>
       </div>
@@ -591,7 +638,7 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
 <section class="dark" id="coreteaser">
   <div class="wrap">
     <h2 class="title">Inside VeriPura Core.</h2>
-    <p class="intro">One orchestrator, 50+ specialist agents and a verifiable record. Here is what that means for a shipment.</p>
+    <p class="intro">One orchestrator, 70+ specialist agents and a verifiable record. Here is what that means for a shipment.</p>
     <div class="problem">
       <div><h3>It reads every paper.</h3><p>Drop a whole folder for a shipment. Core reads each file by its content, files it against the checklist for the route and cross-checks weights, dates, names and certificate numbers.</p></div>
       <div><h3>It says so when it cannot check.</h3><p>A register that is offline shows as Not checked, never as a match. Every result shows the date of the data behind it.</p></div>
@@ -986,7 +1033,7 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
   const build=d=>{
     const rows=d.rows.map(r=>'<li class="'+r[0]+'"><span class="dot"></span><div><strong>'+r[1]+'</strong><span class="d">'+r[2]+'</span></div><span class="tag">'+r[3]+'</span></li>').join('');
     const t=document.createElement('div');
-    t.innerHTML='<div class="folder" aria-hidden="true" aria-label="Illustrative evidence folder: '+esc(d.name)+'"><div class="folder-head"><div><h2>'+d.title+'</h2><p>'+d.sub+'</p></div><span class="verdict">Checking</span></div><ul class="checks">'+rows+'</ul><div class="anchor"><span>Anchored <b>'+d.hash+'</b></span><span>Routed to <b>'+d.route+'</b></span></div><div class="folder-foot">Illustrative example. All data is fictional. Your team makes the decision.</div></div>';
+    t.innerHTML='<div class="folder" aria-hidden="true" aria-label="Illustrative evidence folder: '+esc(d.name)+'"><div class="folder-head"><div><h2>'+d.title+'</h2><p>'+d.sub+'</p></div><span class="verdict">Checking</span></div><ul class="checks">'+rows+'</ul><div class="anchor"><span>Anchored <b>'+d.hash+'</b></span><span>Routed to <b>'+d.route+'</b></span></div><div class="folder-foot">Illustrative example. Your team makes the decision.</div></div>';
     return t.firstElementChild;
   };
   const els=DATA.map(build);

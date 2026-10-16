@@ -462,6 +462,35 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
 .behind p{margin:0;color:var(--slate);font-size:15.5px;font-weight:500}
 @media (max-width:860px){.behind{grid-template-columns:1fr}}
 .ways{margin:20px 0 0;padding-left:20px;display:grid;gap:8px;color:var(--ink-2);font-weight:500;max-width:36em}
+
+/* Engine, reasoning and audit trail */
+.engine{margin:36px 0 8px;display:grid;gap:10px}
+.erow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.eb{border:1.5px dashed var(--line);border-radius:12px;padding:16px;background:transparent;display:flex;flex-direction:column;gap:8px;min-width:0}
+.eb b{font-size:16px;font-weight:700}
+.eb span{font-size:13px;color:var(--slate);font-weight:600}
+.eb.live{border:1.5px solid var(--ink);box-shadow:6px 6px 0 var(--shadow);background:var(--surface)}
+.eb.live .status{align-self:flex-start}
+.ecore{border-radius:12px;padding:20px 22px;background:var(--brand);color:var(--on-brand);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+.ecore b{font-size:19px}
+.ecore span{font-size:14.5px;color:var(--brand-text);font-weight:500}
+.fnote{font-size:13px;color:var(--slate);margin:12px 0 0}
+@media (max-width:960px){.erow{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.erow{grid-template-columns:1fr}}
+.finding{border:1.5px solid var(--ink);border-radius:12px;background:var(--surface);box-shadow:6px 6px 0 var(--shadow);padding:22px 24px;margin:36px 0 0;display:grid;gap:8px}
+.finding p{margin:0;font-size:15.5px;color:var(--ink-2);font-weight:500}
+.finding p b{color:var(--ink)}
+.stag{font-size:13px;font-weight:600;padding:3px 8px;border-radius:5px;white-space:nowrap;display:inline-block}
+.stag.ok{background:var(--pass-bg);color:var(--pass)}
+.stag.miss{background:var(--miss-bg);color:var(--miss)}
+.stag.na{background:var(--tint);color:var(--slate)}
+table.trail{min-width:640px}
+.trail-head{margin:44px 0 14px;font-size:22px;letter-spacing:-.01em}
+.trail-result{margin:14px 0 0;font-weight:600}
+.reviewbox{margin-top:36px;border-left:3px solid #6F8FCB;padding-left:18px;max-width:46em}
+.reviewbox h3{font-size:19px;margin:0 0 6px}
+.reviewbox p{margin:0;color:var(--ink-2);font-weight:500;font-size:15.5px}
+.reviewbox p+p{margin-top:10px;color:var(--slate)}
 </style>
 <script type="application/ld+json" id="seo-ld">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.veripura.com/core.html#webpage","url":"https://www.veripura.com/core.html","name":"VeriPura Core™: the orchestrated compliance agent engine","description":"VeriPura Core™ reads the documents for a shipment, checks them against the rules of the destination, says plainly what it could not check and records a verifiable result. Tuned with you for any regulated supply chain.","isPartOf":{"@type":"WebSite","name":"VeriPura","url":"https://www.veripura.com/"},"publisher":{"@type":"Organization","name":"VeriPura","url":"https://www.veripura.com/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.veripura.com/"},{"@type":"ListItem","position":2,"name":"VeriPura Core","item":"https://www.veripura.com/core.html"}]}]}</script>
 </head>
@@ -481,10 +510,31 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
 
 <header class="hero" id="top"><div class="wrap" style="grid-template-columns:1fr"><div>
 <h1 style="font-size:clamp(34px,4.6vw,56px);max-width:none">The engine behind every industry solution.</h1>
-<p class="lede" style="max-width:46em">VeriPura Core<sup class="tm">™</sup> reads the certificates, lab reports and invoices for a shipment, checks them against the rules of the destination and shows what to review while the goods are still at the origin. An orchestrator runs 50+ specialist agents and writes a tamper-evident record. Your team makes the decision.</p>
+<p class="lede" style="max-width:46em">VeriPura Core<sup class="tm">™</sup> reads the certificates, lab reports and invoices for a shipment, checks them against the rules of the destination and shows what to review while the goods are still at the origin. An orchestrator runs 70+ specialist agents and writes a tamper-evident record. Your team makes the decision.</p>
 <div class="ctas"><a class="btn btn-solid" href="#contact">Start a pilot</a><a class="btn btn-ghost" href="index.html#solutions">See industry solutions</a></div>
 <p class="note">Patent-pending. Tuned first for food in VeriPura Food™.</p>
 <div class="cost"><b>US$600 per day</b><span>Port delays due to incomplete or inaccurate documentation can cost US$600 per day in addition to supply chain disruption. Failure to clear the documentation can result in a total loss.</span></div></div></div></header>
+<section class="alt" id="engine">
+  <div class="wrap">
+    <h2 class="title">Core is the engine. Food is Core for one industry.</h2>
+    <p class="intro">VeriPura Core<sup class="tm">™</sup> works out which rules apply to a shipment, checks the documents against those rules and against each other, and leaves a record that can be verified later. It runs on 70+ specialist agents. VeriPura Food<sup class="tm">™</sup> is Core tuned for food: the rules, documents and checks a food consignment needs.</p>
+    <div class="engine">
+      <div class="erow">
+        <div class="eb live"><b>Food</b><span class="status live">Live</span></div>
+        <div class="eb"><b>Building Supplies</b><span>Example</span></div>
+        <div class="eb"><b>Cosmetics</b><span>Example</span></div>
+        <div class="eb"><b>Supplements</b><span>Example</span></div>
+        <div class="eb"><b>Pharma</b><span>Example</span></div>
+      </div>
+      <div class="ecore"><b>VeriPura Core<sup class="tm">™</sup></b><span>Rules, agents, evidence record</span></div>
+    </div>
+    <p class="fnote">Illustrative.</p>
+    <div class="rules">
+      <div><h3>Have your own AI or IT team?</h3><p>Engage Core through our hosted API and keep your own interface.</p></div>
+      <div><h3>No platform team?</h3><p>Use the industry solution as it is.</p></div>
+    </div>
+  </div>
+</section>
 <section class="dark" id="how">
   <div class="wrap">
     <h2 class="title">One orchestrator, many specialists, one verifiable record.</h2>
@@ -521,7 +571,7 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
           <li class="na on"><span class="dot"></span><div><strong>Certifier's online register</strong><span class="d">Could not be reached today. Core says so and does not guess.</span></div><span class="tag">Not checked</span></li>
         </ul>
         <div class="anchor"><span>Anchored <b>0x9d2e…41ab</b></span><span>Routed to <b>Import compliance</b></span></div>
-        <div class="folder-foot">Illustrative example. All data is fictional. Your team makes the decision.</div>
+        <div class="folder-foot">Illustrative example. Your team makes the decision.</div>
       </div>
       <div class="promise">
         <h3>When Core cannot check something, it says so.</h3>
@@ -732,6 +782,49 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
       </div>
     </div>
     <div class="legend"><span><span class="status live">Live</span> working in the product</span><span><span class="status dev">Under development</span></span></div>
+  </div>
+</section>
+
+<section id="reasoning">
+  <div class="wrap">
+    <h2 class="title">Every finding shows its reasoning.</h2>
+    <p class="intro">You see what was flagged, which rule applies, and what the documents say. The same applies in Core and in every industry solution built on it.</p>
+    <div class="capgrid">
+      <article class="cap"><h4>What was flagged</h4><p>The specific field, document and value.</p></article>
+      <article class="cap"><h4>Which rule applies</h4><p>The rule and its source, such as the destination's regulation.</p></article>
+      <article class="cap"><h4>What the documents show</h4><p>The evidence from each document, with the mismatch marked.</p></article>
+      <article class="cap"><h4>Who decides</h4><p>Your team. VeriPura never approves or clears a shipment.</p></article>
+    </div>
+    <div class="finding">
+      <span class="stag miss" style="justify-self:start">Mismatch</span>
+      <p><b>Net weight differs between documents.</b></p>
+      <p><b>Rule:</b> Destination import documentation requirement (source shown here).</p>
+      <p><b>Evidence:</b> Invoice line 3 states 1,200 kg. Packing list states 1,020 kg.</p>
+      <p><b>Next step:</b> Your team reviews and corrects the document.</p>
+      <p class="fnote" style="margin:6px 0 0">Illustrative example. Your team makes the decision.</p>
+    </div>
+
+    <h3 class="trail-head">Every check leaves a trail.</h3>
+    <p class="intro" style="margin-bottom:20px">For each document, you see which agent ran which check, when it ran, and what it found. The same trail applies in VeriPura Core<sup class="tm">™</sup> and in every industry solution built on it.</p>
+    <div class="tablewrap">
+      <table class="trail">
+        <thead><tr><th scope="col">Agent</th><th scope="col">Time</th><th scope="col">Parameter</th><th scope="col">Status</th><th scope="col">Details</th></tr></thead>
+        <tbody>
+          <tr><td>Document Guard</td><td>13:58</td><td>Signature</td><td><span class="stag miss">Missing</span></td><td>Carrier signature or sign-off</td></tr>
+          <tr><td>Document Guard</td><td>13:58</td><td>Seals and stamps</td><td><span class="stag miss">Missing</span></td><td>Carrier or terminal stamps</td></tr>
+          <tr><td>Document Guard</td><td>13:58</td><td>Commercial value</td><td><span class="stag ok">Matched</span></td><td>Price matches expected value</td></tr>
+          <tr><td>Document Guard</td><td>13:58</td><td>HS classification</td><td><span class="stag ok">Matched</span></td><td>HS code matches destination requirements</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="trail-result">Review: 2 missing, 2 matched.</p>
+    <p class="fnote">Illustrative example. A fictional bill of lading.</p>
+
+    <div class="reviewbox">
+      <h3>When your team reviews.</h3>
+      <p>Every Mismatch, Review and Not checked finding goes to a person. A check that could not run is listed as Not checked, never assumed to be matched. Each result is stored in a record you can verify later.</p>
+      <p>Configurable review rules and user permissions: <a href="#contact">Get in touch</a> to discuss what you need.</p>
+    </div>
   </div>
 </section>
 
