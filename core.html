@@ -466,11 +466,12 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
 /* Engine, reasoning and audit trail */
 .engine{margin:36px 0 8px;display:grid;gap:10px}
 .erow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-.eb{border:1.5px dashed var(--line);border-radius:12px;padding:16px;background:transparent;display:flex;flex-direction:column;gap:8px;min-width:0}
+.eb{border:1.5px solid var(--line);border-radius:12px;padding:16px;background:var(--surface);display:flex;flex-direction:column;gap:8px;min-width:0;text-decoration:none;color:inherit}
+.eb:hover{border-color:var(--seal)}
+.eb:focus-visible{outline:3px solid var(--seal);outline-offset:3px}
 .eb b{font-size:16px;font-weight:700}
 .eb span{font-size:13px;color:var(--slate);font-weight:600}
-.eb.live{border:1.5px solid var(--ink);box-shadow:6px 6px 0 var(--shadow);background:var(--surface)}
-.eb.live .status{align-self:flex-start}
+.eb .status{align-self:flex-start}
 .ecore{border-radius:12px;padding:20px 22px;background:var(--brand);color:var(--on-brand);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
 .ecore b{font-size:19px}
 .ecore span{font-size:14.5px;color:var(--brand-text);font-weight:500}
@@ -516,19 +517,18 @@ table.trail{min-width:640px}
 <div class="cost"><b>US$600 per day</b><span>Port delays due to incomplete or inaccurate documentation can cost US$600 per day in addition to supply chain disruption. Failure to clear the documentation can result in a total loss.</span></div></div></div></header>
 <section class="alt" id="engine">
   <div class="wrap">
-    <h2 class="title">Core is the engine. Food is Core for one industry.</h2>
-    <p class="intro">VeriPura Core<sup class="tm">™</sup> works out which rules apply to a shipment, checks the documents against those rules and against each other, and leaves a record that can be verified later. It runs on 70+ specialist agents. VeriPura Food<sup class="tm">™</sup> is Core tuned for food: the rules, documents and checks a food consignment needs.</p>
+    <h2 class="title">Core is the engine. Industry solutions are built on it.</h2>
+    <p class="intro">VeriPura Core<sup class="tm">™</sup> works out which rules apply to a shipment, checks the documents against those rules and against each other, and leaves a record that can be verified later. It runs on 70+ specialist agents. Each industry solution is Core tuned for one industry: its rules, documents and checks.</p>
     <div class="engine">
       <div class="erow">
-        <div class="eb live"><b>Food</b><span class="status live">Live</span></div>
-        <div class="eb"><b>Building Supplies</b><span>Example</span></div>
-        <div class="eb"><b>Cosmetics</b><span>Example</span></div>
-        <div class="eb"><b>Supplements</b><span>Example</span></div>
-        <div class="eb"><b>Pharma</b><span>Example</span></div>
+        <a class="eb" href="food.html"><b>Food</b><span class="status live">Live</span></a>
+        <a class="eb" href="building-supplies.html"><b>Building Supplies</b><span>Example</span></a>
+        <a class="eb" href="cosmetics.html"><b>Cosmetics</b><span>Example</span></a>
+        <a class="eb" href="supplements.html"><b>Supplements</b><span>Example</span></a>
+        <a class="eb" href="pharmaceuticals.html"><b>Pharma</b><span>Example</span></a>
       </div>
       <div class="ecore"><b>VeriPura Core<sup class="tm">™</sup></b><span>Rules, agents, evidence record</span></div>
     </div>
-    <p class="fnote">Illustrative.</p>
     <div class="rules">
       <div><h3>Have your own AI or IT team?</h3><p>Engage Core through our hosted API and keep your own interface.</p></div>
       <div><h3>No platform team?</h3><p>Use the industry solution as it is.</p></div>
