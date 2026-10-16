@@ -468,6 +468,17 @@ ol.flow.light p{color:var(--ink-2);font-weight:500}
   .nav-right{flex:none}
   .nav-right .btn{padding:11px 12px;font-size:14px}
 }
+
+/* Audit trail */
+.fnote{font-size:13px;color:var(--slate);margin:12px 0 0}
+.stag{font-size:13px;font-weight:600;padding:3px 8px;border-radius:5px;white-space:nowrap;display:inline-block}
+.stag.ok{background:var(--pass-bg);color:var(--pass)}
+.stag.miss{background:var(--miss-bg);color:var(--miss)}
+table.trail{border-collapse:collapse;width:100%;min-width:640px;font-size:15px}
+table.trail th,table.trail td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+table.trail thead th{font-size:14px;color:var(--slate);font-weight:600;background:var(--paper)}
+table.trail tbody tr:last-child td{border-bottom:0}
+.trail-result{margin:14px 0 0;font-weight:600}
 </style>
 <script type="application/ld+json" id="seo-ld">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.veripura.com/supplements.html#webpage","url":"https://www.veripura.com/supplements.html","name":"VeriPura Supplements™: VeriPura Core tuned for vitamins and supplements","description":"VeriPura Supplements™ is VeriPura Core tuned for vitamins and supplements: agents check ingredients, doses, claims and certificates against the requirements of any destination before products ship.","isPartOf":{"@type":"WebSite","name":"VeriPura","url":"https://www.veripura.com/"},"publisher":{"@type":"Organization","name":"VeriPura","url":"https://www.veripura.com/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.veripura.com/"},{"@type":"ListItem","position":2,"name":"Industry solutions","item":"https://www.veripura.com/#solutions"},{"@type":"ListItem","position":3,"name":"Vitamins and Supplements","item":"https://www.veripura.com/supplements.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is VeriPura Supplements™?","acceptedAnswer":{"@type":"Answer","text":"VeriPura Core tuned for vitamins and supplements. It checks formulas, doses, labels, claims and lab results against the requirements of any country of origin and any country of destination before a shipment departs."}},{"@type":"Question","name":"How does it relate to VeriPura Core™?","acceptedAnswer":{"@type":"Answer","text":"VeriPura Supplements™ is the industry solution built on VeriPura Core™ tuned for vitamins and supplements: the same orchestrated agent engine, with agents trained on vitamins and supplements rules, documents and certifiers. Other industries, such as food, cosmetics and pharmaceuticals, have their own tuned editions."}},{"@type":"Question","name":"Is VeriPura Core™ patent-pending?","acceptedAnswer":{"@type":"Answer","text":"Yes. The orchestration and verification approach is covered under VeriPura's USPTO filing, U.S. provisional patent application 64/088,697. The filing secures our date for later non-provisional and foreign patent filings."}},{"@type":"Question","name":"Can our IT team use it directly?","acceptedAnswer":{"@type":"Answer","text":"Yes, through our hosted API. Talk to an engineer to discuss what your team needs."}},{"@type":"Question","name":"Which documents does it check?","acceptedAnswer":{"@type":"Answer","text":"Formulas, certificates of analysis, label artwork, GMP certificates, product notifications, certificates of origin and the other documents the destination market requires."}},{"@type":"Question","name":"Which frameworks does it cover?","acceptedAnswer":{"@type":"Answer","text":"Any framework for any country of origin and any country of destination, wherever the rules can be obtained, plus certifications your buyers require. Examples include the EU Food Supplements Directive, the EU Novel Food Regulation, EU health claims rules, US dietary supplement and labeling rules, and Health Canada's natural health product rules."}},{"@type":"Question","name":"When is a supplement treated as a medicine?","acceptedAnswer":{"@type":"Answer","text":"It depends on the market. An ingredient, a dose or a claim can move a product into the medicine category in one country but not in another. The agents check each against the destination's rules and flag the ones that would cross the line."}},{"@type":"Question","name":"What does a pilot look like?","acceptedAnswer":{"@type":"Answer","text":"It starts with one real shipment. We show every rule that applied, what was missing and any red flags. Your team makes the decision. If it's useful, a paid pilot follows in shadow mode, with the fee credited toward a contract."}}]}]}</script>
 </head>
@@ -521,7 +532,7 @@ ol.flow.light p{color:var(--ink-2);font-weight:500}
         <li class="pass"><span class="dot"></span><div><strong>Certificate of analysis</strong><span class="d">Results confirmed with the issuing laboratory</span></div><span class="tag">Matched</span></li>
       </ul>
       <div class="anchor"><span>Anchored <b>0x4b17a2…c90d</b></span><span>Routed to <b>Quality and regulatory</b></span></div>
-      <div class="folder-foot">Illustrative example. All data is fictional. Your team makes the decision.</div>
+      <div class="folder-foot">Illustrative example. Your team makes the decision.</div>
     </div>
   </div>
 </header>
@@ -839,6 +850,26 @@ check_compliance({
       <li><span class="n">Step 2</span><h3>Core finds the requirements</h3><p>The agents identify the HS code, the rules that apply and every document the shipment needs.</p></li>
       <li><span class="n">Step 3</span><h3>Agents trained and checked</h3><p>The agents are trained and tested on sample documents for that route, then put to work on it.</p></li>
     </ol>
+  </div>
+</section>
+
+<section id="trail" style="padding-bottom:0">
+  <div class="wrap">
+    <h2 class="title">Every check leaves a trail.</h2>
+    <p class="intro">For each document, you see which agent ran which check, when it ran, and what it found. The same trail applies in VeriPura Core™ and in every industry solution built on it.</p>
+    <div class="tablewrap">
+      <table class="trail">
+        <thead><tr><th scope="col">Agent</th><th scope="col">Time</th><th scope="col">Parameter</th><th scope="col">Status</th><th scope="col">Details</th></tr></thead>
+        <tbody>
+          <tr><td>Document Guard</td><td>13:58</td><td>Signature</td><td><span class="stag miss">Missing</span></td><td>Laboratory signature</td></tr>
+          <tr><td>Document Guard</td><td>13:58</td><td>Seals and stamps</td><td><span class="stag miss">Missing</span></td><td>Laboratory accreditation stamp</td></tr>
+          <tr><td>Document Guard</td><td>13:58</td><td>Commercial value</td><td><span class="stag ok">Matched</span></td><td>Price matches expected value</td></tr>
+          <tr><td>Document Guard</td><td>13:58</td><td>HS classification</td><td><span class="stag ok">Matched</span></td><td>HS code matches destination requirements</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="trail-result">Review: 2 missing, 2 matched.</p>
+    <p class="fnote">Illustrative example. A fictional certificate of analysis.</p>
   </div>
 </section>
 
