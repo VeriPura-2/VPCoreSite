@@ -1,0 +1,38 @@
+name: Deploy Website via FTP
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  web-deploy:
+    name: Deploy to Web Server
+    runs-on: ubuntu-latest
+    environment: GIT_TO_WEB
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Sync Files to Server
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ${{ secrets.FTP_PROTOCOL || 'ftps' }}
+          server-dir: ${{ secrets.FTP_SERVER_DIR || './' }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            deploy.py
+            deploy.sh
+            .env*
+            .deploy-cache.json
+            README.md
+            STYLE_GUIDE.md
+

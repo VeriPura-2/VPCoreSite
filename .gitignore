@@ -1,0 +1,11 @@
+# Environment & Credentials
+.env
+.env.*
+!.env.example
+
+# Deployment cache
+.deploy-cache.json
+
+# OS files
+.DS_Store
+Thumbs.db
