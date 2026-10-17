@@ -32,6 +32,7 @@
 - [US food label requirements for imported food](https://www.veripura.com/guides/us-food-label-requirements.html): The statements FDA expects on a packaged food label, the allergen rules, country of origin marking by US Customs, and checks to run before you print.
 - [EU food label requirements for imported food](https://www.veripura.com/guides/eu-food-label-requirements.html): The mandatory particulars on an EU food label, the allergen rules, language and minimum text size, and checks to run before you print.
 - [Bill of lading errors that cause port delays](https://www.veripura.com/guides/bill-of-lading-errors.html): Which bill of lading fields customs systems use, the mismatches that give officials a reason to ask questions, and a checklist for reviewing the draft.
+- [Certificate of origin and HS code mistakes on food shipments](https://www.veripura.com/guides/origin-and-hs-code-mistakes.html): How HS codes and proof of origin work, the mismatches customs authorities can compare across documents, and a checklist to run before you ship.
 
 ## Contact and policy
 
