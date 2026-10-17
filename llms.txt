@@ -31,6 +31,7 @@
 - [Documents needed to import food into the UK](https://www.veripura.com/guides/uk-food-import-documents.html): The customs documents, health certificates and CHED notifications food needs to enter Great Britain, with checks to run before shipping.
 - [US food label requirements for imported food](https://www.veripura.com/guides/us-food-label-requirements.html): The statements FDA expects on a packaged food label, the allergen rules, country of origin marking by US Customs, and checks to run before you print.
 - [EU food label requirements for imported food](https://www.veripura.com/guides/eu-food-label-requirements.html): The mandatory particulars on an EU food label, the allergen rules, language and minimum text size, and checks to run before you print.
+- [Bill of lading errors that cause port delays](https://www.veripura.com/guides/bill-of-lading-errors.html): Which bill of lading fields customs systems use, the mismatches that give officials a reason to ask questions, and a checklist for reviewing the draft.
 
 ## Contact and policy
 
