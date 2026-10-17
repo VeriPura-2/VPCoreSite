@@ -22,6 +22,11 @@
 - [VeriPura Supplements (example)](https://www.veripura.com/supplements.html): VeriPura Supplements™ is VeriPura Core tuned for vitamins and supplements: agents check ingredients, doses, claims and certificates against the requirements of any destination before products ship.
 - [VeriPura Pharma (example)](https://www.veripura.com/pharmaceuticals.html): VeriPura Pharma™ is VeriPura Core tuned for pharmaceuticals: agents check licences, GMP certificates, batch and cold chain records against the requirements of any destination before products ship.
 
+## Guides
+
+- [Guides for food importers](https://www.veripura.com/guides/): Plain, sourced guides to food import rules. Information for importers, not legal advice.
+- [Halal label requirements for Indonesia](https://www.veripura.com/guides/halal-label-requirements-indonesia.html): What imported food needs for Indonesia's halal rules from 17 October 2026: the label, foreign certificate registration, per-shipment checks and a pre-print checklist.
+
 ## Contact and policy
 
 - [Contact and pilot request](https://www.veripura.com/#contact)
