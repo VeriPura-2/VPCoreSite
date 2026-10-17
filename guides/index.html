@@ -471,5 +471,14 @@ sup.tm{font-size:.55em;line-height:0;vertical-align:super;font-weight:500;margin
   document.addEventListener('keydown',e=>{if(e.key==='Escape')set(false);});
 })();
 </script>
+<script>
+// Guides index: when the visitor arrives from an industry page, show that page in the breadcrumb
+(function(){try{
+  var r=document.referrer||"",m={"food.html":"Food","cosmetics.html":"Cosmetics","building-supplies.html":"Building Supplies"};
+  for(var k in m){ if(r.indexOf("/"+k)>-1 && r.indexOf(location.host)>-1){
+    var ol=document.querySelector(".crumbs ol"),last=ol.lastElementChild,li=document.createElement("li");
+    li.innerHTML='<a href="../'+k+'">'+m[k]+'</a>';ol.insertBefore(li,last);break;}}
+}catch(e){}})();
+</script>
 </body>
 </html>
