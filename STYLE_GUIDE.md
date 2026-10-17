@@ -116,7 +116,7 @@ Dark mode: follows `prefers-color-scheme`, with a manual toggle (a sun or moon i
 - **Code figure**: navy block, caption bar "Your system calls VeriPura Food" and "Illustrative". Response uses `status: "review"` and `findings`, never a verdict.
 - **FAQ**: native `<details>`, 18px bold summary, "+" marker, hairline borders. Include the patent question.
 - **Form**: labels 14px weight 600 above inputs, 16px inputs (prevents iOS zoom), `--seal` focus ring `0 0 0 3px rgba(46,85,201,.18)`. Submit via Formspree. Privacy link beside the form.
-- **Footer**: slate text, links About, In the media, Core, Privacy, social icons (34px circles).
+- **Footer**: slate text, links About, In the media, Core, Guides, Privacy, social icons (34px circles).
 
 ## 7. Industry solution page template (order)
 
@@ -177,3 +177,14 @@ Copy to change (rules in section 2):
 - Show an "Illustrative example" label on the sample artwork result, and "Your team makes the decision."
 
 Keep from the current page: the market list, sample artwork flow, pricing tiers, Stripe checkout, Google sign-in, FAQ, Press page.
+
+---
+
+## 11. Guides (answer pages for importers)
+
+- Location: `guides/<question-slug>.html` on www.veripura.com, plus the index at `guides/`. Every guide is in the sitemap and llms.txt, and linked from the index.
+- Shell: copy the privacy page layout. Brand lockup is "VeriPura Food™", CTA "Free trial" to https://food.veripura.com/. Breadcrumb: Home / Food / Guides / This page. Asset paths start with `../`.
+- Content: title is the question importers search. First two sentences answer it. Facts are sourced to official bodies where possible, with a Sources list. Secondary sources (law firms, consultancies) are named as such and dates from them are labeled "reported".
+- Voice: information, not decisions (section 2). No unsourced numbers. No cost or delay figures. Add "Last updated" with a date and "information, not legal advice".
+- Markup: Article, BreadcrumbList and FAQPage JSON-LD, with FAQ text matching the visible page. One "Where VeriPura fits" box with Free trial and the tool link.
+- Order of guides: Halal label requirements for Indonesia (live); then FDA Prior Notice, EU food import documents, UK food import documents, bill of lading errors, US and EU label requirements, certificate of origin and HS code mistakes.
