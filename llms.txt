@@ -14,18 +14,18 @@
 
 ## Pages
 
-- [VeriPura home](https://www.veripura.com/): VeriPura™ builds orchestrated compliance agents that find the rules, check the documents and record a verifiable result. Industry solutions for food, cosmetics, supplements, pharmaceuticals and building supplies, built on VeriPura Core.
-- [VeriPura Core](https://www.veripura.com/core.html): VeriPura Core™ reads the documents for a shipment, checks them against the rules of the destination, says plainly what it could not check and records a verifiable result. Tuned with you for any regulated supply chain.
-- [VeriPura Food (live)](https://www.veripura.com/food.html): VeriPura Food™ is VeriPura Core tuned for food: agents trained on food import rules check every document against the border requirements of any destination before the container moves.
-- [VeriPura Building Supplies (example)](https://www.veripura.com/building-supplies.html): VeriPura Building Supplies™ is VeriPura Core tuned for building materials: agents check origin, duty, timber, forced-labor and carbon documents against the requirements of any destination before goods ship.
-- [VeriPura Cosmetics (example)](https://www.veripura.com/cosmetics.html): VeriPura Cosmetics™ is VeriPura Core tuned for cosmetics: agents check formulas, labels, claims and registrations against the requirements of any destination before products ship.
-- [VeriPura Supplements (example)](https://www.veripura.com/supplements.html): VeriPura Supplements™ is VeriPura Core tuned for vitamins and supplements: agents check ingredients, doses, claims and certificates against the requirements of any destination before products ship.
-- [VeriPura Pharma (example)](https://www.veripura.com/pharmaceuticals.html): VeriPura Pharma™ is VeriPura Core tuned for pharmaceuticals: agents check licences, GMP certificates, batch and cold chain records against the requirements of any destination before products ship.
+- [VeriPura home](https://www.veripura.com/): VeriPura™ builds 70+ orchestrated compliance agents that find rules, check trade documents, and record verifiable results across regulated supply chains.
+- [VeriPura Core](https://www.veripura.com/core.html): VeriPura Core™ checks shipment documents against destination rules, reports what could not be checked, and records verifiable results for supply chains.
+- [VeriPura Food (live)](https://www.veripura.com/food.html): VeriPura Food™ checks every shipment document against border import requirements of any destination before the container moves. Powered by VeriPura Core.
+- [VeriPura Building Supplies (example)](https://www.veripura.com/building-supplies.html): VeriPura Building Supplies™ checks origin, duty, timber, forced-labor, and carbon documents against destination requirements before materials ship.
+- [VeriPura Cosmetics (example)](https://www.veripura.com/cosmetics.html): VeriPura Cosmetics™ checks formulas, labels, claims, and registrations against the requirements of any destination before cosmetic products ship.
+- [VeriPura Supplements (example)](https://www.veripura.com/supplements.html): VeriPura Supplements™ checks ingredients, dosage limits, claims, and certificates against destination requirements before vitamins and supplements ship.
+- [VeriPura Pharma (example)](https://www.veripura.com/pharmaceuticals.html): VeriPura Pharma™ checks licences, GMP certificates, batch, and cold-chain records against destination requirements before pharmaceutical products ship.
 
 ## Guides
 
 - [Guides for importers](https://www.veripura.com/guides/): Plain, sourced guides to import rules for food, cosmetics, building supplies, supplements and pharmaceuticals. Information for importers, not legal advice.
-- [Halal label requirements for Indonesia](https://www.veripura.com/guides/halal-label-requirements-indonesia.html): What imported food needs for Indonesia's halal rules from 17 October 2026: the label, foreign certificate registration, per-shipment checks and a pre-print checklist.
+- [Halal label requirements for Indonesia](https://www.veripura.com/guides/halal-label-requirements-indonesia.html): Indonesia halal rules for imported food from 17 October 2026: label rules, foreign certificate registration, shipment checks, and pre-print checklist.
 - [FDA Prior Notice checklist for food imports into the US](https://www.veripura.com/guides/fda-prior-notice-checklist.html): When to submit FDA Prior Notice, what information it needs, what happens without it, and checks to run before you submit.
 - [Documents needed to import food into the EU](https://www.veripura.com/guides/eu-food-import-documents.html): The customs documents, certificates and CHED filings food needs to enter the EU, by animal and non-animal origin, with checks to run before shipping.
 - [Documents needed to import food into the UK](https://www.veripura.com/guides/uk-food-import-documents.html): The customs documents, health certificates and CHED notifications food needs to enter Great Britain, with checks to run before shipping.
@@ -33,10 +33,10 @@
 - [EU food label requirements for imported food](https://www.veripura.com/guides/eu-food-label-requirements.html): The mandatory particulars on an EU food label, the allergen rules, language and minimum text size, and checks to run before you print.
 - [Bill of lading errors that cause port delays](https://www.veripura.com/guides/bill-of-lading-errors.html): Which bill of lading fields customs systems use, the mismatches that give officials a reason to ask questions, and a checklist for reviewing the draft.
 - [Certificate of origin and HS code mistakes on food shipments](https://www.veripura.com/guides/origin-and-hs-code-mistakes.html): How HS codes and proof of origin work, the mismatches customs authorities can compare across documents, and a checklist to run before you ship.
-- [Cosmetics label and product file checks for EU and US sales](https://www.veripura.com/guides/cosmetics-label-and-file-checks.html): What the EU Cosmetics Regulation and the US MoCRA and FDA labeling rules expect on a cosmetic label and in the records behind it, and the mismatches to check before you ship.
-- [Lacey Act declaration and wood import checks for lumber into the US](https://www.veripura.com/guides/lacey-act-lumber-import-checks.html): What the US Lacey Act declaration requires for imported plants and wood products, how APHIS says to file it, and the mismatches to check before your shipment sails.
+- [Cosmetics label and product file checks for EU and US sales](https://www.veripura.com/guides/cosmetics-label-and-file-checks.html): What EU Cosmetics Regulation, US MoCRA, and FDA labeling rules expect on cosmetic labels and records, and the mismatches to check before you ship.
+- [Lacey Act declaration and wood import checks for lumber into the US](https://www.veripura.com/guides/lacey-act-lumber-import-checks.html): What the US Lacey Act requires for imported plants and wood products, how APHIS says to file declarations, and mismatches to check before shipping.
 - [Dietary supplement label and claim checks for US and EU sales](https://www.veripura.com/guides/supplement-label-and-claim-checks.html): What US FDA rules and the EU food supplements directive expect on a supplement label and in its claims, and the mismatches to check before you ship.
-- [Medicine import checks for the EU and US: authorisations and registrations](https://www.veripura.com/guides/medicine-import-checks-eu-us.html): What EU law and US FDA rules ask of those who import medicines: authorisations, batch certification, establishment registration and drug listing, and the records that must match before a batch ships.
+- [Medicine import checks for the EU and US: authorisations and registrations](https://www.veripura.com/guides/medicine-import-checks-eu-us.html): What EU law and US FDA rules require for imported medicines: batch certification, registration, and the document records to check before a batch ships.
 
 ## Contact and policy
 
