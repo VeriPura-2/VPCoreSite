@@ -180,6 +180,17 @@ Keep from the current page: the market list, sample artwork flow, pricing tiers,
 
 ---
 
+## 12. Cost estimator
+
+- Files: `estimator.js` and `estimator.css` are the single source. `food.html` mounts it compact (`#estimator`, after the Problem section, rejections and delays collapsed). `food-estimator.html` mounts it full (`data-mode="full"`). Change the logic in one place.
+- Open to everyone. No email gate. Nothing is stored or sent unless the visitor chooses "Contact us about this estimate", which carries a one-line summary into the contact form.
+- Inputs start empty. No benchmark or "industry average" defaults. "Try an example" fills fictional values and shows "Illustrative example. Fictional numbers, not customer data."
+- Savings, net savings and ROI are shown (Thomas, 23 Oct 2026). They follow from the visitor's own "share of this cost you expect to avoid", never a VeriPura default, and are labeled "your estimate, not a measured result". Pilot results replace assumptions once measured and approved.
+- Pricing is shown (Thomas, 23 Oct 2026): 0.8% of shipment value per shipment checked, minimum US$100 per shipment, converted at indicative rates. Change `FEE_PCT` and `MIN_USD` in `estimator.js` if pricing changes.
+- Style: page tokens only, Food accent on the kicker only, offset shadow on the results card, 16px inputs, labels above, no all-caps, no colour-only signals (shares are printed as text beside the bar).
+
+---
+
 ## 11. Guides (answer pages for importers)
 
 - Location: `guides/<question-slug>.html` on www.veripura.com, plus the index at `guides/`. Every guide is in the sitemap and llms.txt, and linked from the index.
