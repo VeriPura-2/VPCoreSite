@@ -20,7 +20,7 @@
   var EXAMPLE = {
     rate: 50, ships: 100, value: 25000,
     hDocs: 1, hLabel: 1, hFix: 1, hHs: 1, hHold: 1,
-    rej: 2, del: 2, days: 5, avoid: 50
+    rej: 2, del: 2, days: 5, avoid: 75
   };
   // Cargo presets (USD per day, spoilage and late-fee % per day, hint). Visitors can edit both values.
   var PRESETS = {
@@ -87,7 +87,7 @@
         '<div class="est-grp">' +
           '<h3>Your assumption</h3>' +
           '<div class="est-grid">' +
-            field('avoid', 'Share of this cost you expect to avoid (%)', 'Your own estimate. VeriPura does not set it.', ' max="100"') +
+            field('avoid', 'Share of this cost VeriPura Food™ helps you avoid (%)', 'Adjust to your own case.', ' value="75" max="100"') +
           '</div>' +
         '</div>' +
         '<div class="est-actions">' +
@@ -114,7 +114,7 @@
           '</div>' +
           '<div class="est-callout"><strong>Food Safety &amp; Brand Protection</strong>Substantially reduces labor costs, recall risks, undeclared allergen risks, missing health cert holds, reefer electricity surcharges, shelf-life degradation, and late delivery retailer fees.</div>' +
           '<p class="est-price" id="est-price"></p>' +
-          '<p class="est-note">* Estimated savings reflect workflow efficiency gains, assuming VeriPura eliminates the share of documented waste that you set. Perishable and cold-chain selections adjust the port holding rate (reefer power) and the daily spoilage and late-delivery percentage. Platform costs apply a validation percentage subject to a minimum fee per shipment. It is your estimate, not a measured result. Your team makes the decision.</p>' +
+          '<p class="est-note">* Estimated savings reflect workflow efficiency gains, assuming VeriPura eliminates the share of documented waste set above. Perishable and cold-chain selections adjust the port holding rate (reefer power) and the daily spoilage and late-delivery percentage. Platform costs apply a validation percentage subject to a minimum fee per shipment. It is your estimate, not a measured result. Your team makes the decision.</p>' +
         '</div>' +
         '<p class="est-ill" id="est-ill" hidden>Illustrative example. Fictional numbers, not customer data.</p>' +
         '<div class="est-cta">' +
@@ -186,11 +186,11 @@
 
     if (avoid > 0) {
       show('sav', money(savings));
-      show('savl', 'Estimated savings per year, at ' + avoid + '% (your assumption)');
+      show('savl', 'Estimated savings per year, at ' + avoid + '%');
       show('net', money(net));
       show('roi', platform > 0 ? Math.round(net / platform * 100).toLocaleString('en') + '%' : 'n/a');
     } else {
-      show('sav', 'Enter your assumption');
+      show('sav', 'Set a share above');
       show('savl', 'Estimated savings per year');
       show('net', 'n/a');
       show('roi', 'n/a');
@@ -212,7 +212,7 @@
     if (total > 0) {
       t = 'Cost estimate from the website (my own inputs). Shipments per year: ' + Math.round(ships).toLocaleString('en') +
         '. Cost today: ' + money(total) + ' per year.' +
-        (avoid > 0 ? ' Savings at ' + avoid + '% (my assumption): ' + money(savings) + '. VeriPura cost at the published pricing: ' + money(platform) + '.' : '');
+        (avoid > 0 ? ' Savings at ' + avoid + '%: ' + money(savings) + '. VeriPura cost at the published pricing: ' + money(platform) + '.' : '');
     }
     last.text = t;
     if (!document.getElementById('form')) {
@@ -232,6 +232,7 @@
   });
   document.getElementById('est-clear').addEventListener('click', function () {
     app.querySelectorAll('input').forEach(function (i) { i.value = ''; });
+    set('avoid', 75);
     document.getElementById('est-cargo').value = ''; holdHint.textContent = holdHintDefault;
     ill(false); update();
   });
