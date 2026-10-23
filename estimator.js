@@ -20,7 +20,13 @@
   var EXAMPLE = {
     rate: 50, ships: 100, value: 25000,
     hDocs: 1, hLabel: 1, hFix: 1, hHs: 1, hHold: 1,
-    rej: 2, rejLoss: 50, del: 2, days: 5, hold: 500, spoil: 1, avoid: 50
+    rej: 2, del: 2, days: 5, avoid: 50
+  };
+  // Cargo presets (USD per day, spoilage and late-fee % per day, hint). Visitors can edit both values.
+  var PRESETS = {
+    dry: [500, 0.5, 'Base port demurrage'],
+    cold: [750, 1.5, 'Includes a reefer surcharge'],
+    peri: [750, 3, 'Includes a reefer surcharge']
   };
 
   function num(id) {
@@ -39,14 +45,16 @@
 
   var more =
     '<div class="est-grp">' +
-      '<p class="est-sub">Leave these empty if you only want the time estimate. Use your own figures.</p>' +
+      '<p class="est-sub">Leave these empty if you only want the time estimate.</p>' +
       '<div class="est-grid">' +
-        field('rej', 'Shipments rejected (%)', 'Share rejected at the border each year', ' max="100"') +
-        field('rejLoss', 'Value lost per rejection (%)', 'Share of the shipment value you lose', ' max="100"') +
-        field('del', 'Shipments delayed (%)', 'Share held for checks or inspection', ' max="100"') +
-        field('days', 'Average days of delay', '') +
+        field('rej', 'Shipments rejected (%)', 'Rejected at the border. Industry avg: 2%', ' max="100"') +
+        field('del', 'Shipments delayed (%)', 'Held for checks or inspection. Industry avg: 2%', ' max="100"') +
+        field('days', 'Average days of delay', 'Days a container sits held at the border') +
+        '<label><span>Food or cargo type</span><select id="est-cargo"><option value="">Choose a type</option>' +
+          '<option value="dry">Dry goods</option><option value="cold">Cold chain</option><option value="peri">Perishable</option></select>' +
+          '<small>Suggests the port cost and spoilage rate. You can edit both.</small></label>' +
         field('hold', 'Port cost per day (' + cur + ')', 'Storage, demurrage, detention, reefer power') +
-        field('spoil', 'Spoilage and late fees (% per day)', 'Applied to the shipment value for each day of delay', ' max="100"') +
+        field('spoil', 'Spoilage and late fees (% per day)', 'Applied to the shipment value for every day of delay', ' max="100"') +
       '</div>' +
     '</div>';
 
@@ -104,8 +112,9 @@
             '<div><b id="est-net"></b><span>Net savings per year</span></div>' +
             '<div><b id="est-roi"></b><span>Annual ROI</span></div>' +
           '</div>' +
+          '<div class="est-callout"><strong>Food Safety &amp; Brand Protection</strong>Substantially reduces labor costs, recall risks, undeclared allergen risks, missing health cert holds, reefer electricity surcharges, shelf-life degradation, and late delivery retailer fees.</div>' +
           '<p class="est-price" id="est-price"></p>' +
-          '<p class="est-note">Your estimate, from your inputs and your assumption. It is not a measured result. Your team makes the decision.</p>' +
+          '<p class="est-note">* Estimated savings reflect workflow efficiency gains, assuming VeriPura eliminates the share of documented waste that you set. Perishable and cold-chain selections adjust the port holding rate (reefer power) and the daily spoilage and late-delivery percentage. Platform costs apply a validation percentage subject to a minimum fee per shipment. It is your estimate, not a measured result. Your team makes the decision.</p>' +
         '</div>' +
         '<p class="est-ill" id="est-ill" hidden>Illustrative example. Fictional numbers, not customer data.</p>' +
         '<div class="est-cta">' +
@@ -139,7 +148,7 @@
 
     var team = hours * ships * r;
     var rejected = ships * (pct('rej') / 100);
-    var rejection = rejected * value * (pct('rejLoss') / 100);
+    var rejection = rejected * value;
     var delayed = ships * (pct('del') / 100);
     var delay = delayed * num('days') * num('hold') + delayed * value * (pct('spoil') / 100) * num('days');
     var total = team + rejection + delay;
@@ -218,16 +227,32 @@
     sel.value = 'USD'; prevRate = 1;
     Object.keys(EXAMPLE).forEach(function (k) { set(k, EXAMPLE[k]); });
     document.getElementById('est-more').open = true;
+    var c = document.getElementById('est-cargo'); c.value = 'peri'; c.dispatchEvent(new Event('change'));
     ill(true); update();
   });
   document.getElementById('est-clear').addEventListener('click', function () {
     app.querySelectorAll('input').forEach(function (i) { i.value = ''; });
+    document.getElementById('est-cargo').value = ''; holdHint.textContent = holdHintDefault;
     ill(false); update();
   });
   app.addEventListener('input', function (e) {
     if (e.target.id !== 'est-cur') ill(false);
     update();
   });
+  // Cargo type suggests the port cost and spoilage rate. Both stay editable.
+  var holdHint = document.getElementById('est-hold').parentNode.querySelector('small');
+  var holdHintDefault = holdHint.textContent;
+  function surcharge() { return ' (about ' + money(250 * rate()) + ' a day)'; }
+  document.getElementById('est-cargo').addEventListener('change', function (e) {
+    var p = PRESETS[e.target.value];
+    if (!p) { holdHint.textContent = holdHintDefault; update(); return; }
+    set('hold', Math.round(p[0] * rate()));
+    set('spoil', p[1]);
+    holdHint.textContent = p[2] + (e.target.value === 'dry' ? '' : surcharge());
+    ill(false); update();
+  });
+  document.getElementById('est-hold').addEventListener('input', function () { holdHint.textContent = 'Your own figure'; });
+
   // Switching currency converts the money fields at the same indicative rates.
   sel.addEventListener('change', function () {
     var ratio = rate() / prevRate;

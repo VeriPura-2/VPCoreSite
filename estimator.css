@@ -41,6 +41,8 @@
 .est-kpis div:nth-child(even){padding-left:16px;padding-right:0;border-left:1px solid var(--line)}
 .est-kpis b{display:block;font-size:24px;line-height:1.15;font-weight:800;letter-spacing:-.01em;overflow-wrap:anywhere}
 .est-kpis span{display:block;font-size:14px;color:var(--slate);font-weight:500;margin-top:4px}
+.est-callout{margin:0;padding:14px 16px;border-left:3px solid var(--seal);background:var(--paper);border-radius:0 10px 10px 0;font-size:14.5px;color:var(--ink-2);font-weight:500}
+.est-callout strong{display:block;margin-bottom:4px;color:var(--ink);font-weight:700}
 .est-price{margin:0;padding:14px 16px;background:var(--paper);border:1px solid var(--line);border-radius:10px;font-size:14.5px;color:var(--ink-2);font-weight:500}
 .est-ill{margin:0;font-size:13px;font-weight:600;color:var(--slate)}
 .est-cta{display:flex;flex-wrap:wrap;gap:10px}
