@@ -237,6 +237,8 @@ ol.flow{margin:0;padding:0}
 .status.live{background:var(--pass-bg);color:var(--pass)}
 .status.cfg{background:var(--tint-2);color:var(--seal)}
 .status.dev{background:var(--flag-bg);color:var(--flag)}
+.status.ask{text-decoration:none;cursor:pointer}.status.ask:hover{text-decoration:underline}.status.ask:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+
 .legend{margin-top:32px;font-size:14px;color:var(--slate);display:flex;gap:18px;flex-wrap:wrap;align-items:center}
 @media (max-width:900px){.lib{grid-template-columns:1fr}.lib .col + .col{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
 
@@ -626,11 +628,11 @@ table.trail{min-width:640px}
         <p class="why">The rules behind each result are kept up to date automatically.</p>
       </article>
       <article class="cap" data-s="dev">
-        <header><h4>Jurisdiction profiles</h4><span class="status dev">Under development</span></header>
+        <header><h4>Jurisdiction profiles</h4><a class="status dev ask" href="#contact" data-ask="Jurisdiction profiles" aria-label="Ask about Jurisdiction profiles">Ask about</a></header>
         <p>Versioned rulebooks per country, state or local authority, resolved from an address.</p>
       </article>
       <article class="cap" data-s="dev">
-        <header><h4>EU Forced Labour Regulation</h4><span class="status dev">Under development</span></header>
+        <header><h4>EU Forced Labour Regulation</h4><a class="status dev ask" href="#contact" data-ask="EU Forced Labour Regulation" aria-label="Ask about EU Forced Labour Regulation">Ask about</a></header>
         <p>The EU ban on products made with forced labor applies from 14 December 2027. We have researched what it requires and planned how Core supports it.</p>
       </article>
       </div>
@@ -691,7 +693,7 @@ table.trail{min-width:640px}
         <p class="why">Built around the checks border posts actually apply.</p>
       </article>
       <article class="cap" data-s="dev">
-        <header><h4>Quality-scheme certificates</h4><span class="status dev">Under development</span></header>
+        <header><h4>Quality-scheme certificates</h4><a class="status dev ask" href="#contact" data-ask="Quality-scheme certificates" aria-label="Ask about Quality-scheme certificates">Ask about</a></header>
         <p>BRCGS, GLOBALG.A.P., FSSC 22000 and organic certificates are checked for expiry. The newest rule flags a missing BRCGS site code or GLOBALG.A.P. number, because a certificate nobody can look up is not proof.</p>
         <p class="why">The stricter rules are built and tested.</p>
       </article>
@@ -700,16 +702,16 @@ table.trail{min-width:640px}
         <p>Core checks the issuing body of a religious certificate against the official list of recognized bodies, including whether its recognition has lapsed. For halal it knows 23 recognized bodies, and it can look a certificate up on national registers.</p>
       </article>
       <article class="cap" data-s="dev">
-        <header><h4>Packaging rules</h4><span class="status dev">Under development</span></header>
+        <header><h4>Packaging rules</h4><a class="status dev ask" href="#contact" data-ask="Packaging rules" aria-label="Ask about Packaging rules">Ask about</a></header>
         <p>Checks whether a packaging producer is on the government register where the destination requires one, for example UK EPR.</p>
       </article>
       <article class="cap" data-s="dev">
-        <header><h4>Nutrition and ingredients audit</h4><span class="status dev">Under development</span></header>
+        <header><h4>Nutrition and ingredients audit</h4><a class="status dev ask" href="#contact" data-ask="Nutrition and ingredients audit" aria-label="Ask about Nutrition and ingredients audit">Ask about</a></header>
         <p>Paste a product specification and Core checks it against the target market's rules: additives, and a mass-balance check on the recipe.</p>
         <p class="why">An early check before you print a label.</p>
       </article>
       <article class="cap" data-s="dev">
-        <header><h4>Misleading “green” label claims</h4><span class="status dev">Under development</span></header>
+        <header><h4>Misleading “green” label claims</h4><a class="status dev ask" href="#contact" data-ask="Misleading “green” label claims" aria-label="Ask about Misleading “green” label claims">Ask about</a></header>
         <p>Scans labels for vague claims such as “eco-friendly” or “climate neutral” with no proof. It only warns.</p>
       </article>
       </div>
@@ -723,24 +725,24 @@ table.trail{min-width:640px}
         <p>Screens suppliers against government lists of banned entities for goods linked to high-risk regions, for example the US list.</p>
       </article>
       <article class="cap" data-s="dev">
-        <header><h4>Sanctions screening</h4><span class="status dev">Under development</span></header>
+        <header><h4>Sanctions screening</h4><a class="status dev ask" href="#contact" data-ask="Sanctions screening" aria-label="Ask about Sanctions screening">Ask about</a></header>
         <p>Checks the companies on a shipment against the full sanctions lists. A match raises a critical alert.</p>
       </article>
       <article class="cap" data-s="dev">
-        <header><h4>Provenance and duty</h4><span class="status dev">Under development</span></header>
+        <header><h4>Provenance and duty</h4><a class="status dev ask" href="#contact" data-ask="Provenance and duty" aria-label="Ask about Provenance and duty">Ask about</a></header>
         <p>Checks origin, species or material and duty exposure per producer and period.</p>
       </article>
       <article class="cap" data-s="dev">
-        <header><h4>Red-flag sentinel</h4><span class="status dev">Under development</span></header>
+        <header><h4>Red-flag sentinel</h4><a class="status dev ask" href="#contact" data-ask="Red-flag sentinel" aria-label="Ask about Red-flag sentinel">Ask about</a></header>
         <p>Watches price outliers, supplier enforcement news and new routing patterns.</p>
       </article>
       <article class="cap" data-s="dev">
-        <header><h4>Cold chain and sensors</h4><span class="status dev">Under development</span></header>
+        <header><h4>Cold chain and sensors</h4><a class="status dev ask" href="#contact" data-ask="Cold chain and sensors" aria-label="Ask about Cold chain and sensors">Ask about</a></header>
         <p>Shows container temperature readings during transit. Core compares them with the limits for the goods and raises a flag when a limit is breached.</p>
         <p class="why">Needs sensor data from the carrier or the container.</p>
       </article>
       <article class="cap" data-s="dev">
-        <header><h4>Pallet labels and traceability events</h4><span class="status dev">Under development</span></header>
+        <header><h4>Pallet labels and traceability events</h4><a class="status dev ask" href="#contact" data-ask="Pallet labels and traceability events" aria-label="Ask about Pallet labels and traceability events">Ask about</a></header>
         <p>Makes GS1 pallet labels (pallet code, item code, lot) and reads GS1 traceability events (EPCIS). Core flags impossible timelines, such as harvest after shipping, outputs larger than inputs and cold-chain breaches.</p>
         <p class="why">The standard format for retailer and supply-chain traceability.</p>
       </article>
@@ -761,7 +763,7 @@ table.trail{min-width:640px}
         <p class="why">The audit trail you can show a regulator or a buyer.</p>
       </article>
       <article class="cap" data-s="dev">
-        <header><h4>Lineage</h4><span class="status dev">Under development</span></header>
+        <header><h4>Lineage</h4><a class="status dev ask" href="#contact" data-ask="Lineage" aria-label="Ask about Lineage">Ask about</a></header>
         <p>Follows evidence through splits, blends and bills of materials.</p>
       </article>
       </div>
@@ -781,7 +783,7 @@ table.trail{min-width:640px}
         <p class="why">Clear accountability instead of an email chain.</p>
       </article>
       <article class="cap" data-s="dev">
-        <header><h4>Talk to your shipment (text or voice)</h4><span class="status dev">Under development</span></header>
+        <header><h4>Talk to your shipment (text or voice)</h4><a class="status dev ask" href="#contact" data-ask="Talk to your shipment (text or voice)" aria-label="Ask about Talk to your shipment (text or voice)">Ask about</a></header>
         <p>Ask the Consignment Guardian what is wrong, what is missing or what to do next, by typing or by speaking. It answers from that shipment's own documents and checks.</p>
       </article>
       <article class="cap" data-s="live">
@@ -791,7 +793,7 @@ table.trail{min-width:640px}
       </article>
       </div>
     </div>
-    <div class="legend"><span><span class="status live">Live</span> working in the product</span><span><span class="status dev">Under development</span></span></div>
+    <div class="legend"><span><span class="status live">Live</span> working in the product</span><span><span class="status dev">Under development</span> marked <strong>Ask about</strong>: tell us if you need one</span></div>
   </div>
 </section>
 
@@ -919,10 +921,10 @@ check_compliance({
       </figure>
     </div>
     <div class="devgrid">
-      <div><h3>Agents à la carte <span class="status dev">Under development</span></h3><p>Every agent as a separate tool, alongside the orchestrator.</p></div>
       <div><h3>Findings you can debug</h3><p>Each answer returns its sources, rule versions and confidence scores, so your engineers can see why, not just what.</p></div>
       <div><h3>Accuracy you can check</h3><p>In every pilot we report measured accuracy for your documents, so your team can see how the agents perform.</p></div>
       <div><h3>Hosted, and your data stays yours</h3><p>VeriPura Core runs on our infrastructure and is reached through our API. Your data never trains models for anyone else.</p></div>
+      <div><h3>Agents à la carte <a class="status dev ask" href="#contact" data-ask="Agents à la carte" aria-label="Ask about Agents à la carte">Ask about</a></h3><p>Every agent as a separate tool, alongside the orchestrator.</p></div>
     </div>
     <div class="ctas devcta">
       <a class="btn btn-solid" href="#contact" data-interest="Hosted API access">Talk to an engineer</a>
@@ -958,7 +960,7 @@ check_compliance({
       <div><h3>Systems use the API</h3><p>Your ERP, TMS or customs platform calls the hosted API. The same call gives the same result every time, built for volume and scheduled jobs.</p></div>
       <div><h3>Assistants use MCP</h3><p>Your people ask a question and their assistant calls Core for them. Good for quick answers on one consignment.</p></div>
       <div><h3>One key, one set of rules</h3><p>MCP uses your partner key and the same rules as the API, so both give the same answers from your data.</p></div>
-      <div><h3>Submit documents from your assistant <span class="status dev">Under development</span></h3><p>Sending documents for compliance checks from your assistant is next.</p></div>
+      <div><h3>Submit documents from your assistant <a class="status dev ask" href="#contact" data-ask="Submit documents from your assistant" aria-label="Ask about Submit documents from your assistant">Ask about</a></h3><p>Sending documents for compliance checks from your assistant is next.</p></div>
     </div>
     <div class="ctas devcta">
       <a class="btn btn-solid" href="#contact" data-interest="AI assistant access (MCP)">Talk to an engineer</a>
@@ -1010,6 +1012,7 @@ check_compliance({
     </div>
     <form id="form" action="https://formspree.io/f/xvkzqnzr" method="POST" novalidate>
       <input type="hidden" name="_subject" value="New enquiry from veripura.com">
+      <input type="hidden" name="asked_about" value="">
       <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
       <div class="row">
         <label>Name<input name="name" autocomplete="name" required></label>
@@ -1126,6 +1129,7 @@ document.querySelectorAll('[data-interest]').forEach(a=>a.addEventListener('clic
 })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "54981e9b4761452196f1849c3382c42d"}'></script><!-- End Cloudflare Web Analytics -->
+<script>document.querySelectorAll("[data-ask]").forEach(function(a){a.addEventListener("click",function(){var h=document.querySelector('input[name="asked_about"]');if(h)h.value="Ask about: "+a.dataset.ask;var s=document.querySelector('select[name="interest"]');if(s)s.value="Something else";var p=document.querySelector('[name="problem"]');if(p&&!p.value)p.placeholder="Tell us what you would use "+a.dataset.ask+" for"})})</script>
 </body>
 </html>
 

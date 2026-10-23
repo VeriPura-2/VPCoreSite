@@ -182,6 +182,8 @@ ol.flow{margin:0;padding:0}
 .status.live{background:var(--pass-bg);color:var(--pass)}
 .status.cfg{background:var(--tint-2);color:var(--seal)}
 .status.dev{background:var(--flag-bg);color:var(--flag)}
+.status.ask{text-decoration:none;cursor:pointer}.status.ask:hover{text-decoration:underline}.status.ask:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+
 a.status{text-decoration:none}
 a.status:hover{text-decoration:underline}
 .legend{margin-top:32px;font-size:14px;color:var(--slate);display:flex;gap:18px;flex-wrap:wrap;align-items:center}
@@ -699,11 +701,11 @@ check_compliance({
         <p class="why">The rules behind each result are kept up to date automatically.</p>
       </article>
       <article class="cap" data-s="dev">
-        <header><h4>Jurisdiction profiles</h4><span class="status dev">Under development</span></header>
+        <header><h4>Jurisdiction profiles</h4><a class="status dev ask" href="#contact" data-ask="Jurisdiction profiles" aria-label="Ask about Jurisdiction profiles">Ask about</a></header>
         <p>Versioned rulebooks per country, state or local authority, resolved from an address, for example state and local building codes.</p>
       </article>
       <article class="cap" data-s="dev">
-        <header><h4>EU Forced Labour Regulation</h4><span class="status dev">Under development</span></header>
+        <header><h4>EU Forced Labour Regulation</h4><a class="status dev ask" href="#contact" data-ask="EU Forced Labour Regulation" aria-label="Ask about EU Forced Labour Regulation">Ask about</a></header>
         <p>The EU ban on products made with forced labor applies from 14 December 2027. We have researched what it requires and planned how Core supports it.</p>
       </article>
       </div>
@@ -763,7 +765,7 @@ check_compliance({
         <p class="why">A report from an unaccredited lab is flagged for review.</p>
       </article>
       <article class="cap" data-s="dev">
-        <header><h4>Misleading “low carbon” claims</h4><span class="tags"><span class="status dev">Under development</span><span class="status cfg">Set up on request</span></span></header>
+        <header><h4>Misleading “low carbon” claims</h4><span class="tags"><a class="status dev ask" href="#contact" data-ask="Misleading “low carbon” claims" aria-label="Ask about Misleading “low carbon” claims">Ask about</a><span class="status cfg">Set up on request</span></span></header>
         <p>Scans product claims such as “low carbon” or “eco-friendly” with no proof. It only warns.</p>
       </article>
       </div>
@@ -777,15 +779,15 @@ check_compliance({
         <p>Screens suppliers against government lists of banned entities for goods linked to high-risk regions, for example the US list.</p>
       </article>
       <article class="cap" data-s="dev">
-        <header><h4>Sanctions screening</h4><span class="status dev">Under development</span></header>
+        <header><h4>Sanctions screening</h4><a class="status dev ask" href="#contact" data-ask="Sanctions screening" aria-label="Ask about Sanctions screening">Ask about</a></header>
         <p>Checks the companies on a shipment against the full sanctions lists. A match raises a critical alert.</p>
       </article>
       <article class="cap" data-s="dev">
-        <header><h4>Provenance and duty</h4><span class="status dev">Under development</span></header>
+        <header><h4>Provenance and duty</h4><a class="status dev ask" href="#contact" data-ask="Provenance and duty" aria-label="Ask about Provenance and duty">Ask about</a></header>
         <p>Checks origin, material and duty exposure per producer and period, for example anti-dumping and countervailing duty.</p>
       </article>
       <article class="cap" data-s="dev">
-        <header><h4>Red-flag sentinel</h4><span class="status dev">Under development</span></header>
+        <header><h4>Red-flag sentinel</h4><a class="status dev ask" href="#contact" data-ask="Red-flag sentinel" aria-label="Ask about Red-flag sentinel">Ask about</a></header>
         <p>Watches price outliers, supplier enforcement news and new routing patterns, for example circumvention routing.</p>
       </article>
       </div>
@@ -805,7 +807,7 @@ check_compliance({
         <p class="why">The audit trail you can show a regulator or a buyer.</p>
       </article>
       <article class="cap" data-s="dev">
-        <header><h4>Lineage</h4><span class="status dev">Under development</span></header>
+        <header><h4>Lineage</h4><a class="status dev ask" href="#contact" data-ask="Lineage" aria-label="Ask about Lineage">Ask about</a></header>
         <p>Follows evidence through splits, blends and bills of materials, such as engineered wood and composite products.</p>
       </article>
       </div>
@@ -830,7 +832,7 @@ check_compliance({
       </article>
       </div>
     </div>
-    <div class="legend"><span><span class="status live">Live</span> working in the product</span><span><span class="status dev">Under development</span></span></div>
+    <div class="legend"><span><span class="status live">Live</span> working in the product</span><span><span class="status dev">Under development</span> marked <strong>Ask about</strong>: tell us if you need one</span></div>
 
     <h3 class="subhead">Any route, set up on request.</h3>
     <ol class="flow light">
@@ -956,6 +958,7 @@ check_compliance({
     </div>
     <form id="form" action="https://formspree.io/f/xvkzqnzr" method="POST" novalidate>
       <input type="hidden" name="_subject" value="New enquiry from the VeriPura Building Supplies site">
+      <input type="hidden" name="asked_about" value="">
       <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
       <div class="row">
         <label>Name<input name="name" autocomplete="name" required></label>
@@ -1075,5 +1078,6 @@ document.querySelectorAll('[data-role]').forEach(a=>a.addEventListener('click',(
 })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "54981e9b4761452196f1849c3382c42d"}'></script><!-- End Cloudflare Web Analytics -->
+<script>document.querySelectorAll("[data-ask]").forEach(function(a){a.addEventListener("click",function(){var h=document.querySelector('input[name="asked_about"]');if(h)h.value="Ask about: "+a.dataset.ask;var s=document.querySelector('select[name="interest"]');if(s)s.value="Something else";var p=document.querySelector('[name="problem"]');if(p&&!p.value)p.placeholder="Tell us what you would use "+a.dataset.ask+" for"})})</script>
 </body>
 </html>
