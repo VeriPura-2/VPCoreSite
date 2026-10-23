@@ -6,7 +6,7 @@
 
 - VeriPura gives information, not decisions. It reports findings to review and fix, and the customer's team makes the decision.
 - Only VeriPura Food is live. Building Supplies, Cosmetics, Supplements and Pharma are examples of what VeriPura Core can be tuned for.
-- Teams can use VeriPura through the portal, or call the agents from their own systems through the hosted API.
+- Teams can use VeriPura through the portal, or call the agents from their own systems through the hosted API. Teams can also connect any MCP-compatible AI assistant with the same partner key. MCP access is read-only and limited to the customer's own consignments, with the same rules as the API. Submitting documents from an assistant is under development.
 - Pilots start with one real consignment.
 - When VeriPura Core cannot check something, it says so. A missing document is a finding, and an offline register shows as Not checked, never as a match.
 - VeriPura Core labels every capability Live or Under development. Core reads documents by content, cross-checks them, chases missing papers, screens suppliers and records every document on a tamper-evident trail anchored on a public blockchain.
