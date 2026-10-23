@@ -338,6 +338,7 @@ tbody tr:last-child td{border-bottom:0}
 .code.chat .msg.a{border-left:3px solid #9FD8C6;padding-left:14px}
 .code.chat .tool{font:500 13px/1.5 var(--mono);color:#F1C27D}
 .code.chat .ch{opacity:0}.code.chat .ch.on{opacity:1}
+@media (max-width:560px){.code figcaption .live{display:none}}
 @media print{.code.armed .ln,.code.chat .ch{opacity:1!important}}
 .code .c{color:#A9BCDB}.code .s{color:#9FD8C6}.code .n{color:#F1C27D}
 .devgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:48px;padding-top:32px;border-top:1px solid var(--line)}
@@ -978,7 +979,7 @@ check_compliance({
       <div class="chatbody">
         <div class="msg q ln" data-ph="q"><b>You</b><span class="txt">What is the compliance status of consignment 4711, and which documents are still missing?</span></div>
         <div class="tool ln" data-ph="r">Assistant calls VeriPura Core: get_consignment_status("4711"), read-only</div>
-        <div class="msg a ln" data-ph="r"><b>Assistant</b><span class="txt">Consignment 4711 is in review. All three documents were received. One field is missing: the Lacey declaration does not name the species for the core veneer. Source: APHIS Lacey Act guidance, version 2026-01. Your team decides the next step.</span></div>
+        <div class="msg a ln" data-ph="r"><b>Assistant</b><span class="txt">Consignment 4711 is in review. Both documents were received, the health certificate and the proof of origin. One mismatch: the establishment number on the health certificate is not on the approved list. Source: independent registry. Your team decides the next step.</span></div>
       </div>
     </figure>
 <div class="devgrid">
