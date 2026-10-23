@@ -1,0 +1,55 @@
+/* VeriPura Food cost estimator. Uses the page tokens only (see STYLE_GUIDE.md). */
+.est,.est *{box-sizing:border-box}
+.est{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:32px;align-items:start}
+.est-in{background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:28px;display:grid;gap:26px;min-width:0}
+.est-grp{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;min-width:0}
+.est-in label{grid-template-columns:minmax(0,1fr);align-content:start}
+.est-grp>h3,.est-more>summary{font-size:19px;line-height:1.25;margin:0;font-weight:700}
+.est-sub{margin:-8px 0 0;font-size:14px;color:var(--slate);font-weight:500}
+.est-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.est-grid label small,.est-grp label small{font-size:13px;font-weight:500;color:var(--slate)}
+.est-more{border-top:1px solid var(--line);padding-top:20px}
+.est-more>summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;min-height:44px;align-items:center}
+.est-more>summary::-webkit-details-marker{display:none}
+.est-more>summary::after{content:"+";font-weight:500;color:var(--slate)}
+.est-more[open]>summary::after{content:"\2212"}
+.est-more .est-grp{margin-top:14px}
+.est-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.est-actions .btn,.est-out .btn{min-height:44px;display:inline-flex;align-items:center}
+.est-actions button.btn{font-family:var(--sans)}
+.est-out{border:1.5px solid var(--ink);border-radius:12px;background:var(--surface);box-shadow:6px 6px 0 var(--shadow);padding:26px;display:grid;gap:20px;position:sticky;top:88px;min-width:0}
+.est-out h3{margin:0;font-size:19px}
+.est-note{margin:0;font-size:13.5px;color:var(--slate);font-weight:500}
+.est-empty{margin:0;color:var(--ink-2);font-weight:500}
+.est-res{display:grid;gap:20px}
+.est-res[hidden],.est-empty[hidden],.est-ill[hidden]{display:none}
+.est-big{display:block;font-size:clamp(34px,4vw,46px);line-height:1.05;font-weight:800;letter-spacing:-.02em;overflow-wrap:anywhere}
+.est-lab{display:block;font-size:14px;font-weight:600;color:var(--slate);margin-bottom:4px}
+.est-bar{display:flex;height:12px;border-radius:999px;overflow:hidden;background:var(--line-soft)}
+.est-bar span{display:block;height:100%}
+.est-bar .b1,.est-sw.b1{background:var(--ink)}
+.est-bar .b2,.est-sw.b2{background:var(--seal)}
+.est-bar .b3,.est-sw.b3{background:var(--slate)}
+.est-rows{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.est-rows li{display:grid;grid-template-columns:14px minmax(0,1fr) auto;gap:10px;align-items:baseline;padding:10px 0;border-top:1px solid var(--line-soft);font-size:15.5px;font-weight:500}
+.est-rows li:first-child{border-top:0}
+.est-sw{display:inline-block;width:12px;height:12px;border-radius:3px}
+.est-rows b{font-weight:700;white-space:nowrap}
+.est-rows em{font-style:normal;color:var(--slate);font-size:14px;margin-left:6px}
+.est-kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border-top:2px solid var(--ink)}
+.est-kpis div{padding:16px 14px 6px 0;min-width:0}
+.est-kpis div:nth-child(even){padding-left:16px;padding-right:0;border-left:1px solid var(--line)}
+.est-kpis b{display:block;font-size:24px;line-height:1.15;font-weight:800;letter-spacing:-.01em;overflow-wrap:anywhere}
+.est-kpis span{display:block;font-size:14px;color:var(--slate);font-weight:500;margin-top:4px}
+.est-callout{margin:0;padding:14px 16px;border-left:3px solid var(--seal);background:var(--paper);border-radius:0 10px 10px 0;font-size:14.5px;color:var(--ink-2);font-weight:500}
+.est-callout strong{display:block;margin-bottom:4px;color:var(--ink);font-weight:700}
+.est-price{margin:0;padding:14px 16px;background:var(--paper);border:1px solid var(--line);border-radius:10px;font-size:14.5px;color:var(--ink-2);font-weight:500}
+.est-ill{margin:0;font-size:13px;font-weight:600;color:var(--slate)}
+.est-cta{display:flex;flex-wrap:wrap;gap:10px}
+.est-full{margin:18px 0 0;font-size:15.5px;font-weight:600}
+.est-head{padding:64px 0 24px}
+.est-head h1{font-size:clamp(34px,5vw,56px);line-height:1.04;letter-spacing:-.03em;font-weight:800;margin:0 0 20px;max-width:18ch}
+.est-head p.lede{font-size:20px;line-height:1.5;color:var(--ink-2);max-width:38em;margin:0}
+.est-page{padding-top:32px}
+@media (max-width:960px){.est{grid-template-columns:minmax(0,1fr)}.est-out{position:static}}
+@media (max-width:560px){.est-grid{grid-template-columns:minmax(0,1fr)}.est-in{padding:20px}.est-out{padding:20px}.est-kpis{grid-template-columns:minmax(0,1fr)}.est-kpis div:nth-child(even){padding-left:0;border-left:0}}
