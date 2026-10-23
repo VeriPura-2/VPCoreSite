@@ -262,6 +262,23 @@ tbody tr:last-child td{border-bottom:0}
 .code{margin:0;background:#0F2444;border-radius:12px;overflow:hidden;border:1.5px solid var(--code-border,#0F2444)}
 .code figcaption{display:flex;justify-content:space-between;gap:12px;padding:12px 18px;background:#1C3560;color:#D3DDEC;font-size:13px;font-weight:500}
 .code pre{margin:0;padding:18px;overflow-x:auto;font:500 13.5px/1.6 var(--mono);color:#EEF2F8}
+/* callresp */
+/* Call and response animation (progressive: only armed by script) */
+.code figcaption .live{flex:1;text-align:center;font-weight:500;font-size:12.5px;color:#A9BCDB;letter-spacing:.02em}
+.code figcaption .live:empty{display:none}
+.code figcaption .live::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#F1C27D;margin-right:8px;vertical-align:1px;animation:vpdot 1s ease-in-out infinite}
+.code figcaption .live.done::before{background:#9FD8C6;animation:none}
+@keyframes vpdot{50%{opacity:.25}}
+.code pre .ln{display:block;width:max-content;min-height:1.6em}
+.code.armed .ln{opacity:0}
+.code.armed .ln.on{opacity:1}
+.code .ln.hot{background:rgba(241,194,125,.16);border-radius:3px;box-shadow:0 0 0 3px rgba(241,194,125,.16);transition:background .4s}
+.code.chat .chatbody{padding:18px;display:grid;gap:14px;color:#EEF2F8;font-size:15px;line-height:1.55}
+.code.chat .msg b{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#A9BCDB;margin-bottom:3px}
+.code.chat .msg.a{border-left:3px solid #9FD8C6;padding-left:14px}
+.code.chat .tool{font:500 13px/1.5 var(--mono);color:#F1C27D}
+.code.chat .ch{opacity:0}.code.chat .ch.on{opacity:1}
+@media print{.code.armed .ln,.code.chat .ch{opacity:1!important}}
 .code .c{color:#A9BCDB}.code .s{color:#9FD8C6}.code .n{color:#F1C27D}
 .devgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:48px;padding-top:32px;border-top:1px solid var(--line)}
 .devgrid h3{font-size:17px;margin:0 0 6px}
@@ -624,7 +641,7 @@ table.trail tbody tr:last-child td{border-bottom:0}
         </div>
       </div>
       <figure class="code" aria-label="Illustrative tool call">
-        <figcaption><span>Your system calls VeriPura Building Supplies</span><span>Illustrative</span></figcaption>
+        <figcaption><span>Your system calls VeriPura Building Supplies</span><span class="live" aria-hidden="true"></span><span>Illustrative</span></figcaption>
 <pre><code><span class="c">// tool call from your own system</span>
 check_compliance({
   hs_code: <span class="s">"4412.33"</span>,
@@ -1078,6 +1095,50 @@ document.querySelectorAll('[data-role]').forEach(a=>a.addEventListener('click',(
 })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "54981e9b4761452196f1849c3382c42d"}'></script><!-- End Cloudflare Web Analytics -->
+<script>// Call and response: plays once when the box is half visible (about 8 seconds)
+(function(){
+  var figs=[].slice.call(document.querySelectorAll('figure.code'));
+  if(!figs.length||!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  function prep(f){
+    var pre=f.querySelector('pre code'),lines=[],req=[],resp=[],chat=!pre;
+    if(pre){
+      var parts=pre.innerHTML.replace(/\n$/,'').split('\n');
+      pre.innerHTML=parts.map(function(p){return '<span class="ln">'+p+'</span>'}).join('');
+      lines=[].slice.call(pre.querySelectorAll('.ln'));
+      var d=0;lines.forEach(function(l,i){if(/\/\/ response/.test(l.textContent))d=i});
+      req=lines.slice(0,d);resp=lines.slice(d)
+    }else{
+      lines=[].slice.call(f.querySelectorAll('.ln'));
+      lines.forEach(function(l){(l.getAttribute('data-ph')==='q'?req:resp).push(l)});
+      lines.forEach(function(l){if(l.classList.contains('msg')){var t=l.querySelector('.txt'),s=t.textContent;t.innerHTML=s.split('').map(function(c){return '<span class="ch">'+c.replace('&','&amp;').replace('<','&lt;')+'</span>'}).join('')}})
+    }
+    f.classList.add('armed');
+    return {f:f,req:req,resp:resp,chat:chat,live:f.querySelector('.live')}
+  }
+  function typeLine(l,ms,chat){
+    l.classList.add('on');
+    if(chat){var c=[].slice.call(l.querySelectorAll('.ch'));if(!c.length)return;c.forEach(function(x,i){setTimeout(function(){x.classList.add('on')},i*ms/c.length)});return}
+    var n=Math.max(1,l.textContent.length);
+    l.animate([{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0 0 0)'}],{duration:ms,easing:'steps('+n+')',fill:'both'})
+  }
+  function run(o){
+    var T=o.chat?{req:2600,pause:1000,resp:4000}:{req:3000,pause:1200,resp:3800};
+    function say(t,done){if(o.live){o.live.textContent=t;o.live.classList.toggle('done',!!done)}}
+    var tot=function(a){return a.reduce(function(s,l){return s+Math.max(1,l.textContent.length)},0)||1};
+    var t=0,rt=tot(o.req);say('Request');
+    o.req.forEach(function(l){var ms=T.req*Math.max(1,l.textContent.length)/rt;(function(l,at,ms){setTimeout(function(){typeLine(l,ms,o.chat)},at)})(l,t,ms);t+=ms});
+    t=T.req;setTimeout(function(){say('Core is checking')},t);t+=T.pause;
+    setTimeout(function(){say('Response')},t);
+    var st=tot(o.resp);
+    o.resp.forEach(function(l){var w=T.resp*Math.max(1,l.textContent.length)/st,isTool=l.classList.contains('tool');
+      (function(l,at,w,isTool){setTimeout(function(){if(o.chat&&!isTool)typeLine(l,w,true);else if(o.chat){l.classList.add('on')}else{l.classList.add('on');l.animate([{opacity:0,transform:'translateY(4px)'},{opacity:1,transform:'none'}],{duration:260,fill:'both'})}
+        if(!o.chat&&/result:/.test(l.textContent))setTimeout(function(){l.classList.add('hot')},260)},at)})(l,t,w,isTool);t+=w});
+    setTimeout(function(){say('Response received',true)},t+200)
+  }
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){io.unobserve(e.target);run(e.target.__o)}})},{threshold:.5});
+  figs.forEach(function(f){f.__o=prep(f);io.observe(f)})
+})();
+</script>
 <script>document.querySelectorAll("[data-ask]").forEach(function(a){a.addEventListener("click",function(){var h=document.querySelector('input[name="asked_about"]');if(h)h.value="Ask about: "+a.dataset.ask;var s=document.querySelector('select[name="interest"]');if(s)s.value="Something else";var p=document.querySelector('[name="problem"]');if(p&&!p.value)p.placeholder="Tell us what you would use "+a.dataset.ask+" for"})})</script>
 </body>
 </html>
